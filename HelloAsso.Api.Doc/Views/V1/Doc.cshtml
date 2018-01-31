@@ -1,0 +1,964 @@
+﻿@{
+    Layout = "~/Views/V1/Shared/_Layout.cshtml";
+}
+
+@section head{
+    <title>HelloAsso API - Documentation technique</title>
+    <style>
+        .content-left {
+            display: block;
+            width: 220px;
+            background: white;
+            float: left;
+            box-sizing: border-box;
+        }
+
+        nav {
+            position: fixed;
+            width: 240px;
+        }
+
+            nav a {
+                display: block;
+                margin: 1em 0;
+            }
+
+        .content-right {
+            float: right;
+            width: 700px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            margin: 0 0 1em 0;
+            font-size: 32px;
+            border-bottom: 5px solid #ddd;
+            padding-bottom: 0.3em;
+            padding-top: 1em;
+            color: #666;
+            letter-spacing: -1px;
+        }
+
+        h3 {
+            color: #888;
+            font: 26px Roboto, Arial;
+            border: 0;
+            margin: 1em;
+            letter-spacing: -1px;
+        }
+
+        table {
+            margin: auto;
+        }
+
+            table tr:nth-child(2n) {
+                background: #e0e0e0;
+            }
+
+            table tr th {
+                font-weight: bold;
+                text-align: left;
+            }
+
+        td, th {
+            font: 12px Roboto, Arial;
+            line-height: 1.8em;
+            padding: 1em;
+        }
+
+        .quote {
+            display: block;
+            margin: 1em;
+            border: 1px dashed #bbb;
+            padding: 1em;
+            color: #888;
+            font: 14px consolas;
+            line-height: 1.8em;
+        }
+
+        .canonical.quote {
+            color: #888;
+            border: none;
+            font: 18px consolas;
+        }
+
+        .code.quote {
+            white-space: pre;
+            font: 14px consolas;
+            line-height: 1.8em;
+        }
+
+        p {
+            text-align: justify;
+            margin: 1em 0;
+        }
+
+        ol li {
+            font: 14px Roboto, Arial;
+        }
+
+            ol li ol li {
+                font: 12px Roboto, Arial;
+            }
+
+        #HelloAsso-dev {
+            position: fixed;
+        }
+
+        input[type="text"] {
+            width: 370px;
+        }
+
+        #widgetForm {
+            background-color: #e0e0e0;
+            padding: 20px 20px 0;
+            margin: 30px 14px;
+            position: relative;
+        }
+
+        .label {
+            display: inline-block;
+            width: 230px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .labelError {
+            color: red;
+            position: absolute;
+            top: 320px;
+            left: 20px;
+        }
+
+        .inputRight {
+            float: right;
+        }
+
+        .widget-colors {
+            width: 392px;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            float: right;
+        }
+
+        .themes-choice .option, .themes-widget-don .option {
+            display: block;
+            float: left;
+            margin: 3px;
+            width: 25px;
+            height: 25px;
+            border: 1px solid #CCC;
+            cursor: pointer;
+        }
+
+            .themes-widget-don .option.color {
+                width: 65px;
+                height: 25px;
+                margin-left: 30px;
+            }
+
+                .themes-widget-don .option.color input[type=text] {
+                    width: 45px;
+                    height: 6px;
+                }
+
+            .themes-widget-don .option:hover {
+                box-shadow: 0px 0px 0px 2px #bbb;
+            }
+
+            .themes-widget-don .option.selected {
+                box-shadow: 0px 0px 0px 2px #888;
+            }
+
+            .themes-choice .option.green, .themes-widget-don .option.green {
+                background: #8BBE43;
+            }
+
+            .themes-widget-don .option.light {
+                background: #FFFFFF;
+            }
+
+            .themes-widget-don .option.transparent {
+                background: url('/img/bg-transparence.png') repeat;
+            }
+
+        #optionWidgetColor {
+            width: 60px;
+            height: 10px;
+        }
+    </style>
+}
+
+<div class="page-content">
+<div class="content-left">
+    <nav>
+        <ol>
+            <li><a href="#section-1">1. Présentation de l'API HelloAsso</a></li>
+            <li>
+                <a href="#section-2">2. Accés aux ressources</a>
+                <ol>
+                    <li><a href="#section-2-1">2.1. Principe général de fonctionnement</a></li>
+                    <li><a href="#section-2-2">2.2. Organisations</a></li>
+                    <li><a href="#section-2-3">2.3. Recherche</a></li>
+                </ol>
+            </li>
+            <li><a href="#section-3">3. Formats des données</a></li>
+            <li><a href="#section-4">4. Erreurs</a></li>
+            <li>
+                <a href="#section-5">5. Références</a>
+                <ol>
+                    <li><a href="#section-5-1">2.1. Ressources</a></li>
+                    <li><a href="#section-5-2">2.2. Prédicats de recherche</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="#section-6">6. Widget de don</a>
+                <ol>
+                    <li><a href="#section-6-1">6.1. Générer le code du widget de don</a></li>
+                    <li><a href="#section-6-2">6.2. Variables du widget</a></li>
+                </ol>
+            </li>
+        </ol>
+    </nav>
+</div>
+<div class="content-right">
+<h2 id="section-1">
+    1. Présentation de l'API HelloAsso
+</h2>
+<p>
+    L’API HelloAsso permet aux développeurs de sites et services web d’explorer la
+    base des associations inscrites sur notre plateforme, et d’utiliser les services
+    de don et d’émission automatique de reçus fiscaux mis à disposition par HelloAsso
+    pour ces mêmes associations. L’objectif de cette API est double ; il s’agit d’une
+    part de permettre aux associations d’atteindre de nouvelles audiences, au travers
+    de services solidaires innovants, et d’autre part, de rendre possible de nouvelles
+    façons d’interagir avec le contenu proposé par ces associations sur HelloAsso.
+    L’API est composée de services web RESTful, permettant d’explorer le contenu public
+    HelloAsso et de récupérer des données au format json.
+</p>
+<h2 id="section-2">
+    2. Ressources
+</h2>
+<h3 id="section-2-1">2.1. Principe général de fonctionnement</h3>
+<p>L'ensemble des ressources de l'API REST sont disponibles en effectuant des requêtes http get de la forme :</p>
+<p class="canonical quote">http://api.helloasso.com/[CHEMIN]</p>
+<p>où CHEMIN est le chemin vers la ressource recherchée.</p>
+<p>Les données retournées par l'API sont au format JSON par défaut. Si une erreur se produit, un code de retour HTML est envoyé dans l'en-tête de la réponse, accompagné d'une description de l'erreur au format JSON dans le corps du message. Reportez-vous à la section <a href="#section-4">Erreurs</a> pour une description détaillée des mécanismes de gestion des erreurs.</p>
+<h3 id="section-2-2">2.2. Organisations</h3>
+<p>
+    Afin de récupérer les données publiques d’une organisation inscrite sur HelloAsso, il suffit d’identifier celle-ci
+    par son nom ou son identifiant HelloAsso.
+</p>
+<p class="canonical quote">http://api.helloasso.com/[NOM|ID]</p>
+<p>
+    Par exemple, les deux chemins
+    suivants sont équivalents, et retournent l’ensemble des informations publiques pour
+    l’association « Planète I.D.E.A.L. » :
+</p>
+<p class="ressource quote">
+    http://api.helloasso.com/planete-i-d-e-a-l
+    <br/>
+    http://api.helloasso.com/60
+</p>
+<p>Une requête GET sur l’une de ces urls produit le résultat suivant :</p>
+<p class="code quote">
+    {
+    "logo": "http://www.helloasso.com/assets/img/logos/planete-ideal-logo.png",
+    "thumbnail": "http://www.helloasso.com/assets/img/photos/4500-slide.JPG",
+    "profile": "http://www.helloasso.com/associations/planete-i-d-e-a-l",
+    "donate_form": "http://www.helloasso.com/don/associations/planete-i-d-e-a-l",
+    "location": {
+    "address": "22 rue de la Fourbisserie",
+    "postal_code": 37170,
+    "city": "Chambray les Tours",
+    "latitude": 47.351432800292969,
+    "longitude": 0.69701260328292847
+    },
+    "legal_status": "Association Loi 1901 reconnue d'interêt général",
+    "name": "Planète I.D.E.A.L.",
+    "website": "planeteideal.free.fr",
+    "summary": "Planète I.D.E.A.L. (Information, Développement, Education, Aide
+    Locale) soutient la scolarité d'enfants et d'étudiants et vient en aide aux
+    populations défavorisées en renforçant leur autonomie.",
+    "supporters": 157,
+    "funding": 4424.4500,
+    "id": 60
+    }
+</p>
+<p>Les propriétés suivantes sont disponibles sur les organisations :</p>
+<table>
+    <tr>
+        <th>Propriétés</th>
+        <th>Description</th>
+        <th>Disponibilité</th>
+    </tr>
+    <tr>
+        <td>activated_receipt_emission</td>
+        <td>Booléen indiquant si l'émission automatique des reçus fiscaux est activée sur cet organisme</td>
+        <td>Toujours</td>
+    </tr>
+    <tr>
+        <td>logo</td>
+        <td>URL pointant sur le logo officiel de l'organisation</td>
+        <td>Imprévisible</td>
+    </tr>
+    <tr>
+        <td>thumbnail</td>
+        <td>URL pointant sur l'image de profil de l'organisation</td>
+        <td>Toujours</td>
+    </tr>
+    <tr>
+        <td>profile</td>
+        <td>URL pointant sur la page de profil de l'organisation sur HelloAsso</td>
+        <td>Toujours</td>
+    </tr>
+    <tr>
+        <td>donate_form</td>
+        <td>URL pointant sur la page de don de l'organisation</td>
+        <td>Don CB activé</td>
+    </tr>
+    <tr>
+        <td>location</td>
+        <td>Informations de localisation de l'organisation</td>
+        <td>Toujours</td>
+    </tr>
+    <tr>
+        <td>legal_status</td>
+        <td>Le statut juridique officiel de l'organisation</td>
+        <td>Toujours</td>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td>Le nom de l'organisation</td>
+        <td>Toujours</td>
+    </tr>
+    <tr>
+        <td>website</td>
+        <td>Le site web de l'organisation</td>
+        <td>Imprévisible</td>
+    </tr>
+    <tr>
+        <td>summary</td>
+        <td>Une description courte des actions de l'organisation</td>
+        <td>Toujours</td>
+    </tr>
+    <tr>
+        <td>supporters</td>
+        <td>Le nombre d'utilisateur qui ont soutenu cette organisation</td>
+        <td>Toujours</td>
+    </tr>
+    <tr>
+        <td>funding</td>
+        <td>Le total de collecte de cette organisation à ce jour</td>
+        <td>Toujours</td>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>L'identifiant HelloAsso de cette organisation</td>
+        <td>Toujours</td>
+    </tr>
+    <tr>
+        <td>theme1</td>
+        <td>La thématique numero 1 dans laquelle se situe l'association (au format trigramme), ou NULL si non définie</td>
+        <td>Toujours</td>
+    </tr>
+    <tr>
+        <td>theme2</td>
+        <td>La thématique numero 2 dans laquelle se situe l'association (au format trigramme), ou NULL si non définie</td>
+        <td>Toujours</td>
+    </tr>
+    <tr>
+        <td>theme3</td>
+        <td>La thématique numero 3 dans laquelle se situe l'association (au format trigramme), ou NULL si non définie</td>
+        <td>Toujours</td>
+    </tr>
+</table>
+<p>Les thématiques sont identifiées par des trigrammes :</p>
+<table>
+    <tr>
+        <th>Thématique</th>
+        <th>Trigramme</th>
+    </tr>
+    <tr>
+        <td>Protection animale</td>
+        <td>ani</td>
+    </tr>
+    <tr>
+        <td>Arts et Cultures</td>
+        <td>art</td>
+    </tr>
+    <tr>
+        <td>Droit des Femmes</td>
+        <td>fem</td>
+    </tr>
+    <tr>
+        <td>Droit et Libertés</td>
+        <td>dro</td>
+    </tr>
+    <tr>
+        <td>Ecologie et Nature</td>
+        <td>eco</td>
+    </tr>
+    <tr>
+        <td>Economie et Social</td>
+        <td>ecn</td>
+    </tr>
+    <tr>
+        <td>Education et Formation</td>
+        <td>edu</td>
+    </tr>
+    <tr>
+        <td>Action humanitaire</td>
+        <td>hum</td>
+    </tr>
+    <tr>
+        <td>Lesbiennes, gays, bisexuels et transgenres</td>
+        <td>lgb</td>
+    </tr>
+    <tr>
+        <td>Nourriture et Agriculture</td>
+        <td>nou</td>
+    </tr>
+    <tr>
+        <td>Santé</td>
+        <td>san</td>
+    </tr>
+    <tr>
+        <td>Sciences et Recherche</td>
+        <td>sci</td>
+    </tr>
+    <tr>
+        <td>Sports et loisirs</td>
+        <td>spo</td>
+    </tr>
+</table>
+<h3 id="section-2-3">2.3. Recherche</h3>
+<p>L’ensemble des ressources d’un même type peut être exploré à l’aide de sous-dossiers définissant chacun un prédicat de recherche sur son dossier parent. Ainsi, l’url canonique d’un ensemble de ressources est la suivante :</p>
+<p class="canonical quote">http://api.helloasso.com/[RESSOURCE]/[PREDICAT/]*[/PAGE]</p>
+<p>Les collections de ressources correspondantes sont retournées sous forme de tableau</p>
+<p class="code quote">
+    {
+    "resources":
+    [
+    {id:X, name:Y}, // tableau de ressource identifiées par leur nom
+    ... // et leur identifiant HelloAsso
+    ],
+    "paging": { // Informations de pagination
+    "page": 1,
+    "total" : 10,
+    "page_size" : 5,
+    "pages" : 2
+    }
+    }
+</p>
+<p>Par exemple, la liste des associations d'action humanitaire reconnues d'utilité publique, peut être obtenue avec l'url :</p>
+<p class="ressource quote"><a href="http://api.helloasso.com/organizations/humanitarian/RUP/">http://api.helloasso.com/organizations/humanitarian/RUP/</a></p>
+<p>Pour éviter de renvoyer des collections trop grandes, les résultats sont paginés. Les informations de paginations sont toujours incluses avec le tableau "resources".</p>
+<table>
+    <tr>
+        <td>page</td>
+        <td>Numéro de la page renvoyée</td>
+    </tr>
+    <tr>
+        <td>total</td>
+        <td>Nombre de résultats</td>
+    </tr>
+    <tr>
+        <td>page_size</td>
+        <td>Nombre de résultats par page</td>
+    </tr>
+    <tr>
+        <td>pages</td>
+        <td>Nombre total de pages</td>
+    </tr>
+</table>
+<p>La page d'accés doit être spécifiée après les prédicats de recherche.</p>
+<p>Consultez la section <a href="#section-5">Références</a> pour obtenir la liste des prédicats disponible pour la recherche.</p>
+<h2 id="section-3">3. Formats des données</h2>
+<p>Toutes nos réponses sont en texte brut et suivent le standard JSON. Les caractéristiques de format et d'encodage de nos réponses sont résumées dans le tableau suivant :</p>
+<table>
+    <tr>
+        <td>Type MIME</td>
+        <td>application/json</td>
+    </tr>
+    <tr>
+        <td>charset</td>
+        <td>UTF-8</td>
+    </tr>
+</table>
+<p>Il est également possible d'obtenir le schéma JSON de toute ressource présente sur l'API en ajoutant le répertoire <strong>/schema</strong> à son url. Par exemple, l'url <a href="http://api.helloasso.com/organizations/schema">http://api.helloasso.com/organizations/schema</a> retourne le schéma suivant :</p>
+<p class="code quote">
+    {
+    "type":"object",
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "id": "#",
+    "required":false,
+    "properties":{
+    "paging": {
+    "type":"object",
+    "id": "paging",
+    "required":false,
+    "properties":{
+    "page_size": {
+    "type":"number",
+    "id": "page_size",
+    "required":false
+    },
+    "page": {
+    "type":"number",
+    "id": "page",
+    "required":false
+    },
+    "pages": {
+    "type":"number",
+    "id": "pages",
+    "required":false
+    },
+    "total": {
+    "type":"number",
+    "id": "total",
+    "required":false
+    }
+    }
+    },
+    "ressources": {
+    "type":"array",
+    "id": "ressources",
+    "required":false,
+    "items":
+    {
+    "type":"object",
+    "id": "0",
+    "required":false,
+    "properties":{
+    "id": {
+    "type":"number",
+    "id": "id",
+    "required":false
+    },
+    "name": {
+    "type":"string",
+    "id": "name",
+    "required":false
+    }
+    }
+    }
+
+
+    }
+    }
+    }
+</p>
+<h2 id="section-4">4. Erreurs</h2>
+<p>Le statut HTTP de la réponse permet de déterminer si une erreur s'est produite.</p>
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Signification</th>
+    </tr>
+    <tr>
+        <td>200</td>
+        <td>La requête a été traitée correctement.</td>
+    </tr>
+    <tr>
+        <td>204</td>
+        <td>La requête a été traitée correctement, mais aucun résultat n'a été trouvé. Dans ce cas, l'objet JSON contient simplement une collection vide.</td>
+    </tr>
+    <tr>
+        <td>403</td>
+        <td>La requête nécessite une connexion SSL.</td>
+    </tr>
+    <tr>
+        <td>404</td>
+        <td>La requête ne correspond à aucune ressource valide.</td>
+    </tr>
+</table>
+<p>Dans le cas d'une erreur 404, le contenu de la réponse permet d'obtenir des informations supplémentaires. Le format de réponse est alors un JSON de la forme :</p>
+<p class="code quote">
+    {
+    "Type": "HelloAsso.InvalidResource",
+    "Code": 0,
+    "Message": "This resource does not exist."
+    }
+</p>
+<p>L'objet réponse contient alors trois champs :</p>
+<ul>
+    <li>Le type d'erreur, identifié par un namespace</li>
+    <li>L'identifiant du code de l'erreur</li>
+    <li>Un message explicitant l'erreur, à destination humaine</li>
+</ul>
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Code</th>
+        <th>Message</th>
+    </tr>
+    <tr>
+        <td>HelloAsso.InvalidResource</td>
+        <td>0</td>
+        <td>This resource does not exist.</td>
+    </tr>
+    <tr>
+        <td>HelloAsso.InvalidPath</td>
+        <td>1</td>
+        <td>This path does not exist.</td>
+    </tr>
+    <tr>
+        <td>HelloAsso.MissingParameter</td>
+        <td>2</td>
+        <td>A required parameter is missing.</td>
+    </tr>
+    <tr>
+        <td>HelloAsso.InvalidParameter</td>
+        <td>3</td>
+        <td>The parameter 'parameter' is invalid.</td>
+    </tr>
+    <tr>
+        <td>HelloAsso.InvalidLengthParameter</td>
+        <td>4</td>
+        <td>The length of 'parameter' is invalid.</td>
+    </tr>
+    <tr>
+        <td>HelloAsso.ServiceUnavailable</td>
+        <td>5</td>
+        <td>Service is under maintenance.</td>
+    </tr>
+    <tr>
+        <td>HelloAsso.NonSecureConnection</td>
+        <td>6</td>
+        <td>The connection is not secure.</td>
+    </tr>
+</table>
+<h2 id="section-5">5. Références</h2>
+<h3 id="section-5-1">5.1. Resources</h3>
+<table>
+    <tr>
+        <th>Ressource</th>
+        <th>URL</th>
+    </tr>
+    <tr>
+        <td>Organisation</td>
+        <td class="code quote">http://api.helloasso.com/[NOM|ID]</td>
+    </tr>
+    <tr>
+        <td>Collection d'organisation</td>
+        <td class="code quote">http://api.helloasso.com/organizations/[PREDICAT/]*[/PAGE]</td>
+    </tr>
+    <tr>
+        <td>Schéma</td>
+        <td class="code quote">http://api.helloasso.com/[CHEMIN DE LA RESSOURCE]/schema</td>
+    </tr>
+</table>
+<h3 id="section-5-2">5.2. Prédicats de recherche</h3>
+<table>
+    <tr>
+        <th>Prédicat</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>animals</td>
+        <td>Protection animale</td>
+    </tr>
+    <tr>
+        <td>arts</td>
+        <td>Arts et Cultures</td>
+    </tr>
+    <tr>
+        <td>women</td>
+        <td>Droit des femmes</td>
+    </tr>
+    <tr>
+        <td>rights</td>
+        <td>Droit et Libertés</td>
+    </tr>
+    <tr>
+        <td>ecology</td>
+        <td>Ecologie et Nature</td>
+    </tr>
+    <tr>
+        <td>economie</td>
+        <td>Economie et Social</td>
+    </tr>
+    <tr>
+        <td>education</td>
+        <td>Education et formation</td>
+    </tr>
+    <tr>
+        <td>humanitarian</td>
+        <td>Action humanitaire</td>
+    </tr>
+    <tr>
+        <td>international</td>
+        <td>Action internationale</td>
+    </tr>
+    <tr>
+        <td>lgbt</td>
+        <td>Lesbiennes, gays, bisexuels et transgenres</td>
+    </tr>
+    <tr>
+        <td>food</td>
+        <td>Nourriture et Agriculture</td>
+    </tr>
+    <tr>
+        <td>health</td>
+        <td>Santé</td>
+    </tr>
+    <tr>
+        <td>science</td>
+        <td>Sciences et Recherche</td>
+    </tr>
+    <tr>
+        <td>sport</td>
+        <td>Sports et loisirs</td>
+    </tr>
+    <tr>
+        <td>rig</td>
+        <td>Reconnue d'interêt général</td>
+    </tr>
+    <tr>
+        <td>rup</td>
+        <td>Reconnue d'utilité publique</td>
+    </tr>
+    <tr>
+        <td>rigrup</td>
+        <td>Reconnue d'utilité publique ou reconnue d'interêt général</td>
+    </tr>
+    <tr>
+        <td>accept-donations</td>
+        <td>Organisme acceptant les dons CB</td>
+    </tr>
+    <tr>
+        <td>search[TERME]</td>
+        <td>Recherche les associations par mot-clé</td>
+    </tr>
+</table>
+
+<h2 id="section-6">6. Widget de don</h2>
+<p>
+    Le widget de don permet d'intégrer le formulaire de don complet HelloAsso via une iframe à votre site.<br/>
+    Afin d'ajouter le formulaire de don à votre site, copiez-collez le code du widget sur votre site à l'endroit où vous souhaitez ajouter le formulaire.<br/>
+    Le widget gère le formulaire de don, le paiement, le retour de paiement et la création des reçus fiscaux ou des attestations de paiement.
+</p>
+<p>NB : le service de paiement n'est accessible qu'aux organismes ayant le don CB activé.</p>
+<h3 id="section-6-1">6.1. Générer le code du widget de don</h3>
+<div id="widgetForm">
+    <label for="txtAssociation" class="label">Url de la page HelloAsso<br/>ou identifiant de l'organisme</label>
+    <asp:TextBox ID="txtAssociation" CssClass="inputRight" runat="server" ClientIDMode="Static"></asp:TextBox><br/>
+    <label for="txtApiKey" class="label">Clé API<br/>(facultatif)</label>
+    <asp:TextBox ID="txtApiKey" CssClass="inputRight" runat="server" ClientIDMode="Static"></asp:TextBox><br/>
+    <label for="txtUrlEffectue" class="label">Url de retour après paiement effectué<br/>(facultatif)</label>
+    <asp:TextBox ID="txtUrlEffectue" CssClass="inputRight" runat="server" ClientIDMode="Static"></asp:TextBox><br/>
+    <label for="txtUrlAnnule" class="label">Url de retour après paiement annulé<br/>(facultatif)</label>
+    <asp:TextBox ID="txtUrlAnnule" CssClass="inputRight" runat="server" ClientIDMode="Static"></asp:TextBox><br/>
+    <label for="txtUrlRefuse" class="label">Url de retour après paiement refusé<br/>(facultatif)</label>
+    <asp:TextBox ID="txtUrlRefuse" CssClass="inputRight" runat="server" ClientIDMode="Static"></asp:TextBox><br/>
+    <label for="txtTheme" class="label">Thème<br/>(facultatif)</label>
+    <asp:TextBox ID="txtTheme" CssClass="inputRight" runat="server" ClientIDMode="Static"></asp:TextBox><br/>
+    <span id="errorTheme" class="labelError" style="display: none;">Valeur incorrecte</span>
+    <%--
+    <div class="widget-colors">
+        <div class="themes-widget-don">
+            <div class="option light selected">
+            </div>
+            <div class="option green">
+            </div>
+            <div class="option transparent">
+            </div>
+        </div>
+        <div style="display: inline-block; margin-left: 0px">
+            Ou couleur au format hexadécimal #
+        </div>
+        <div class="option color" style="display: inline-block">
+            <asp:TextBox ID="optionWidgetColor" runat="server" ClientIDMode="Static"/>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator16" runat="server"
+                                            ControlToValidate="optionWidgetColor" ErrorMessage="La valeur n'est pas au format hexadécimal" Display="dynamic"
+                                            ValidationExpression="^(([0-9]|[a-f]|[A-F]){0,6})$" CssClass="msgErrorColorFormat"/>
+        </div>
+    </div>--%>
+
+    <asp:RequiredFieldValidator ID="rfvTxtAssociation" runat="server"
+                                ControlToValidate="txtAssociation"
+                                CssClass="labelError"
+                                ErrorMessage="L'url ou l'identifiant de l'organisme est obligatoire.">
+    </asp:RequiredFieldValidator>
+    <asp:RegularExpressionValidator ID="rgxTxtAssociation" runat="server"
+                                    ErrorMessage="Valeur incorrecte : url ou identifiant de l'organisme"
+                                    CssClass="labelError"
+                                    ControlToValidate="txtAssociation"
+                                    ValidationExpression="^((http:\/\/)?www.helloasso.com\/associations\/.*)|([0-9]+)$"/>
+    <span id="errorOid" class="labelError" style="display: none;">Valeur inconrrecte : url ou identifiant de l'organisme</span>
+    <span id="errorAppId" class="labelError" style="display: none;">Valeur inexistante : clé API</span>
+    <asp:RegularExpressionValidator ID="rgxTxtTheme" runat="server"
+                                    ErrorMessage="Valeur incorrecte : thème"
+                                    CssClass="labelError"
+                                    ControlToValidate="txtTheme"
+                                    ValidationExpression="^light|transparent|green|#[0-9A-Fa-f]{1,6}$"/>
+
+    <div class="focal-area" style="margin-top: 12px;">
+        <asp:Button ID="btnGetWidgetCode" CssClass="button small green" runat="server" Text="Get code" CausesValidation="False" OnClientClick="getWidgetCode();return false;"/><br/>
+    </div>
+</div>
+
+<div id="widgetCode" class="quote" style="display: none; overflow-wrap: break-word;" runat="server" ClientIDMode="Static">
+</div>
+
+<h3 id="section-6-2">6.2. Variables du widget</h3>
+<table>
+    <tr>
+        <th>Variable</th>
+        <th>Description</th>
+        <th>Type</th>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td>Nom normalisé de l'association </td>
+        <td>Obligatoire si pas d'identifiant association de précisé</td>
+    </tr>
+    <tr>
+        <td>oid</td>
+        <td>Identifiant unique HelloAsso de l'association - vous pouvez l'obtenir à l'aide du <a href="#section-6-1">formulaire de génération du widget</a> ci dessus ou via l'API</td>
+        <td>Obligatoire si pas de nom d'association de précisé</td>
+    </tr>
+    <tr>
+        <td>appId</td>
+        <td>Clé API fournie par HelloAsso après demande</td>
+        <td>Facultatif</td>
+    </tr>
+    <tr>
+        <td>urlEffectue</td>
+        <td>
+            Url de la page de retour après paiement accepté.<br/>
+            Nécessite d'être url-encodée.
+        </td>
+        <td>Facultatif</td>
+    </tr>
+    <tr>
+        <td>urlAnnule</td>
+        <td>
+            Url de la page de retour après paiement annulé.<br/>
+            Nécessite d'être url-encodée.
+        </td>
+        <td>Facultatif</td>
+    </tr>
+    <tr>
+        <td>urlRefuse</td>
+        <td>
+            Url de la page de retour après paiement refusé.<br/>
+            Nécessite d'être url-encodée.
+        </td>
+        <td>Facultatif</td>
+    </tr>
+    <tr>
+        <td>theme</td>
+        <td>
+            Thème ou couleur dominante du formulaire.<br/>
+            Peut prendre les valeurs <em>light</em>, <em>green</em>, <em>transparent</em> ou couleur au format hexadécimal avec le #.
+        </td>
+        <td>Facultatif</td>
+    </tr>
+</table>
+</div>
+</div>
+<script>
+
+    function getWidgetCode() {
+        //            $('.labelError').hide();
+        var code =
+            '<iframe id="mfgWidget" src="https://www.helloasso.com/formulaire-don?[VARIABLES]" style="width:1000px;height:1600px;border:none;"></iframe> ';
+        var widgetVariables = '';
+
+        if ($('#txtAssociation').val() != null && $('#txtAssociation').val() != '') {
+            $('#errorOid').hide();
+            var idAsso = parseInt($('#txtAssociation').val());
+            if (idAsso == 0 || isNaN(idAsso)) {
+                var assoService = new Mailforgood.Web.Services.AssociationAdmin();
+                assoService.GetIDAssoByUrl($('#txtAssociation').val(),
+                    function(oid) {
+                        idAsso = oid;
+                        if (idAsso != null) {
+                            $('#errorOid').hide();
+                            if ($('#txtApiKey').val() != null && $('#txtApiKey').val() != '') {
+                                var assoService = new Mailforgood.Web.Services.AssociationAdmin();
+                                assoService.CheckAppID($('#txtApiKey').val(),
+                                    function(exist) {
+                                        if (!exist) {
+                                            $('#errorAppId').show();
+                                            $('#widgetCode').hide();
+                                        } else {
+                                            $('#errorAppId').hide();
+                                            widgetVariables = getWidgetVariables(idAsso);
+                                            code = code.replace('[VARIABLES]', widgetVariables);
+                                            $('#widgetCode').text(code);
+                                            $('#widgetCode').show();
+                                        }
+                                    });
+                            } else {
+                                widgetVariables = getWidgetVariables(idAsso);
+                                code = code.replace('[VARIABLES]', widgetVariables);
+                                $('#widgetCode').text(code);
+                                $('#widgetCode').show();
+                            }
+                        } else {
+                            $('#errorOid').show();
+                            $('#widgetCode').hide();
+                        }
+                    });
+            } else {
+                if (idAsso != null) {
+                    $('#errorOid').hide();
+                    if ($('#txtApiKey').val() != null && $('#txtApiKey').val() != '') {
+                        var assoService = new Mailforgood.Web.Services.AssociationAdmin();
+                        assoService.CheckAppID($('#txtApiKey').val(),
+                            function(exist) {
+                                if (!exist) {
+                                    $('#errorAppId').show();
+                                    $('#widgetCode').hide();
+                                } else {
+                                    $('#errorAppId').hide();
+                                    widgetVariables = getWidgetVariables(idAsso);
+                                    code = code.replace('[VARIABLES]', widgetVariables);
+                                    $('#widgetCode').text(code);
+                                    $('#widgetCode').show();
+                                }
+                            });
+                    } else {
+                        widgetVariables = getWidgetVariables(idAsso);
+                        code = code.replace('[VARIABLES]', widgetVariables);
+                        $('#widgetCode').text(code);
+                        $('#widgetCode').show();
+                    }
+                } else {
+                    $('#errorOid').show();
+                    $('#widgetCode').hide();
+                }
+            }
+        } else {
+            $('#errorOid').show();
+            $('#widgetCode').hide();
+        }
+    }
+
+    function getWidgetVariables(idAsso) {
+        var widgetVariables = 'oid=' + idAsso;
+        //                    if ($('#txtUrlCallback').val() != null && $('#txtUrlCallback').val() != '') {
+        //                        widgetVariables += '&urlCallback=' + encodeURIComponent($('#txtUrlCallback').val());
+        //                    }
+        if ($('#txtUrlEffectue').val() != null && $('#txtUrlEffectue').val() != '') {
+            widgetVariables += '&urlEffectue=' + encodeURIComponent($('#txtUrlEffectue').val());
+        }
+        if ($('#txtUrlAnnule').val() != null && $('#txtUrlAnnule').val() != '') {
+            widgetVariables += '&urlAnnule=' + encodeURIComponent($('#txtUrlAnnule').val());
+        }
+        if ($('#txtUrlRefuse').val() != null && $('#txtUrlRefuse').val() != '') {
+            widgetVariables += '&urlRefuse=' + encodeURIComponent($('#txtUrlRefuse').val());
+        }
+        if ($('#txtApiKey').val() != null && $('#txtApiKey').val() != '') {
+            widgetVariables += '&appId=' + $('#txtApiKey').val();
+        }
+        if ($('#txtTheme').val() != null && $('#txtTheme').val() != '') {
+            widgetVariables += '&theme=' + $('#txtTheme').val();
+        }
+        return widgetVariables;
+    }
+</script>

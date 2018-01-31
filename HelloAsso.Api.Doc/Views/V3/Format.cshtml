@@ -1,0 +1,179 @@
+﻿@{
+    Layout = "~/Views/V3/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("Shared/_Sidebar")
+
+<div class="main">
+    <div class="container">
+        <div class="summary">
+            <h4>Sommaire</h4>
+            <ul>
+                <li><a href="#encodage">Encodage</a></li>
+                <li><a href="#gestion-erreurs">Gestion des erreurs</a></li>
+                <li><a href="#format-chemins">Format des chemins d’accès aux ressources</a></li>
+                <li><a href="#format-reponses">Format des réponses et pagination</a></li>
+            </ul>
+        </div>
+        <article id="encodage" class="chapter">
+            <h2>Encodage</h2>
+            <section>
+                <p>Les données échangées à travers l’API HelloAsso, qu’elles soient passées en paramètres, ou retournées dans les réponses, respectent les normes suivantes :</p>
+                <ul class="list-styled">
+                    <li><strong>chaine de caractères : </strong>l’encodage utilisé est l’UTF-8</li>
+                    <li><strong>dates : </strong>les dates sont représentées sous forme de timestamp au format ISO 8601. Le 1er février 2015 à midi est ainsi représenté par la chaine 20150201T120000</li>
+                    <li><strong>format du contenu de la réponse : </strong>JSON</li>
+                </ul>
+            </section>
+        </article>
+        <article id="gestion-erreurs" class="chapter">
+            <h2>Gestion des erreurs</h2>
+            <section>
+                <p>Un code HTTP indique si l’appel a été correctement traité. Si ce code est différent de 200, cela signifie qu’un problème a été rencontré.</p>
+                <p>En particulier, voici les différents codes d’erreur HTTP qui sont susceptibles d’être retournés :</p>
+            </section>
+            <section>
+                <h3>400 : Bad Request</h3>
+                <p>L’url de l’appel est incorrect. Ce code correspond généralement à une valeur de paramètre incorrecte ou inexistante.</p>
+            </section>
+            <section>
+                <h3>401 : Unauthorized</h3>
+                <p>Les informations d’authentification sont incorrectes ou absentes.</p>
+            </section>
+            <section>
+                <h3>404 : Not Found</h3>
+                <p>L’appel a été correctement interprété et exécuté, mais la ressource demandée n’a pas été trouvée. En règle générale, cela indique que l’identifiant passé en paramètre est incorrect.</p>
+            </section>
+            <section>
+                <h3>405 : Method Not Allowed</h3>
+                <p>L’url de l’appel est correct, mais la méthode utilisée n’est pas supportée par cette ressource. Par exemple, un appel GET a été réalisé sur une ressource ne pouvant être accédée qu’avec la méthode POST.</p>
+            </section>
+            <section>
+                <h3>426 : Update Required</h3>
+                <p>L’appel a été correctement interprété, mais non exécuté. Ce code est retourné si l’appel est effectué dans un protocole non-sécurisé.</p>
+            </section>
+            <section>
+                <h3>500 : Internal Server Error</h3>
+                <p>Une erreur de traitement a été rencontrée par les serveurs HelloAsso. Dans ce cas, le problème doit être remonté à notre équipe afin que nous puissions en déterminer l’origine et, le cas échéant, appliquer un correctif.</p>
+            </section>
+            <section>
+                <h3>503 : Service Unavailable</h3>
+                <p>Ce code de retour indique que les serveurs HelloAsso sont surchargés. Dans ce cas de figure, l’appel doit être réitéré après le délai indiqué dans le champs d’en-tête Retry-After de la réponse.</p>
+            </section>
+            <section>
+                <p>Outre le code de réponse HTTP, les appels en erreur retournent une réponse contenant plus d’informations sur l’erreur rencontrée. Ces informations apparaissent sous deux formats. Le premier est un message à destination humaine, donnant une indication sur la possible origine du problème. Par exemple, si l’erreur provient d’un paramètre malformé, cela sera indiqué dans le message, avec le nom du paramètre en question.</p>
+                <p>Le deuxième format est un code d’erreur HelloAsso en notation reverse-domain, pouvant donc être automatiquement traité afin de mettre en place différents scénarios de réponses.</p>
+                <p>Voici les différents codes de réponses susceptibles d’être retournés :</p>
+            </section>
+            <section>
+                <h4>com.helloasso.api.InvalidResource</h4>
+                <p>La ressource demandée n’existe pas. La raison en est probablement une url malformée.</p>
+                <h4>com.helloasso.api.MissingParameter</h4>
+                <p>L’accès à la ressource nécessite un paramètre qui n’a pas été fourni. Le message indique alors le paramètre concerné.</p>
+                <h4>com.helloasso.api.InvalidParameter</h4>
+                <p>Un des paramètres fournis n’est pas au format attendu. Le message indique alors le paramètre concerné.</p>
+                <h4>com.helloasso.api.InvalidIdentifier</h4>
+                <p>Un paramètre d’identifiant a été fourni, ne correspondant à aucune donnée enregistrée sur l’application.</p>
+                <h4>com.helloasso.api.NonSecureConnection</h4>
+                <p>L’appel a été réalisé en HTTP, sur une ressource imposant le protocole HTTPS.</p>
+                <h4>com.helloasso.api.ServiceUnavailable</h4>
+                <p>La ressource est actuellement indisponible pour cause de maintenance. Le message indique alors la nature de la maintenance et le temps d’attente estimé avant que la ressource soit à nouveau disponible.</p>
+                <h4>com.helloasso.api.ServerError</h4>
+                <p>Une erreur s’est produite lors du traitement de la demande.</p>
+            </section>
+        </article>
+        <article id="format-chemins" class="chapter">
+            <h2>Format des chemins d’accès aux ressources</h2>
+            <section>
+                <p>Le format canonique des urls d’accès aux ressources est le suivant :</p>
+<pre class="language-markup">
+<code>
+&lt;VERB&gt; api.helloasso.com/&lt;version&gt;/&lt;type&gt;[/&lt;id|slug&gt;].&lt;format&gt;[?parameters]
+</code>
+</pre>
+            </section>
+            <section>
+                <p><strong>[version]</strong> est l’identifiant de version de l’API utilisée. Celui-ci sera valorisé à <strong>v3</strong>. Les futures mises à jour importantes de l’API engendreront systématiquement un changement de numéro de version.</p>
+                <p><strong>[type]</strong> est le type de ressource demandée. Celui-ci peut prendre différentes valeurs :</p>
+                <ul class="list-styled">
+                    <li><strong>organizations</strong></li>
+                    <li><strong>campaigns</strong></li>
+                    <li><strong>actions</strong></li>
+                    <li><strong>payments</strong></li>
+                </ul>
+                <p><strong>[id]</strong> est l’identifiant unique de la ressource demandée. Celui-ci est normalement récupéré par un autre appel à l’API, ou fourni en retour d’un appel de création d’une nouvelle ressource.</p>
+                <p><strong>[format]</strong> est le format de sérialisation souhaitée. Le format par défaut est le JSON, mais d’autres formats de sérialisation pourront être mis en place à l’avenir.</p>
+                <p><strong>[parameters]</strong> est la chaine des paramètres optionnels attendu par la ressource demandée. Celle-ci se présente sous forme de query string d’url standard.</p>
+            </section>
+        </article>
+        <article id="format-reponses" class="chapter">
+            <h2>Format des réponses et pagination</h2>
+            <section>
+                <p>Si l’appel à une resource est correcte, la réponse contient une representation JSON de la resource demandée. Les representations JSON des différentes ressources sont documentées dans le chapitre “Type de réponses”.</p>
+                <p>Certains appels retournent une collection de ressources. Dans ce cas, le format de la réponse est le suivant :</p>
+<pre class="language-json">
+<code class="language-json">
+{
+	"resources": [
+	  {
+	    // Representation JSON du type de resource demandée
+	  }
+	  …
+	],
+	"pagination": {
+	  "page": "int",
+	  "max_page": "int",
+	  "result_per_page": "int"
+	}
+}
+</code>
+</pre>
+            </section>
+            <section>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Élément</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>ressources</strong></td>
+                                <td>Un tableau contenant les représentations JSON des ressources demandées</td>
+                            </tr>
+                            <tr>
+                                <td><strong>pagination.page</strong></td>
+                                <td>La page courante de la collection retournée</td>
+                            </tr>
+                            <tr>
+                                <td><strong>pagination.max_page</strong></td>
+                                <td>Le nombre de pages disponibles pour cette collection</td>
+                            </tr>
+                            <tr>
+                                <td><strong>pagination.result_per_page</strong></td>
+                                <td>Le nombre de résultat par page</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </article>
+    </div>
+    <nav class="page-switch center">
+        <a href="/v3" class="fill-to-left">
+            <i class="fa fa-long-arrow-left"></i>
+            <span>Description de l’API HelloAsso</span>
+        </a>
+        <a href="/v3/responses" class="fill-to-right">
+            <span>Types des réponses</span>
+            <i class="fa fa-long-arrow-right"></i>
+        </a>
+    </nav>
+</div>
+<!-- Ancre vers le haut de page -->
+<a href="#top" class="back-to-top center">
+    <i class="fa fa-angle-up"></i><br />
+    Retour
+</a>

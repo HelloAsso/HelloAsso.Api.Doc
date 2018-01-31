@@ -1,0 +1,40 @@
+article {
+    + article {
+        margin-top: 2.5rem;
+
+        @media (min-width: $tablet) {
+            margin-top: 5rem;
+        }
+
+        h2 {
+            border-top: $base-border;
+        }
+    }
+
+    section {
+
+        + section {
+            margin-top: 2.5rem;
+        }
+    }
+
+    h2 {
+        padding-top: 2rem;
+        color: $base-color;
+
+        @media (min-width: $tablet) {
+            padding-top: 4rem;
+        }
+    }
+    
+    h3,
+    h4 {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    h4 {
+        margin: 0 0 .75em;
+    }
+}

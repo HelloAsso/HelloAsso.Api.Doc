@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Title -->
+    <title>API HelloAsso - Documentation</title>
+    <!-- Metas -->
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="HelloAsso">
+    <meta name="description" content="Retrouvez ici toutes les spécifications de l’API HelloAsso v3.">
+    <meta name="keywords" content="api, helloasso, documentation, doc, v3">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700" rel="stylesheet" type="text/css">
+    <!-- Icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Stylesheets -->
+    <link href="/css/v3/main.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="@this.ViewBag.Theme">
+    <span class="open-menu" data-addclass="open" data-target=".sidebar"><i class="fa fa-bars"></i></span>
+
+    @Html.Partial("Shared/_Sidebar")
+    <div id="top" class="wrapper">
+
+        @RenderBody()
+
+        <footer>
+            <div class="container center">
+                <p>© 2017 <a href="https://www.helloasso.com/">HelloAsso</a> - Tous droits réservés.</p>
+            </div>
+        </footer>
+    </div> <!-- Fin du wrapper -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.1/prism.min.js"></script>
+    <script src="/js/v3/main.min.js"></script>
+</body>
+</html>

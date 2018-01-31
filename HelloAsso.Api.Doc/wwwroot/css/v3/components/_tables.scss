@@ -1,0 +1,41 @@
+.table-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: $base-spacing 0;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+thead {
+    line-height: $heading-line-height;
+    vertical-align: bottom;
+
+    th,
+    td {
+        font-weight: 600;
+        color: #fff;
+        background-color: $base-color;
+    }
+}
+
+tbody {
+    vertical-align: top;
+
+    tr:nth-of-type(even) {
+        background-color: #fff;
+    }
+}
+
+th,
+td {
+    padding: $small-spacing;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

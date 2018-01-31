@@ -1,0 +1,60 @@
+.theme-night-mode {
+    color: #fff;
+    background-color: $helloasso-black;
+
+    p > a,
+    .summary a,
+    article h2,
+    .back-to-top:hover {
+        color: #fff;
+    }
+
+    .menu,
+    .open-menu,
+    .sidebar a.current,
+    .back-to-top:focus,
+    .back-to-top:active {
+        color: $helloasso-black;
+    }
+
+    header,
+    .btn-primary:hover,
+    .fill:before,
+    .fill-to-left:before,
+    .fill-to-right:before,
+    .sidebar-nav a:before,
+    .summary h4:after,
+    thead td,
+    thead th,
+    .page-switch a:before,
+    .back-to-top:hover {
+        background-color: $space;
+    }
+
+    .btn-primary:focus,
+    .btn-primary:active,
+    tbody tr:nth-of-type(even) {
+        background-color: darken($space, 5%);
+    }
+
+    .sidebar {
+        background-color: $body-background;
+    }
+
+    .summary li:before,
+    .back-to-top:focus,
+    .back-to-top:active {
+        background-color: #fff;
+    }
+
+    .btn-primary {
+        color: $helloasso-black;
+        background-color: #fff;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    height: 100%;
+    font-family: $base-font-family;
+    font-size: 62.5%;
+    color: $base-font-color;
+    line-height: $base-line-height;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 1.4rem;
+    background-color: $body-background;
+
+    @media (min-width: $tablet) {
+        font-size: 1.6rem;
+    }
+}

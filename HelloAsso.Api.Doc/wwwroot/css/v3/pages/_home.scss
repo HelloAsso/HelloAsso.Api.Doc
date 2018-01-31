@@ -1,0 +1,23 @@
+.page-title-home {
+    .version-number {
+        margin: 0;
+        padding-top: 1rem;
+        color: #fff;
+    }
+}
+
+.page-content-home {
+    margin: 0;
+    
+    > a {
+        margin: 2.5rem 0;
+
+        @media (min-width: $tablet) {
+            margin: 5rem 0;
+        }
+
+        i {
+            padding: 0 0 0 1rem;
+        }
+    }
+}

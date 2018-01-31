@@ -1,0 +1,28 @@
+figure {
+	margin: 0;
+}
+
+img,
+picture {
+	margin: 0;
+	max-width: 100%;
+}
+
+.logo-wrapper {
+	a {
+		color: $base-font-color;
+		text-decoration: none;
+
+		&:before {
+			display: none;
+		}
+	}
+}
+
+.logo {
+	max-width: 18rem;
+	
+	@media (min-width: $large-phone) {
+		max-width: 20rem;
+	}
+}

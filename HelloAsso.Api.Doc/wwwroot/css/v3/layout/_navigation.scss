@@ -1,0 +1,184 @@
+.open-menu {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    min-width: 4rem;
+    min-height: 4rem;
+    padding: .5rem 1rem;
+    color: $base-color;
+    font-size: 2rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .75);
+    border-radius: $base-border-radius;
+
+    @media (min-width: $small-desktop) {
+        display: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.summary {
+    position: relative;
+    padding: 0 0 2.5rem;
+
+    @media (min-width: $tablet) {
+        padding: 0 0 5rem;
+    }
+
+    h4 {
+        position: relative;
+        padding: 0 0 1rem;
+        color: $font-grey;
+        font-weight: 400;
+
+        @media (min-width: $tablet) {
+            padding: .5em 0 1rem;
+        }
+
+        &:after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            width: 33.33%;
+            height: .2rem;
+            background-color: $base-color;
+
+            @media (min-width: $tablet) {
+                width: 25%;
+            }
+        }
+    }
+
+    li {
+        position: relative;
+        padding-left: 2rem;
+        line-height: 2em;
+
+        &:hover {
+            &:before {
+                opacity: 1;
+            }
+        }
+
+        &:before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 0;
+            width: .5rem;
+            height: .5rem;
+            background-color: $base-color;
+            opacity: 0;
+            transform: translateY(-50%);
+        }
+    }
+
+    a {
+        font-size: 2rem;
+        font-weight: 600;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    top: 50%;
+    display: none;
+    border-radius: $base-border-radius;
+    color: $font-grey;
+    background-color: transparent;
+    transition: all $base-duration $base-timing;
+    transform: translateY(-50%);
+
+    @media (min-width: $tablet) {
+        right: .5rem;
+        width: 5rem;
+        height: 5rem;
+        display: block;
+        padding: .5rem;
+        font-size: 1.1rem;
+    }
+
+    @media (min-width: $small-desktop) {
+        right: 1rem;
+        width: 7rem;
+        height: 7rem;
+        padding: 1rem;
+        font-size: 1.3rem;
+    }
+
+    &:hover {
+        color: #fff;
+        background-color: darken($base-color, 5%);
+        text-decoration: none;
+    }
+
+    &:focus,
+    &:active {
+        color: #fff;
+        background-color: darken($base-color, 10%);
+    }
+
+    i {
+        font-size: 2rem;
+
+        @media (min-width: $small-desktop) {
+            font-size: 3rem;
+        }
+    }
+}
+
+.page-switch {
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+
+    @media (min-width: $tablet) {
+        padding-top: 8rem;
+    }
+
+    a {
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        padding: 1.5rem 0;
+        font-size: 2.4rem;
+        font-weight: 600;
+        color: $font-grey;
+        transition: all $base-duration $base-timing;
+
+        @media (min-width: $tablet) {
+            padding: 2.5rem 0;
+            font-size: 2rem;
+        }
+
+        &:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        i,
+        span {
+            position: relative;
+            z-index: 5;
+        }
+        
+        span {
+            display: none;
+            @media (min-width: $tablet) {
+                display: inline-block;
+            }
+        }
+    }
+}

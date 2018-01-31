@@ -1,0 +1,72 @@
+.btn {
+    cursor: pointer;
+    appearance: none;
+    display: inline-block;
+    margin: .6rem 0;
+    padding: .6rem 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    border: none;
+    border-radius: $base-border-radius;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    transition: all $base-duration $base-timing;
+
+    @media (min-width: $large-phone) {
+        ppadding: 1rem 2rem;
+        font-size: 1.5rem;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: #fff;
+        outline: none;
+        text-decoration: none;
+    }
+
+    &.disabled,
+    &:disabled {
+        pointer-events: none;
+        cursor: default;
+        color: $disabled-color;
+        background-color: $disabled-background;
+    }
+
+    i {
+        transition: none;
+    }
+}
+
+// Gros boutons
+
+.btn-lg {
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    
+    @media (min-width: $large-phone) {
+        padding: 2rem 4rem;
+        font-size: 2rem;
+    }
+}
+
+// Defaults
+
+.btn-primary {
+    color: #fff;
+    background-color: $base-color;
+
+    &:hover {
+        background-color: darken($base-color, 5%);
+    }
+
+    &:focus,
+    &:active {
+        background-color: darken($base-color, 10%);
+    }
+}

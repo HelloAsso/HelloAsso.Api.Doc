@@ -1,0 +1,34 @@
+ul,
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    &.list-styled {
+        margin: 0 0 1em;
+
+        li {
+            position: relative;
+            padding-left: 2rem;
+            
+            &:before {
+                position: absolute;
+                content: '-';
+                left: 0;
+            }
+        }
+    }
+}
+
+dl {
+    margin: 0;
+}
+
+dt {
+    font-weight: 600;
+    margin: 0;
+}
+
+dd {
+    margin: 0;
+}

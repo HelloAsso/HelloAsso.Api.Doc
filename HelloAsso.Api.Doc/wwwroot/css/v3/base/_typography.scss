@@ -1,0 +1,90 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $base-font-family;
+	line-height: $heading-line-height;
+	margin: 0 0 $small-spacing;
+}
+
+h1 {
+	font-size: 3rem;
+
+	@media (min-width: $large-phone) {
+		font-size: 3.6rem;
+	}
+
+	@media (min-width: $tablet) {
+		font-size: 4.2rem;
+	}
+}
+
+h2 {
+	font-size: 2.4rem;
+	font-weight: 600;
+
+	@media (min-width: $tablet) {
+		font-size: 3.4rem;
+	}
+}
+
+h3 {
+	font-size: 2rem;
+	font-weight: 400;
+
+	@media (min-width: $tablet) {
+		font-size: 2.4rem;
+	}
+}
+
+h4 {
+	font-size: 1.8rem;
+
+	@media (min-width: $tablet) {
+		font-size: 2rem;
+	}
+}
+
+h5 {
+	font-size: 1.6rem;
+
+	@media (min-width: $tablet) {
+		font-size: 1.8rem;
+	}
+}
+
+p {
+	margin: 0 0 $small-spacing;
+}
+
+a {
+	color: $base-color;
+	text-decoration: none;
+	transition: color $base-duration $base-timing;
+	
+	&:hover {
+		text-decoration: underline;
+	}
+
+	&:focus {
+		outline: none;
+		text-decoration: none;
+	}
+	
+	&.link-block {
+		display: block;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+}
+
+hr {
+	border-top: 0;
+	border-right: 0;
+	border-bottom: $base-border;
+	border-left: 0;
+	margin: $base-spacing 0;
+}

@@ -1,0 +1,76 @@
+﻿<aside class="sidebar">
+    <div class="siderbar-wrapper">
+        <div>
+            <div class="logo-wrapper center">
+                <a href="/v3">
+                    <img src="/images/v3/logo.svg" alt="Logo" class="logo">
+                </a>
+                <p class="version-number"><small>v3.0.4</small></p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li data-link="index"><a href="/v3">Introduction</a></li>
+                    <li data-link="description">
+                        <a href="javascript:;">Description de l'API HelloAsso</a>
+                        <ul class="collapsible">
+                            <li><a href="/v3/description#definitions">Définitions</a></li>
+                            <li><a href="/v3/description#presentation-generale">Présentation générale</a></li>
+                        </ul>
+                    </li>
+                    <li data-link="format">
+                        <a href="javascript:;">Format des échanges</a>
+                        <ul class="collapsible">
+                            <li><a href="/v3/format#encodage">Encodage</a></li>
+                            <li><a href="/v3/format#gestion-erreurs">Gestion des erreurs</a></li>
+                            <li><a href="/v3/format#format-chemins">Format des chemins d'accès aux ressources</a></li>
+                            <li><a href="/v3/format#format-reponses">Format des réponses et pagination</a></li>
+                        </ul>
+                    </li>
+                    <li data-link="reponses">
+                        <a href="javascript:;">Types des réponses</a>
+                        <ul class="collapsible">
+                            <li><a href="/v3/responses#organismes">Organismes</a></li>
+                            <li><a href="/v3/responses#campagnes">Campagnes</a></li>
+                            <li><a href="/v3/responses#actions">Actions</a></li>
+                            <li><a href="/v3/responses#paiements">Paiements</a></li>
+                            <li><a href="/v3/responses#campagnes-basiques">Campagnes basiques</a></li>
+                        </ul>
+                    </li>
+                    <li data-link="ressources">
+                        <a href="javascript:;">Ressources</a>
+                        <ul class="collapsible">
+                            <li><a href="/v3/resources#liste-organismes">Liste des organismes</a></li>
+                            <li><a href="/v3/resources#detail-organisme">Détail d'un organisme</a></li>
+                            <li><a href="/v3/resources#liste-campagnes">Liste des campagnes</a></li>
+                            <li><a href="/v3/resources#detail-campagne">Détail d'une campagne</a></li>
+                            <li><a href="/v3/resources#liste-actions">Liste des actions</a></li>
+                            <li><a href="/v3/resources#detail-action">Détail d'une action</a></li>
+                            <li><a href="/v3/resources#liste-paiements">Liste des paiements</a></li>
+                            <li><a href="/v3/resources#detail-paiement">Détail d'un paiement</a></li>
+                        </ul>
+                    </li>
+                    <li data-link="notifications">
+                        <a href="javascript:;">Notifications</a>
+                        <ul class="collapsible">
+                            <li><a href="/v3/notifications#generalites">Généralités</a></li>
+                            <li><a href="/v3/notifications#nouveau-paiement">Nouveau paiement</a></li>
+                            <li><a href="/v3/notifications#creation-edition-campagne">Création/édition de campagne</a></li>
+                        </ul>
+                    </li>
+                    <li data-link="api-publique"><a href="/v3/public">API publique</a>
+                    <li>
+                </ul>
+            </nav>
+            <div class="theme-selector">
+                <p>Thèmes</p>
+                <ul class="themes">
+                    <li class="theme theme-default @(this.ViewBag.Theme == "theme-default" ? "theme-active" : "")" data-theme="theme-default"></li>
+                    <li class="theme theme-orange @(this.ViewBag.Theme == "theme-orange" ? "theme-active" : "")" data-theme="theme-orange"></li>
+                    <li class="theme theme-purple @(this.ViewBag.Theme == "theme-purple" ? "theme-active" : "")" data-theme="theme-purple"></li>
+                    <li class="theme theme-blue @(this.ViewBag.Theme == "theme-blue" ? "theme-active" : "")" data-theme="theme-blue"></li>
+                    <li class="theme theme-night-mode @(this.ViewBag.Theme == "theme-night-mode" ? "theme-active" : "")" data-theme="theme-night-mode"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>

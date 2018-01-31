@@ -1,0 +1,36 @@
+.theme-purple {
+    p > a,
+    .menu,
+    .open-menu,
+    .sidebar a.current,
+    .summary a,
+    article h2 {
+        color: $helloasso-purple;
+    }
+
+    header,
+    .btn-primary,
+    .fill:before,
+    .fill-to-left:before,
+    .fill-to-right:before,
+    .sidebar-nav a:before,
+    .summary h4:after,
+    .summary li:before,
+    thead td,
+    thead th,
+    .page-switch a:before,
+    .back-to-top:hover {
+        background-color: $helloasso-purple;
+    }
+
+    .btn-primary:hover,
+    .back-to-top:focus,
+    .back-to-top:active {
+        background-color: darken($helloasso-purple, 5%);
+    }
+
+    .btn-primary:focus,
+    .btn-primary:active {
+        background-color: darken($helloasso-purple, 10%);
+    }
+}

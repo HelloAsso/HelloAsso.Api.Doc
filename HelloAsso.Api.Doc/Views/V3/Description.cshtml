@@ -1,0 +1,85 @@
+﻿@{
+    Layout = "~/Views/V3/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("Shared/_Sidebar")
+
+<div class="main">
+    <div class="container">
+        <div class="summary">
+            <h4>Sommaire</h4>
+            <ul>
+                <li><a href="#definitions">Définitions</a></li>
+                <li><a href="#presentation-generale">Présentation générale</a></li>
+            </ul>
+        </div>
+        <article id="definitions" class="chapter">
+            <h2>Définitions</h2>
+            <section>
+                <h3>Application</h3>
+                <p>Une application est un compte API ouvert pour vous par HelloAsso, vous permettant de réaliser des opérations d’API sur les organismes enregistrés dessus.</p>
+            </section>
+            <section>
+                <h3>Organisme</h3>
+                <p>Un compte associatif ou une fondation inscrit-e sur HelloAsso.</p>
+            </section>
+            <section>
+                <h3>Action</h3>
+                <p>Une action d’un contributeur sur la plateforme HelloAsso, susceptible de remonter dans votre application, à condition que celle-ci ait été effectuée sur un des organismes affiliés à celle-ci.<br>Exemples : un don, une adhésion, une inscription à une billetterie.</p>
+            </section>
+            <section>
+                <h3>Paiement</h3>
+                <p>Un paiement est une transaction monétique réalisée sur HelloAsso, au profit d’une campagne. Un paiement est toujours associé à une ou plusieurs actions. Sur une billetterie, les internautes peuvent par exemple inscrire plusieurs personnes en même temps, et/ou laisser un don en plus de leurs inscriptions. Ceci engendrerait donc la création d’un paiement associé à une ou plusieurs actions d’inscription, et le cas échéant, d’une action de don.</p>
+            </section>
+            <section>
+                <h3>Campagne</h3>
+                <p>Une campagne est une page créée par un organisme sur HelloAsso, permettant de présenter un projet de financement participatif, un formulaire d’adhésion ou une billetterie en ligne. Les contributeurs peuvent réaliser des actions sur une campagne : réaliser un don (unique ou mensuel), s’inscrire, adhérer.</p>
+            </section>
+        </article>
+        <article id="presentation-generale" class="chapter">
+            <h2 class="chapter-title">Présentation générale</h2>
+            <section>
+                <p>L’ensemble des interfaces HelloAsso sont exposées au travers d’une API accessible sur le domaine api.helloasso.com. Celle-ci est structurée suivant les principes REST : les ressources sont exposées sous forme d’url sur lesquelles des appels HTTP GET et POST permettent respectivement de récupérer et modifier les données concernées.</p>
+                <p>HelloAsso ouvre pour ses partenaires des comptes d’application sur son API, il est nécessaire d’envoyer voter demande de clé via le <a href="https://www.helloasso.com/contact" target="_blank">formulaire de contact HelloAsso</a>. Des données d’authentification seront fournies par HelloAsso. Celles-ci vous permettront d’accéder aux ressources privées associées à votre application. Ces données d’authentification doivent être intégrées dans l’en-tête de tous les appels, via le champ Authorization. Tous les appels apis auront donc la forme :</p>
+<pre class="language-markup">
+<code>
+    &lt;VERB&gt; https://api.helloasso.com/v3/chemin
+    Header :
+    Authorization : Basic &lt;chaine de connexion&gt;
+</code>
+</pre>
+            </section>
+            <section>
+                <p>La chaîne de connexion est l’encodage base64 de la chaîne « username :password » ,ainsi que spécifié dans le standard Basic access authentication :</p>
+                <p><a href="https://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank" rel="noopener noreferrer" class="link-block">https://en.wikipedia.org/wiki/Basic_access_authentication</a></p>
+            </section>
+            <section>
+                <p>Les ressources sont nommées de façon explicite et sont arrangées selon la typologie suivante.</p>
+                <ul class="list-styled">
+                    <li><strong>organization</strong> : un organisme enregistré sur votre application.</li>
+                    <li><strong>campaign</strong> : une campagne enregistrée sur votre application.</li>
+                    <li><strong>action</strong> : un don, une adhésion ou une inscription réalisée sur une campagne.</li>
+                    <li><strong>payment</strong> : un paiement réalisé sur une campagne, correspond à une ou plusieurs actions.</li>
+                </ul>
+            </section>
+            <section>
+                <p>Tous les appels en lecture sont réalisés via une requête http GET. Les appels réalisant un enregistrement d’une nouvelle ressource sont réalisés par une requête http PUT, les modifications sont réalisées en POST. Toutes les requêtes doivent être réalisées en https.</p>
+            </section>
+        </article>
+    </div>
+    <nav class="page-switch center">
+        <a href="/v3" class="fill-to-left">
+            <i class="fa fa-long-arrow-left"></i>
+            <span>Introduction</span>
+        </a>
+        <a href="/v3/format" class="fill-to-right">
+            <span>Format des échanges</span>
+            <i class="fa fa-long-arrow-right"></i>
+        </a>
+    </nav>
+</div>
+<!-- Ancre vers le haut de page -->
+<a href="#top" class="back-to-top center">
+    <i class="fa fa-angle-up"></i><br />
+    Retour
+</a>

@@ -1,0 +1,41 @@
+// Conteneurs
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    @media (min-width: $small-desktop) {
+        padding-left: 30rem;
+    }
+}
+
+.main {
+    margin-top: 2.5rem;
+    
+    @media (min-width: $tablet) {
+        margin-top: 5rem;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 1.5rem;
+
+    @media (min-width: $tablet) {
+        width: 85%;
+        padding: 0;
+    }
+    
+    @media (min-width: $small-desktop) {
+        width: 75%;
+    }
+}
+
+// Alignement
+
+.center {
+    margin: 0 auto;
+    text-align: center;
+}

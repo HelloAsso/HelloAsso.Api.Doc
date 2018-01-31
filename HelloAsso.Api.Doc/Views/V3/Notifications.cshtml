@@ -1,0 +1,141 @@
+﻿@{
+    Layout = "~/Views/V3/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("Shared/_Sidebar")
+
+<div class="main">
+    <div class="container">
+        <div class="summary">
+            <h4>Sommaire</h4>
+            <ul>
+                <li><a href="#generalites">Généralités</a></li>
+                <li><a href="#nouveau-paiement">Nouveau paiement</a></li>
+                <li><a href="#creation-edition-campagne">Création/édition de campagne</a></li>
+            </ul>
+        </div>
+        <article id="generalites" class="chapter">
+            <h2>Généralités</h2>
+            <section>
+                <p>HelloAsso peut vous envoyer des notifications lors de différents événements liés aux organismes et campagnes enregistrés sur votre application.</p>
+                <p>Les notifications sont réalisées via des requêtes POST sur les urls que vous aurez définies pour chacun des types de notification décrits dans ce chapitre. HelloAsso envoie sur chaque notification les paramètres décrits dans les sections suivantes.</p>
+            </section>
+        </article>
+        <article id="nouveau-paiement" class="chapter">
+            <h2>Nouveau paiement</h2>
+            <section>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Paramètre</th>
+                                <th>Description</th>
+                                <th>Format</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>id</strong></td>
+                                <td>L’identifiant du paiement</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td><strong>date</strong></td>
+                                <td>La date</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td><strong>amount</strong></td>
+                                <td>Le montant du paiement</td>
+                                <td>decimal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>url</strong></td>
+                                <td>L’url de la campagne sur laquelle a été effectué le paiement</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td><strong>payer_first_name</strong></td>
+                                <td>Le prénom du payeur</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td><strong>payer_last_name</strong></td>
+                                <td>Le nom du payeur</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td><strong>url_receipt</strong></td>
+                                <td>L’url du reçu</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td><strong>url_tax_receipt</strong></td>
+                                <td>L’url du reçu fiscal</td>
+                                <td>string</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </article>
+        <article id="creation-edition-campagne" class="chapter">
+            <h2>Création/édition de campagne</h2>
+            <section>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Paramètre</th>
+                                <th>Description</th>
+                                <th>Format</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>id</strong></td>
+                                <td>L’identifiant de la campagne</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td><strong>date</strong></td>
+                                <td>La date de création ou modification</td>
+                                <td>date</td>
+                            </tr>
+                            <tr>
+                                <td><strong>url</strong></td>
+                                <td>L’url de la campagne</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>
+                                <td><strong>notification_type</strong></td>
+                                <td>Type de notification</td>
+                                <td>EDITION | CREATION</td>
+                            </tr>
+                            <tr>
+                                <td><strong>type</strong></td>
+                                <td>Type de la campagne</td>
+                                <td>EVENT | FORM | FUNDRAISER | MEMBERSHIP | FUNDRAISER_PEER_TO_PEER</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </article>
+    </div>
+    <nav class="page-switch center">
+        <a href="/v3/resources" class="fill-to-left">
+            <i class="fa fa-long-arrow-left"></i>
+            <span>Ressources</span>
+        </a>
+        <a href="/v3/public" class="fill-to-right">
+            <span>API publique</span>
+            <i class="fa fa-long-arrow-right"></i>
+        </a>
+    </nav>
+</div>
+<!-- Ancre vers le haut de page -->
+<a href="#top" class="back-to-top center">
+    <i class="fa fa-angle-up"></i><br />
+    Retour
+</a>

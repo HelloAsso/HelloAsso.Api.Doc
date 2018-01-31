@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\css\v3\" />
     <Folder Include="wwwroot\css\v2\" />
     <Folder Include="wwwroot\css\v1\" />
   </ItemGroup>

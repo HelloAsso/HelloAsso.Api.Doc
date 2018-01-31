@@ -7,10 +7,10 @@
 		"index": "Introduction",
 		"description": "Description de l'API HelloAsso",
 		"format": "Format des échanges",
-		"reponses": "Types des réponses",
-		"ressources": "Ressources",
+		"responses": "Types des réponses",
+		"resources": "Ressources",
 		"notifications": "Notifications",
-		"api-publique": "API publique"
+		"public": "API publique"
 	}
 
 	// Applique le nom de la page courante au header

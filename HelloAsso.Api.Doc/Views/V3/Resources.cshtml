@@ -363,9 +363,9 @@ GET https://api.helloasso.com/v3/campaigns/&lt;id&gt;.json
             <section>
                 <h3>Requête</h3>
 <pre class="language-markup">
-<code class="language-markup">
-GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/&lt;campaign-id&gt;/]actions.json[?type=&lt;DONATION|INSCRIPTION|SUBSCRIPTIONS&gt;&from=&lt;from&gt;&to=&lt;to&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
-</code>
+    <code class="language-markup">
+        GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/&lt;campaign-id&gt;/]actions.json[?type=&lt;DONATION|INSCRIPTION|SUBSCRIPTIONS|RECURRENT_DONATION|OPTION&gt;&from=&lt;from&gt;&to=&lt;to&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
+    </code>
 </pre>
             </section>
             <section>
@@ -440,9 +440,9 @@ GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/
                             </tr>
                             <tr>
                                 <td><strong>type</strong></td>
-                                <td>Le type de campagnes à récupérer</td>
+                                <td>Le type des actions à récupérer</td>
                                 <td>Non</td>
-                                <td>EVENT | FORM | FUNDRAISER | MEMBERSHIP</td>
+                                <td>DONATION | INSCRIPTION | SUBSCRIPTIONS | RECURRENT_DONATION | OPTION</td>
                             </tr>
                             <tr>
                                 <td><strong>from</strong></td>

@@ -32,9 +32,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="helloasso_notification_server.js" />
-    <Content Include="helloasso_stat.php" />
-    <Content Include="helloasso_stat_total.php" />
+    <Content Include="nodejs\helloasso_notification_server.js" />
+    <Content Include="php\helloasso_stat.php" />
+    <Content Include="php\helloasso_stat_total.php" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="curl\actions.sh" />
+    <None Include="curl\payments.sh" />
+    <None Include="curl\campaigns.sh" />
+    <None Include="curl\organizations.sh" />
+    <None Include="go\actions.go" />
+    <None Include="go\campaigns.go" />
+    <None Include="go\organizations.go" />
+    <None Include="go\payments.go" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

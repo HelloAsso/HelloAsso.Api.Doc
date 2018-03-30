@@ -45,7 +45,7 @@ gulp.task('styles', function() {
         .pipe($.autoprefixer()) // Autoprefixer
         .pipe($.cleanCss()) // Minifier
         .pipe($.rename({ suffix: '.min' })) // Renommer la version minifiée avec un suffixe ".min"
-        .pipe(gulp.dest(paths.styles)) // Déplacer les fichiers dans le dossier de production
+        .pipe(gulp.dest('css/v3/')) // Déplacer les fichiers dans le dossier de production
         .pipe(browserSync.reload({ stream: true })); // Rafraichir le navigateur automatiquement
 });
 
@@ -58,7 +58,7 @@ gulp.task('scripts', function() {
         }))
         .pipe($.uglify()) // Minifier
         .pipe($.rename({ suffix: '.min' }))
-        .pipe(gulp.dest(paths.scripts))
+        .pipe(gulp.dest('js/v3/'))
         .pipe(browserSync.reload({ stream: true }));
 });
 
@@ -70,7 +70,7 @@ gulp.task('images', function() {
             this.emit('end');
         }))
         .pipe($.cache($.imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))) // Optimiser les images
-        .pipe(gulp.dest(paths.images))
+        .pipe(gulp.dest('images/v3'))
         .pipe(browserSync.reload({ stream: true }));
 });
 

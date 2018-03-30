@@ -3,58 +3,74 @@
     background-color: $helloasso-black;
 
     p > a,
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-secondary,
+    .btn-secondary:hover,
+    .btn-secondary:focus,
+    .btn-secondary:active,
     .summary a,
+    .summary h4,
     article h2,
-    .back-to-top:hover {
+    .page-switch a,
+    .back-to-top,
+    footer p {
         color: #fff;
     }
 
     .menu,
     .open-menu,
-    .sidebar a.current,
-    .back-to-top:focus,
-    .back-to-top:active {
+    .sidebar .sidebar-nav a,
+    .sidebar a.current {
         color: $helloasso-black;
     }
 
     header,
     .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-secondary:hover,
+    .btn-secondary:focus,
+    .btn-secondary:active,
     .fill:before,
     .fill-to-left:before,
     .fill-to-right:before,
     .sidebar-nav a:before,
-    .summary h4:after,
     thead td,
     thead th,
+    tbody tr:nth-of-type(even),
     .page-switch a:before,
-    .back-to-top:hover {
-        background-color: $space;
-    }
-
-    .btn-primary:focus,
-    .btn-primary:active,
-    tbody tr:nth-of-type(even) {
-        background-color: darken($space, 5%);
-    }
-
-    .sidebar {
-        background-color: $body-background;
-    }
-
-    .summary li:before,
+    .back-to-top:hover,
     .back-to-top:focus,
     .back-to-top:active {
+        background-color: darken($helloasso-black, 5%);
+    }
+
+    thead tr {
+        background-color: darken($helloasso-black, 10%);
+    }
+
+    .sidebar,
+    .summary h4:after,
+    .summary li:before {
         background-color: #fff;
     }
 
     .btn-primary {
         color: $helloasso-black;
         background-color: #fff;
+    }
 
-        &:hover,
-        &:focus,
-        &:active {
-            color: #fff;
-        }
+    .btn-secondary {
+        box-shadow: inset 0 0 0 .2rem #fff;
+    }
+
+    .btn-secondary:hover {
+        box-shadow: inset 0 0 0 .2rem darken($helloasso-black, 5%);
+    }
+
+    .sidebar .sidebar-nav a.current {
+        font-weight: 700;
     }
 }

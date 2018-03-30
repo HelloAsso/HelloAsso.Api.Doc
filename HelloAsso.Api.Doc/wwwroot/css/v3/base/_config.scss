@@ -24,7 +24,7 @@ $body-background: $cloud !default;
 $disabled-background: $smoke !default;
 
 // Borders
-$border-color: $stone !default;
+$border-color: $silver !default;
 $base-border: 1px solid $border-color !default;
 
 // Disabled states
@@ -38,7 +38,7 @@ $focus-outline: $focus-outline-width solid $focus-outline-color !default;
 $focus-outline-offset: 1px !default;
 
 // Other Sizes
-$base-border-radius: 4px !default;
+$base-border-radius: 5px !default;
 $base-spacing: 2em !default;
 $small-spacing: $base-spacing / 2 !default;
 $large-spacing: $base-spacing * 2 !default;

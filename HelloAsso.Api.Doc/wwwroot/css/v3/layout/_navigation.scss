@@ -78,6 +78,7 @@
     }
 
     a {
+        color: $base-font-color;
         font-size: 2rem;
         font-weight: 600;
 
@@ -120,17 +121,11 @@
         text-decoration: none;
     }
 
-    &:focus,
-    &:active {
-        color: #fff;
-        background-color: darken($base-color, 10%);
-    }
-
-    i {
+    svg {
         font-size: 2rem;
 
         @media (min-width: $small-desktop) {
-            font-size: 3rem;
+            font-size: 2.6rem;
         }
     }
 }
@@ -155,7 +150,7 @@
         padding: 1.5rem 0;
         font-size: 2.4rem;
         font-weight: 600;
-        color: $font-grey;
+        color: $base-font-color;
         transition: all $base-duration $base-timing;
 
         @media (min-width: $tablet) {
@@ -168,14 +163,27 @@
             text-decoration: none;
         }
 
-        i,
+        &:first-of-type {
+            svg {
+                margin-right: 1em;
+            }
+        }
+
+        &:last-of-type {
+            svg {
+                margin-left: 1em;
+            }
+        }
+
+        svg,
         span {
             position: relative;
             z-index: 5;
         }
-        
+
         span {
             display: none;
+
             @media (min-width: $tablet) {
                 display: inline-block;
             }

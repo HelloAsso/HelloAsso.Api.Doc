@@ -7,7 +7,7 @@ article {
         }
 
         h2 {
-            border-top: $base-border;
+            border-top: .2rem solid $border-color;
         }
     }
 
@@ -20,7 +20,6 @@ article {
 
     h2 {
         padding-top: 2rem;
-        color: $base-color;
 
         @media (min-width: $tablet) {
             padding-top: 4rem;

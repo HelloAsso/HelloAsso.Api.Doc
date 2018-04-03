@@ -10,9 +10,15 @@ header {
     h1 {
         margin: 0;
     }
-    
+
     h2 {
         font-weight: 300;
         color: rgba(255, 255, 255, .5);
+    }
+
+    .version-number {
+        margin: 0;
+        padding-top: 1rem;
+        color: #fff;
     }
 }

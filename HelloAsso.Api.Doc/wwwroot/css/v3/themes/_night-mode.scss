@@ -22,7 +22,9 @@
     .menu,
     .open-menu,
     .sidebar .sidebar-nav a,
-    .sidebar a.current {
+    .sidebar a.current,
+    .list-content h3,
+    .list-content.list-content-key span {
         color: $helloasso-black;
     }
 
@@ -40,6 +42,7 @@
     thead td,
     thead th,
     tbody tr:nth-of-type(even),
+    .list-content span,
     .page-switch a:before,
     .back-to-top:hover,
     .back-to-top:focus,
@@ -68,6 +71,10 @@
 
     .btn-secondary:hover {
         box-shadow: inset 0 0 0 .2rem darken($helloasso-black, 5%);
+    }
+
+    .list-content.list-content-key span {
+        box-shadow: inset 0 0 0 .2rem $helloasso-black;
     }
 
     .sidebar .sidebar-nav a.current {

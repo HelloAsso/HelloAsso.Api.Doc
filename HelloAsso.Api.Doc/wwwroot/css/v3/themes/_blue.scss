@@ -3,7 +3,8 @@
     .btn-secondary,
     .menu,
     .open-menu,
-    .sidebar a.current {
+    .sidebar a.current,
+    .list-content.list-content-key span {
         color: $helloasso-blue;
     }
 
@@ -21,6 +22,7 @@
     .summary li:before,
     thead td,
     thead th,
+    .list-content span,
     .page-switch a:before,
     .back-to-top:hover,
     .back-to-top:focus,
@@ -33,7 +35,8 @@
         background-color: darken($helloasso-blue, 5%);
     }
 
-    .btn-secondary {
+    .btn-secondary,
+    .list-content.list-content-key span {
         box-shadow: inset 0 0 0 .2rem $helloasso-blue;
     }
 

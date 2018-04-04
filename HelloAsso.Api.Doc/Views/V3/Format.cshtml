@@ -21,7 +21,7 @@
                 <p>Les données échangées à travers l’API HelloAsso, qu’elles soient passées en paramètres, ou retournées dans les réponses, respectent les normes suivantes :</p>
                 <ul class="list-styled">
                     <li><strong>chaine de caractères : </strong>l’encodage utilisé est l’UTF-8</li>
-                    <li><strong>dates : </strong>les dates sont représentées sous forme de timestamp au format ISO 8601. Le 1er février 2015 à midi est ainsi représenté par la chaine 20150201T120000</li>
+                    <li><strong>dates : </strong>les dates sont représentées sous forme de timestamp au format <a href="https://fr.wikipedia.org/wiki/ISO_8601">ISO 8601</a>. Le 1er février 2015 à midi est ainsi représenté par la chaine 2015-02-01T12:00:00</li>
                     <li><strong>format du contenu de la réponse : </strong>JSON</li>
                 </ul>
             </section>
@@ -88,7 +88,7 @@
                 <p>Le format canonique des urls d’accès aux ressources est le suivant :</p>
 <pre class="language-markup">
 <code>
-    &lt;VERB&gt; api.helloasso.com/&lt;version&gt;/&lt;type&gt;[/&lt;id|slug&gt;].&lt;format&gt;[?parameters]
+&lt;VERB&gt; api.helloasso.com/&lt;version&gt;/&lt;type&gt;[/&lt;id|slug&gt;].&lt;format&gt;[?parameters]
 </code>
 </pre>
             </section>
@@ -113,19 +113,19 @@
                 <p>Certains appels retournent une collection de ressources. Dans ce cas, le format de la réponse est le suivant :</p>
 <pre class="language-json">
 <code class="language-json">
-    {
-	    "resources": [
-	      {
-	        // Representation JSON du type de resource demandée
-	      }
-	      …
-	    ],
-	    "pagination": {
-	      "page": "int",
-	      "max_page": "int",
-	      "result_per_page": "int"
+{
+	"resources": [
+	    {
+	    // Representation JSON du type de resource demandée
 	    }
-    }
+	    …
+	],
+	"pagination": {
+	    "page": "int",
+	    "max_page": "int",
+	    "result_per_page": "int"
+	}
+}
 </code>
 </pre>
             </section>

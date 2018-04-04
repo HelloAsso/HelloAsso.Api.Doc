@@ -25,7 +25,7 @@
                 <h3>Requête</h3>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/organizations.json[?page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
+GET https://api.helloasso.com/v3/organizations.json[?page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
             </section>
@@ -34,23 +34,23 @@
                 <p>Une collection d’<a href="responses#organismes" traget="_blank">organismes</a>.</p>
 <pre class="language-json">
 <code class="language-json">
-    {
-	    "resources": [
-		    {
-			    "id": "string",
-			    "name": "string",
-			    "slug": "string",
-			    "type": "string",
-			    "funding": "decimal",
-			    "supporters": "int",
-			    "logo": "string",
-			    "thumbnail": "string",
-			    "profile": "string",
-			    "donate-form": "string"
-		    }
-		    …
-	    ]
-    }
+{
+	"resources": [
+		{
+			"id": "string",
+			"name": "string",
+			"slug": "string",
+			"type": "string",
+			"funding": "decimal",
+			"supporters": "int",
+			"logo": "string",
+			"thumbnail": "string",
+			"profile": "string",
+			"donate-form": "string"
+		}
+		…
+	]
+}
 </code>
 </pre>
             </section>
@@ -94,7 +94,7 @@
                 <h3>Requête</h3>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/organizations/&lt;id&gt;.json[?page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
+GET https://api.helloasso.com/v3/organizations/&lt;id&gt;.json[?page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
             </section>
@@ -103,18 +103,18 @@
                 <p>Un <a href="responses#organismes" traget="_blank">organisme</a>.</p>
 <pre class="language-json">
 <code class="language-json">
-    {
-	    "id": "string",
-	    "name": "string",
-	    "slug": "string",
-	    "type": "string",
-	    "funding": "decimal",
-	    "supporters": "int",
-	    "logo": "string",
-	    "thumbnail": "string",
-	    "profile": "string",
-	    "donate-form": "string"
-    }
+{
+	"id": "string",
+	"name": "string",
+	"slug": "string",
+	"type": "string",
+	"funding": "decimal",
+	"supporters": "int",
+	"logo": "string",
+	"thumbnail": "string",
+	"profile": "string",
+	"donate-form": "string"
+}
 </code>
 </pre>
             </section>
@@ -164,7 +164,7 @@
                 <h3>Requête</h3>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/]campaigns.json[?type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP&gt;&createdFrom=&lt;createdFrom&gt;&createdTo=&lt;createdTo&gt;&updatedFrom=&lt;updatedFrom&gt;&updatedTo=&lt;updatedTo&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
+GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/]campaigns.json[?type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP&gt;&createdFrom=&lt;createdFrom&gt;&createdTo=&lt;createdTo&gt;&updatedFrom=&lt;updatedFrom&gt;&updatedTo=&lt;updatedTo&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
             </section>
@@ -173,32 +173,32 @@
                 <p>Une collection de <a href="responses#campagnes" traget="_blank">campagnes</a>.</p>
 <pre class="language-json">
 <code class="language-json">
-    {
-	    "resources": [
-		    {
-			    "id": "string",
-			    "name": "string",
-			    "slug": "string",
-			    "type": "string",
-			    "state": "string",
-			    "funding": "decimal",
-			    "supporters": "int",
-			    "url": "string",
-			    "id_organism": "string",
-			    "slug_organism": "string",
-			    "creation_date": "date",
-			    "last_update": "date",
-			    "place_name": "string",
-			    "place_address": "string",
-			    "place_city": "string",
-			    "place_zipcode": "string",
-			    "place_country": "string",
-			    "start_date": "date",
-			    "end_date": "date"
-		    }
-		    …
-	    ]
-    }
+{
+	"resources": [
+		{
+			"id": "string",
+			"name": "string",
+			"slug": "string",
+			"type": "string",
+			"state": "string",
+			"funding": "decimal",
+			"supporters": "int",
+			"url": "string",
+			"id_organism": "string",
+			"slug_organism": "string",
+			"creation_date": "date",
+			"last_update": "date",
+			"place_name": "string",
+			"place_address": "string",
+			"place_city": "string",
+			"place_zipcode": "string",
+			"place_country": "string",
+			"start_date": "date",
+			"end_date": "date"
+		}
+		…
+	]
+}
 </code>
 </pre>
             </section>
@@ -280,13 +280,13 @@
                 <p>Récupérer la liste des événements enregistrés sur l’application :</p>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/campaigns.json?type=EVENT
+GET https://api.helloasso.com/v3/campaigns.json?type=EVENT
 </code>
 </pre>
                 <p>Récupérer la liste des campagnes créées par l’organisme “mon association” :</p>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/organizations/00000000002/campaigns.json
+GET https://api.helloasso.com/v3/organizations/00000000002/campaigns.json
 </code>
 </pre>
             </section>
@@ -297,7 +297,7 @@
                 <h3>Requête</h3>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/campaigns/&lt;id&gt;.json
+GET https://api.helloasso.com/v3/campaigns/&lt;id&gt;.json
 </code>
 </pre>
             </section>
@@ -306,27 +306,27 @@
                 <p>Une <a href="responses#campagnes" traget="_blank">campagne</a>.</p>
 <pre class="language-json">
 <code class="language-json">
-    {
-	    "id": "string",
-	    "name": "string",
-	    "slug": "string",
-	    "type": "string",
-	    "state": "string",
-	    "funding": "decimal",
-	    "supporters": "int",
-	    "url": "string",
-	    "id_organism": "string",
-	    "slug_organism": "string",
-	    "creation_date": "date",
-	    "last_update": "date",
-	    "place_name": "string",
-	    "place_address": "string",
-	    "place_city": "string",
-	    "place_zipcode": "string",
-	    "place_country": "string",
-	    "start_date": "date",
-	    "end_date": "date"
-    }
+{
+	"id": "string",
+	"name": "string",
+	"slug": "string",
+	"type": "string",
+	"state": "string",
+	"funding": "decimal",
+	"supporters": "int",
+	"url": "string",
+	"id_organism": "string",
+	"slug_organism": "string",
+	"creation_date": "date",
+	"last_update": "date",
+	"place_name": "string",
+	"place_address": "string",
+	"place_city": "string",
+	"place_zipcode": "string",
+	"place_country": "string",
+	"start_date": "date",
+	"end_date": "date"
+}
 </code>
 </pre>
             </section>
@@ -364,7 +364,7 @@
                 <h3>Requête</h3>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/&lt;campaign-id&gt;/]actions.json[?type=&lt;DONATION|INSCRIPTION|SUBSCRIPTIONS|RECURRENT_DONATION|OPTION&gt;&from=&lt;from&gt;&to=&lt;to&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
+GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/&lt;campaign-id&gt;/]actions.json[?type=&lt;DONATION|INSCRIPTION|SUBSCRIPTION|RECURRENT_DONATION|OPTION&gt;&from=&lt;from&gt;&to=&lt;to&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
             </section>
@@ -373,36 +373,36 @@
                 <p>Une collection d’<a href="responses#actions" traget="_blank">actions</a>.</p>
 <pre class="language-json">
 <code class="language-json">
-    {
-	    "resources": [
-		    {
-			    "id": "string",
-			    "id_campaign": "string",
-			    "id_organism": "string",
-			    "id_payment": "string",
-			    "date": "date",
-			    "amount": "decimal",
-			    "type": "string",
-			    "first_name": "string",
-			    "last_name": "string",
-			    "address": "string",
-			    "zip_code": "string",
-			    "city": "string",
-			    "country": "string",
-			    "email": "string",
-			    "status": "string",
-			    "option_label": "string",
-			    "custom_infos": [
-			      {
-				    "label": "string",
-				    "value": "string"
-			      }
-			      …
-			    ]
-		    }
-		    …
-	    ]
-    }
+{
+	"resources": [
+		{
+			"id": "string",
+			"id_campaign": "string",
+			"id_organism": "string",
+			"id_payment": "string",
+			"date": "date",
+			"amount": "decimal",
+			"type": "string",
+			"first_name": "string",
+			"last_name": "string",
+			"address": "string",
+			"zip_code": "string",
+			"city": "string",
+			"country": "string",
+			"email": "string",
+			"status": "string",
+			"option_label": "string",
+			"custom_infos": [
+			    {
+				"label": "string",
+				"value": "string"
+			    }
+			    …
+			]
+		}
+		…
+	]
+}
 </code>
 </pre>
             </section>
@@ -442,7 +442,7 @@
                                 <td><strong>type</strong></td>
                                 <td>Le type des actions à récupérer</td>
                                 <td>Non</td>
-                                <td>DONATION | INSCRIPTION | SUBSCRIPTIONS | RECURRENT_DONATION | OPTION</td>
+                                <td>DONATION | INSCRIPTION | SUBSCRIPTION | RECURRENT_DONATION | OPTION</td>
                             </tr>
                             <tr>
                                 <td><strong>from</strong></td>
@@ -477,19 +477,19 @@
                 <p>Récupérer la liste des actions enregistrés sur l’application :</p>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/actions.json
+GET https://api.helloasso.com/v3/actions.json
 </code>
 </pre>
                 <p>Récupérer la liste des actions enregistrées sur une association :</p>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/organizations/00000000002/actions.json
+GET https://api.helloasso.com/v3/organizations/00000000002/actions.json
 </code>
 </pre>
                 <p>Récupérer la liste des actions enregistrées sur un événement depuis le premier janvier 2017 :</p>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/campaigns/00000000002/actions.json?from=2017-01-01T00:00:00
+GET https://api.helloasso.com/v3/campaigns/00000000002/actions.json?from=2017-01-01T00:00:00
 </code>
 </pre>
             </section>
@@ -500,7 +500,7 @@
                 <h3>Requête</h3>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/actions/&lt;id&gt;.json
+GET https://api.helloasso.com/v3/actions/&lt;id&gt;.json
 </code>
 </pre>
             </section>
@@ -509,31 +509,31 @@
                 <p>Une <a href="responses#actions" traget="_blank">action</a>.</p>
 <pre class="language-json">
 <code class="language-json">
-    {
-	    "id": "string",
-	    "id_campaign": "string",
-	    "id_organism": "string",
-	    "id_payment": "string",
-	    "date": "date",
-	    "amount": "decimal",
-	    "type": "string",
-	    "first_name": "string",
-	    "last_name": "string",
-	    "address": "string",
-	    "zip_code": "string",
-	    "city": "string",
-	    "country": "string",
-	    "email": "string",
-	    "status": "string",
-	    "option_label": "string",
-	    "custom_infos": [
-	      {
-	        "label": "string",
-	        "value": "string"
-	      }
-	      …
-	    ]
-    }
+{
+	"id": "string",
+	"id_campaign": "string",
+	"id_organism": "string",
+	"id_payment": "string",
+	"date": "date",
+	"amount": "decimal",
+	"type": "string",
+	"first_name": "string",
+	"last_name": "string",
+	"address": "string",
+	"zip_code": "string",
+	"city": "string",
+	"country": "string",
+	"email": "string",
+	"status": "string",
+	"option_label": "string",
+	"custom_infos": [
+	    {
+	    "label": "string",
+	    "value": "string"
+	    }
+	    …
+	]
+}
 </code>
 </pre>
             </section>
@@ -571,7 +571,7 @@
                 <h3>Requête</h3>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/&lt;campaign-id&gt;/]payments.json[?type=&lt;CREDIT&gt;&from=&lt;from&gt;&to=&lt;to&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
+GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/&lt;campaign-id&gt;/]payments.json[?type=&lt;CREDIT&gt;&from=&lt;from&gt;&to=&lt;to&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
             </section>
@@ -580,39 +580,39 @@
                 <p>Une collection de <a href="responses#paiements" traget="_blank">paiements</a>.</p>
 <pre class="language-json">
 <code class="language-json">
-    {
-	    "resources": [
-		    {
-			    "id": "string",
-			    "date": "date",
-			    "amount": "decimal",
-			    "type" : "string",
-			    "payer_first_name": "string",
-			    "payer_last_name": "string",
-			    "payer_address": "string",
-			    "payer_zip_code": "string",
-			    "payer_city": "string",
-			    "payer_country": "string",
-			    "payer_email": "string",
-			    "payer_birthdate": "date",
-			    "payer_citizenship": "string",
-			    "payer_society": "string",
-			    "payer_is_society": "bool",
-			    "url_receipt": "string",
-			    "url_tax_receipt": "string",
-			    "status": "string",
-			    "actions": [
-			      {
-				    "id": "string",
-				    "type": "string",
-				    "amount": "decimal"
-			      }
-			      …
-			    ]
-		    }
-		    …
-	    ]
-    }
+{
+	"resources": [
+		{
+			"id": "string",
+			"date": "date",
+			"amount": "decimal",
+			"type" : "string",
+			"payer_first_name": "string",
+			"payer_last_name": "string",
+			"payer_address": "string",
+			"payer_zip_code": "string",
+			"payer_city": "string",
+			"payer_country": "string",
+			"payer_email": "string",
+			"payer_birthdate": "date",
+			"payer_citizenship": "string",
+			"payer_society": "string",
+			"payer_is_society": "bool",
+			"url_receipt": "string",
+			"url_tax_receipt": "string",
+			"status": "string",
+			"actions": [
+			    {
+				"id": "string",
+				"type": "string",
+				"amount": "decimal"
+			    }
+			    …
+			]
+		}
+		…
+	]
+}
 </code>
 </pre>
             </section>
@@ -680,13 +680,13 @@
                 <p>Récupérer la liste des paiements enregistrés sur l’application :</p>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/payments.json
+GET https://api.helloasso.com/v3/payments.json
 </code>
 </pre>
                 <p>Récupérer la liste des paiements enregistrés sur un événement :</p>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/campaigns/00000000002/payments.json
+GET https://api.helloasso.com/v3/campaigns/00000000002/payments.json
 </code>
 </pre>
                 <p>
@@ -695,7 +695,7 @@
                 </p>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/organizations/00000000002/payments.json?from=2017-01-01T00:00:00&to=2017-02-01T00:00:00
+GET https://api.helloasso.com/v3/organizations/00000000002/payments.json?from=2017-01-01T00:00:00&to=2017-02-01T00:00:00
 </code>
 </pre>
             </section>
@@ -706,7 +706,7 @@
                 <h3>Requête</h3>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/payments/&lt;id&gt;.json
+GET https://api.helloasso.com/v3/payments/&lt;id&gt;.json
 </code>
 </pre>
             </section>
@@ -715,34 +715,34 @@
                 <p>Un <a href="responses#paiements" traget="_blank">paiement</a>.</p>
 <pre class="language-json">
 <code class="language-json">
-    {
+{
+	"id": "string",
+	"date": "date",
+	"amount": "decimal",
+	"type" : "string",
+	"payer_first_name": "string",
+	"payer_last_name": "string",
+	"payer_address": "string",
+	"payer_zip_code": "string",
+	"payer_city": "string",
+	"payer_country": "string",
+	"payer_email": "string",
+	"payer_birthdate": "date",
+	"payer_citizenship": "string",
+	"payer_society": "string",
+	"payer_is_society": "bool",
+	"url_receipt": "string",
+	"url_tax_receipt": "string",
+	"status": "string",
+	"actions": [
+	    {
 	    "id": "string",
-	    "date": "date",
-	    "amount": "decimal",
-	    "type" : "string",
-	    "payer_first_name": "string",
-	    "payer_last_name": "string",
-	    "payer_address": "string",
-	    "payer_zip_code": "string",
-	    "payer_city": "string",
-	    "payer_country": "string",
-	    "payer_email": "string",
-	    "payer_birthdate": "date",
-	    "payer_citizenship": "string",
-	    "payer_society": "string",
-	    "payer_is_society": "bool",
-	    "url_receipt": "string",
-	    "url_tax_receipt": "string",
-	    "status": "string",
-	    "actions": [
-	      {
-	        "id": "string",
-	        "type": "string",
-	        "amount": "decimal"
-	      }
-	      …
-	    ]
-    }
+	    "type": "string",
+	    "amount": "decimal"
+	    }
+	    …
+	]
+}
 </code>
 </pre>
             </section>

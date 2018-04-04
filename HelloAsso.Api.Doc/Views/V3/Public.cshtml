@@ -12,7 +12,7 @@
                 <h3>Requête</h3>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/public/organizations/{slug}/campaigns.json[?type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
+GET https://api.helloasso.com/v3/public/organizations/{slug}/campaigns.json[?type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
             </section>
@@ -59,21 +59,21 @@
                 <p>Réponse : Une collection des <a href="responses#campagnes-basiques" target="_blank">campagnes basiques</a>.</p>
 <pre class="language-json">
 <code class="language-json">
-    {
-	    "resources": [
-		    {
-			    "name": "string",
-			    "slug": "string",
-			    "type": "string",
-			    "url": "string",
-			    "url_widget": "string",
-			    "url_bouton": "string",
-			    "name_organism": "string",
-			    "slug_organism": "string"
-		    }
-		    …
-	    ]
-    }
+{
+	"resources": [
+		{
+			"name": "string",
+			"slug": "string",
+			"type": "string",
+			"url": "string",
+			"url_widget": "string",
+			"url_bouton": "string",
+			"name_organism": "string",
+			"slug_organism": "string"
+		}
+		…
+	]
+}
 </code>
 </pre>
             </section>
@@ -86,7 +86,7 @@
                 <h3>Requête</h3>
 <pre class="language-markup">
 <code class="language-markup">
-    GET https://api.helloasso.com/v3/public/organizations/campaigns.json?organism_id=&lt;organism_id&gt;[&type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
+GET https://api.helloasso.com/v3/public/organizations/campaigns.json?organism_id=&lt;organism_id&gt;[&type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
             </section>
@@ -133,16 +133,16 @@
                 <p>Réponse : Une collection des <a href="responses#campagnes-basiques" target="_blank">campagnes basiques</a>.</p>
 <pre class="language-json">
 <code class="language-json">
-    {
-	    "name": "string",
-	    "slug": "string",
-        "type": "string",
-        "url": "string",
-        "url_widget": "string",
-        "url_bouton": "string",
-        "name_organism": "string",
-	    "slug_organism": "string"
-    }
+{
+	"name": "string",
+	"slug": "string",
+    "type": "string",
+    "url": "string",
+    "url_widget": "string",
+    "url_bouton": "string",
+    "name_organism": "string",
+	"slug_organism": "string"
+}
 </code>
 </pre>
             </section>

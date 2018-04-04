@@ -22,18 +22,18 @@
                 <p>La représentation JSON d’un organisme est la suivante :</p>
 <pre class="language-json">
 <code class="language-json">
-{
-	"id": "string",
-	"name": "string",
-	"slug": "string",
-	"type": "string",
-	"funding": "decimal",
-	"supporters": "int",
-	"logo": "string",
-	"thumbnail": "string",
-	"profile": "string",
-	"donate-form": "string"
-}
+    {
+	    "id": "string",
+	    "name": "string",
+	    "slug": "string",
+	    "type": "string",
+	    "funding": "decimal",
+	    "supporters": "int",
+	    "logo": "string",
+	    "thumbnail": "string",
+	    "profile": "string",
+	    "donate-form": "string"
+    }
 </code>
 </pre>
             </section>
@@ -109,27 +109,27 @@
                 <p>La représentation JSON d’une campagne est la suivante :</p>
 <pre class="language-json">
 <code class="language-json">
-{
-	"id": "string",
-	"name": "string",
-	"slug": "string",
-	"type": "string",
-	"state": "string",
-	"funding": "decimal",
-	"supporters": "int",
-	"url": "string",
-	"id_organism": "string",
-	"slug_organism": "string",
-	"creation_date": "date",
-	"last_update": "date",
-	"place_name": "string",
-	"place_address": "string",
-	"place_city": "string",
-	"place_zipcode": "string",
-	"place_country": "string",
-	"start_date": "date",
-	"end_date": "date"
-}
+    {
+	    "id": "string",
+	    "name": "string",
+	    "slug": "string",
+	    "type": "string",
+	    "state": "string",
+	    "funding": "decimal",
+	    "supporters": "int",
+	    "url": "string",
+	    "id_organism": "string",
+	    "slug_organism": "string",
+	    "creation_date": "date",
+	    "last_update": "date",
+	    "place_name": "string",
+	    "place_address": "string",
+	    "place_city": "string",
+	    "place_zipcode": "string",
+	    "place_country": "string",
+	    "start_date": "date",
+	    "end_date": "date"
+    }
 </code>
 </pre>
             </section>
@@ -250,31 +250,31 @@
                 <p>La représentation JSON d’une action est la suivante :</p>
 <pre class="language-json">
 <code class="language-json">
-{
-	"id": "string",
-	"id_campaign": "string",
-	"id_organism": "string",
-	"id_payment": "string",
-	"date": "date",
-	"amount": "decimal",
-	"type": "string",
-	"first_name": "string",
-	"last_name": "string",
-	"address": "string",
-	"zip_code": "string",
-	"city": "string",
-	"country": "string",
-	"email": "string",
-	"status": "string",
-	"option_label": "string",
-	"custom_infos": [
-	  {
-	    "label": "string",
-	    "value": "string"
-	  }
-	  …
-	]
-}
+    {
+	    "id": "string",
+	    "id_campaign": "string",
+	    "id_organism": "string",
+	    "id_payment": "string",
+	    "date": "date",
+	    "amount": "decimal",
+	    "type": "string",
+	    "first_name": "string",
+	    "last_name": "string",
+	    "address": "string",
+	    "zip_code": "string",
+	    "city": "string",
+	    "country": "string",
+	    "email": "string",
+	    "status": "string",
+	    "option_label": "string",
+	    "custom_infos": [
+	      {
+	        "label": "string",
+	        "value": "string"
+	      }
+	      …
+	    ]
+    }
 </code>
 </pre>
             </section>
@@ -390,34 +390,34 @@
                 <p>La représentation JSON d’un paiement est la suivante :</p>
 <pre class="language-json">
 <code class="language-json">
-{
-	"id": "string",
-	"date": "date",
-	"amount": "decimal",
-	"type" : "string",
-	"payer_first_name": "string",
-	"payer_last_name": "string",
-	"payer_address": "string",
-	"payer_zip_code": "string",
-	"payer_city": "string",
-	"payer_country": "string",
-	"payer_email": "string",
-	"payer_birthdate": "date",
-	"payer_citizenship": "string",
-	"payer_society": "string",
-	"payer_is_society": "bool",
-	"url_receipt": "string",
-	"url_tax_receipt": "string",
-	"status": "string",
-	"actions": [
-	  {
+    {
 	    "id": "string",
-	    "type": "string",
-	    "amount": "decimal"
-	  }
-	  …
-	]
-}
+	    "date": "date",
+	    "amount": "decimal",
+	    "type" : "string",
+	    "payer_first_name": "string",
+	    "payer_last_name": "string",
+	    "payer_address": "string",
+	    "payer_zip_code": "string",
+	    "payer_city": "string",
+	    "payer_country": "string",
+	    "payer_email": "string",
+	    "payer_birthdate": "date",
+	    "payer_citizenship": "string",
+	    "payer_society": "string",
+	    "payer_is_society": "bool",
+	    "url_receipt": "string",
+	    "url_tax_receipt": "string",
+	    "status": "string",
+	    "actions": [
+	      {
+	        "id": "string",
+	        "type": "string",
+	        "amount": "decimal"
+	      }
+	      …
+	    ]
+    }
 </code>
 </pre>
             </section>
@@ -551,16 +551,16 @@
                 <p>La représentation JSON d’une campagne basique est la suivante :</p>
 <pre class="language-json">
 <code class="language-json">
-{
-	"name": "string",
-	"slug": "string",
-    "type": "string",
-    "url": "string",
-    "url_widget": "string",
-    "url_bouton": "string",
-    "name_organism": "string",
-	"slug_organism": "string"
-}
+    {
+	    "name": "string",
+	    "slug": "string",
+        "type": "string",
+        "url": "string",
+        "url_widget": "string",
+        "url_bouton": "string",
+        "name_organism": "string",
+	    "slug_organism": "string"
+    }
 </code>
 </pre>
             </section>

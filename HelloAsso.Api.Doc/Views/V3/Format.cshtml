@@ -88,7 +88,7 @@
                 <p>Le format canonique des urls d’accès aux ressources est le suivant :</p>
 <pre class="language-markup">
 <code>
-&lt;VERB&gt; api.helloasso.com/&lt;version&gt;/&lt;type&gt;[/&lt;id|slug&gt;].&lt;format&gt;[?parameters]
+    &lt;VERB&gt; api.helloasso.com/&lt;version&gt;/&lt;type&gt;[/&lt;id|slug&gt;].&lt;format&gt;[?parameters]
 </code>
 </pre>
             </section>
@@ -113,19 +113,19 @@
                 <p>Certains appels retournent une collection de ressources. Dans ce cas, le format de la réponse est le suivant :</p>
 <pre class="language-json">
 <code class="language-json">
-{
-	"resources": [
-	  {
-	    // Representation JSON du type de resource demandée
-	  }
-	  …
-	],
-	"pagination": {
-	  "page": "int",
-	  "max_page": "int",
-	  "result_per_page": "int"
-	}
-}
+    {
+	    "resources": [
+	      {
+	        // Representation JSON du type de resource demandée
+	      }
+	      …
+	    ],
+	    "pagination": {
+	      "page": "int",
+	      "max_page": "int",
+	      "result_per_page": "int"
+	    }
+    }
 </code>
 </pre>
             </section>

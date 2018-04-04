@@ -78,9 +78,10 @@ gulp.task('images', function() {
 gulp.task('watch', ['browser-sync'], function() {
     gulp.watch(paths.views, ['views']);
     gulp.watch(paths.styles, ['styles']);
-    gulp.watch(paths.scripts, ['scripts']);
-    gulp.watch(paths.images, ['images']);
+    //gulp.watch(paths.scripts, ['scripts']);
+    //gulp.watch(paths.images, ['images']);
 });
 
 // Définit la  tâche par défaut
-gulp.task('default', ['styles', 'scripts', 'images']);
+//gulp.task('default', ['styles', 'scripts', 'images']);
+gulp.task('default', ['styles']);

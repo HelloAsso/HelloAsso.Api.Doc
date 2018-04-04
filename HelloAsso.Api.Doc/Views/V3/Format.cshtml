@@ -21,7 +21,7 @@
                 <p>Les données échangées à travers l’API HelloAsso, qu’elles soient passées en paramètres, ou retournées dans les réponses, respectent les normes suivantes :</p>
                 <ul class="list-styled">
                     <li><strong>chaine de caractères : </strong>l’encodage utilisé est l’UTF-8</li>
-                    <li><strong>dates : </strong>les dates sont représentées sous forme de timestamp au format <a href="https://fr.wikipedia.org/wiki/ISO_8601">ISO 8601</a>. Le 1er février 2015 à midi est ainsi représenté par la chaine 2015-02-01T12:00:00</li>
+                    <li><strong>dates : </strong>les dates sont représentées sous forme de timestamp au format <a href="https://fr.wikipedia.org/wiki/ISO_8601">ISO 8601</a>. Le <span class="full-date">12 mai 2015</span>  est ainsi représenté par la chaine <span class="api-date">2015-05-12T12:12:33</span></li>
                     <li><strong>format du contenu de la réponse : </strong>JSON</li>
                 </ul>
             </section>
@@ -177,3 +177,44 @@
     <i class="fas fa-angle-up"></i><br />
     Retour
 </a>
+
+@*<script>
+    function dynamicDate() {
+        var date = new Date();
+        var pad = '00';
+
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var monthIso = (date.getMonth() + 1) + '';
+            monthIso = pad.substring(0, pad.length - monthIso.length) + monthIso;
+        var months = new Array('janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre');
+        var day = date.getDate();
+        if (day == 1) {
+            day = day + 'er';
+        }
+        var dayIso = date.getDate() + '';
+            dayIso = pad.substring(0, pad.length - dayIso.length) + dayIso;
+        var hour = date.getHours() + '';
+            hour = pad.substring(0, pad.length - hour.length) + hour;
+        var minutes = date.getMinutes() + '';
+            minutes = pad.substring(0, pad.length - minutes.length) + minutes;
+        var seconds = date.getSeconds() + '';
+            seconds = pad.substring(0, pad.length - seconds.length) + seconds;
+        
+        var fullDate = day + ' ' + months[month] + ' ' + year + ' à ' + hour + 'h' + minutes;
+        document.querySelector('.full-date').innerHTML = fullDate;
+
+        var apiDate = year + '-' + monthIso + '-' + dayIso + 'T' + hour + ':' + minutes + ':' + seconds;
+        document.querySelector('.api-date').innerHTML = apiDate;
+    }
+
+    function initDate() {
+        dynamicDate();
+    };
+
+    window.onload = initDate();
+    window.setInterval(function () {
+        initDate();
+    }, 1000);
+
+</script>*@

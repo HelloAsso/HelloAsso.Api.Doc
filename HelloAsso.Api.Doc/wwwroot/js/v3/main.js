@@ -248,7 +248,7 @@
 			if (!window.api.childOrParentHasClass(event.target, 'sidebar') && !window.api.childOrParentHasClass(event.target, 'open-menu')) {
 				window.api.removeClass(sidebar, 'open');
 			}
-		});
+        });
 	}
 
 }).call(window.api = window.api || {});

@@ -1,0 +1,15 @@
+{
+  "name": "callback_nodejs",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Gil Felot",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^1.8.0",
+    "nodemon": "^1.18.3"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  }
+}

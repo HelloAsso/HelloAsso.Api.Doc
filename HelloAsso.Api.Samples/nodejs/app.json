@@ -1,0 +1,10 @@
+{
+  "description": "Patron pour le callback à mettre en place afin de reçevoir les notification HelloAsso en NodeJS + Fastify",
+  "keywords": [
+    "helloasso",
+    "callback",
+    "notification"
+  ],
+  "name": "HelloAsso NodeJs Notification",
+  "repository": "https://github.com/Mailforgood/HelloAsso.Api.Doc"
+}

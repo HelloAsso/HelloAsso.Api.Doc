@@ -1,0 +1,22 @@
+.payment-form-wrapper {
+    margin-bottom: 100px;
+}
+
+button.payment,
+button.payment:hover,
+button.payment:focus {
+    background: rgb(99, 143, 52);
+}
+
+body {
+    background-color: #ecf0f1 !important
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.form-control{
+    color: #0a0a0a;
+}

@@ -5,22 +5,32 @@
 @Html.Partial("Shared/_Header")
 
 <div class="main">
-    <div class="container">
-        <div class="summary">
-            <h4>Sommaire</h4>
-            <ul>
-                <li><a href="#organismes">Organismes</a></li>
-                <li><a href="#campagnes">Campagnes</a></li>
-                <li><a href="#actions">Actions</a></li>
-                <li><a href="#paiements">Paiements</a></li>
-                <li><a href="#campagnes-basiques">Campagnes basiques</a></li>
-            </ul>
-        </div>
-        <article id="organismes" class="chapter">
-            <h2>Organismes</h2>
-            <section>
-                <p>La représentation JSON d’un organisme est la suivante :</p>
-<pre class="language-json">
+<div class="container">
+<div class="summary">
+    <h4>Sommaire</h4>
+    <ul>
+        <li>
+            <a href="#organismes">Organismes</a>
+        </li>
+        <li>
+            <a href="#campagnes">Campagnes</a>
+        </li>
+        <li>
+            <a href="#actions">Actions</a>
+        </li>
+        <li>
+            <a href="#paiements">Paiements</a>
+        </li>
+        <li>
+            <a href="#campagnes-basiques">Campagnes basiques</a>
+        </li>
+    </ul>
+</div>
+<article id="organismes" class="chapter">
+    <h2>Organismes</h2>
+    <section>
+        <p>La représentation JSON d’un organisme est la suivante :</p>
+        <pre class="language-json">
 <code class="language-json">
 {
 	"id": "string",
@@ -36,78 +46,98 @@
 }
 </code>
 </pre>
-            </section>
-            <section>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                                <th>Exemple</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>id</strong></td>
-                                <td>Identifiant de l’organisme</td>
-                                <td>00000001234</td>
-                            </tr>
-                            <tr>
-                                <td><strong>name</strong></td>
-                                <td>Nom de l’organisme, tel qu’il apparait sur la plateforme HelloAsso</td>
-                                <td>Le rire médecin</td>
-                            </tr>
-                            <tr>
-                                <td><strong>slug</strong></td>
-                                <td>Le slug de l’organisme, utilisé dans les urls HelloAsso et sur l’api</td>
-                                <td>le-rire-medecin</td>
-                            </tr>
-                            <tr>
-                                <td><strong>type</strong></td>
-                                <td>Le type de l’organisme, valorisé systématiquement à ORGANISM dans cette version</td>
-                                <td>ORGANISM</td>
-                            </tr>
-                            <tr>
-                                <td><strong>funding</strong></td>
-                                <td>Le total collecté par l’organisme sur HelloAsso</td>
-                                <td>3567.54</td>
-                            </tr>
-                            <tr>
-                                <td><strong>supporters</strong></td>
-                                <td>Le nombre de contributeur total à cet organisme</td>
-                                <td>105</td>
-                            </tr>
-                            <tr>
-                                <td><strong>logo</strong></td>
-                                <td>L’url de logo de l’organisme</td>
-                                <td>https://www.helloasso.com/assets/img/logos/le-rire-medecin.jpg</td>
-                            </tr>
-                            <tr>
-                                <td><strong>thumbnail</strong></td>
-                                <td>L’url de la minature de l’organisme</td>
-                                <td>https://www.helloasso.com/assets/img/logos/le-rire-medecin.jpg</td>
-                            </tr>
-                            <tr>
-                                <td><strong>profile</strong></td>
-                                <td>L’url de la page de l’organisme sur HelloAsso</td>
-                                <td>https://www.helloasso.com/associations/le-rire-medecin</td>
-                            </tr>
-                            <tr>
-                                <td><strong>donate-form</strong></td>
-                                <td>L’url du formulaire de don principal de l’organisme sur HelloAsso</td>
-                                <td>https://www.helloasso.com/don/associations/le-rire-medecin</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </article>
-        <article id="campagnes" class="chapter">
-            <h2>Campagnes</h2>
-            <section>
-                <p>La représentation JSON d’une campagne est la suivante :</p>
-<pre class="language-json">
+    </section>
+    <section>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Élément</th>
+                    <th>Description</th>
+                    <th>Exemple</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>id</strong>
+                    </td>
+                    <td>Identifiant de l’organisme</td>
+                    <td>00000001234</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>name</strong>
+                    </td>
+                    <td>Nom de l’organisme, tel qu’il apparait sur la plateforme HelloAsso</td>
+                    <td>Le rire médecin</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>slug</strong>
+                    </td>
+                    <td>Le slug de l’organisme, utilisé dans les urls HelloAsso et sur l’api</td>
+                    <td>le-rire-medecin</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>type</strong>
+                    </td>
+                    <td>Le type de l’organisme, valorisé systématiquement à ORGANISM dans cette version</td>
+                    <td>ORGANISM</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>funding</strong>
+                    </td>
+                    <td>Le total collecté par l’organisme sur HelloAsso</td>
+                    <td>3567.54</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>supporters</strong>
+                    </td>
+                    <td>Le nombre de contributeur total à cet organisme</td>
+                    <td>105</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>logo</strong>
+                    </td>
+                    <td>L’url de logo de l’organisme</td>
+                    <td>https://www.helloasso.com/assets/img/logos/le-rire-medecin.jpg</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>thumbnail</strong>
+                    </td>
+                    <td>L’url de la minature de l’organisme</td>
+                    <td>https://www.helloasso.com/assets/img/logos/le-rire-medecin.jpg</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>profile</strong>
+                    </td>
+                    <td>L’url de la page de l’organisme sur HelloAsso</td>
+                    <td>https://www.helloasso.com/associations/le-rire-medecin</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>donate-form</strong>
+                    </td>
+                    <td>L’url du formulaire de don principal de l’organisme sur HelloAsso</td>
+                    <td>https://www.helloasso.com/don/associations/le-rire-medecin</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+<article id="campagnes" class="chapter">
+    <h2>Campagnes</h2>
+    <section>
+        <p>La représentation JSON d’une campagne est la suivante :</p>
+        <pre class="language-json">
 <code class="language-json">
 {
 	"id": "string",
@@ -132,123 +162,161 @@
 }
 </code>
 </pre>
-            </section>
-            <section>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                                <th>Exemple</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>id</strong></td>
-                                <td>Identifiant de la campagne</td>
-                                <td>00000001234</td>
-                            </tr>
-                            <tr>
-                                <td><strong>name</strong></td>
-                                <td>Nom de la campagne, tel qu’il apparait sur la plateforme HelloAsso</td>
-                                <td>Festival de la choucroute</td>
-                            </tr>
-                            <tr>
-                                <td><strong>slug</strong></td>
-                                <td>Le slug de la campagne, utilisé dans les urls HelloAsso et sur l’api</td>
-                                <td>festival-de-la-choucroute</td>
-                            </tr>
-                            <tr>
-                                <td><strong>type</strong></td>
-                                <td>Le type de la campagne</td>
-                                <td>EVENT|FORM|MEMBERSHIP|FUNDRAISER</td>
-                            </tr>
-                            <tr>
-                                <td><strong>state</strong></td>
-                                <td>L’état de la campagne</td>
-                                <td>PUBLIC|PRIVATE|DISABLED|DRAFT</td>
-                            </tr>
-                            <tr>
-                                <td><strong>funding</strong></td>
-                                <td>Le total collecté par la campagne</td>
-                                <td>3567.54</td>
-                            </tr>
-                            <tr>
-                                <td><strong>supporters</strong></td>
-                                <td>Le nombre de contributeur total à cette campagne</td>
-                                <td>105</td>
-                            </tr>
-                            <tr>
-                                <td><strong>url</strong></td>
-                                <td>L’url de la campagne sur HelloAsso</td>
-                                <td>https://www.helloasso.com/associations/mon-asso/evenements/festival-de-la-choucroute</td>
-                            </tr>
-                            <tr>
-                                <td><strong>id_organism</strong></td>
-                                <td>L’identifiant de l’organisme détenteur de la campagne</td>
-                                <td>00000001234</td>
-                            </tr>
-                            <tr>
-                                <td><strong>slug_organism</strong></td>
-                                <td>Le slug de l’organisme détenteur de la campagne</td>
-                                <td>le-rire-medecin</td>
-                            </tr>
-                            <tr>
-                                <td><strong>creation_date</strong></td>
-                                <td>Date de création de la campagne</td>
-                                <td>20150201T12:00:00</td>
-                            </tr>
-                            <tr>
-                                <td><strong>last_update</strong></td>
-                                <td>Date de dernière mise à jour de la campagne</td>
-                                <td>20150201T12:00:00</td>
-                            </tr>
-                            <tr>
-                                <td><strong>place_name</strong></td>
-                                <td>Lieu de la campagne si applicable (uniquement pour les campagens de type EVENT)</td>
-                                <td>HelloAsso</td>
-                            </tr>
-                            <tr>
-                                <td><strong>place_address</strong></td>
-                                <td>Addresse de la campagne si applicable (uniquement pour les campagens de type EVENT)</td>
-                                <td>87 quai des queyries</td>
-                            </tr>
-                            <tr>
-                                <td><strong>place_city</strong></td>
-                                <td>Ville de la campagne si applicable (uniquement pour les campagens de type EVENT)</td>
-                                <td>Bordeaux</td>
-                            </tr>
-                            <tr>
-                                <td><strong>place_zipcode</strong></td>
-                                <td>Code postal de la campagne si applicable (uniquement pour les campagens de type EVENT)</td>
-                                <td>33000</td>
-                            </tr>
-                            <tr>
-                                <td><strong>place_country</strong></td>
-                                <td>Pays de la campagne si applicable (uniquement pour les campagens de type EVENT)</td>
-                                <td>France</td>
-                            </tr>
-                            <tr>
-                                <td><strong>start_date</strong></td>
-                                <td>Date de début de la campagne</td>
-                                <td>20150201T12:00:00</td>
-                            </tr>
-                            <tr>
-                                <td><strong>end_date</strong></td>
-                                <td>Date de fin de la campagne</td>
-                                <td>20150201T12:00:00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </article>
-        <article id="actions" class="chapter">
-            <h2>Actions</h2>
-            <section>
-                <p>La représentation JSON d’une action est la suivante :</p>
-<pre class="language-json">
+    </section>
+    <section>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Élément</th>
+                    <th>Description</th>
+                    <th>Exemple</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>id</strong>
+                    </td>
+                    <td>Identifiant de la campagne</td>
+                    <td>00000001234</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>name</strong>
+                    </td>
+                    <td>Nom de la campagne, tel qu’il apparait sur la plateforme HelloAsso</td>
+                    <td>Festival de la choucroute</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>slug</strong>
+                    </td>
+                    <td>Le slug de la campagne, utilisé dans les urls HelloAsso et sur l’api</td>
+                    <td>festival-de-la-choucroute</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>type</strong>
+                    </td>
+                    <td>Le type de la campagne</td>
+                    <td>EVENT|FORM|MEMBERSHIP|FUNDRAISER</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>state</strong>
+                    </td>
+                    <td>L’état de la campagne</td>
+                    <td>PUBLIC|PRIVATE|DISABLED|DRAFT</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>funding</strong>
+                    </td>
+                    <td>Le total collecté par la campagne</td>
+                    <td>3567.54</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>supporters</strong>
+                    </td>
+                    <td>Le nombre de contributeur total à cette campagne</td>
+                    <td>105</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>url</strong>
+                    </td>
+                    <td>L’url de la campagne sur HelloAsso</td>
+                    <td>https://www.helloasso.com/associations/mon-asso/evenements/festival-de-la-choucroute</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>id_organism</strong>
+                    </td>
+                    <td>L’identifiant de l’organisme détenteur de la campagne</td>
+                    <td>00000001234</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>slug_organism</strong>
+                    </td>
+                    <td>Le slug de l’organisme détenteur de la campagne</td>
+                    <td>le-rire-medecin</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>creation_date</strong>
+                    </td>
+                    <td>Date de création de la campagne</td>
+                    <td>20150201T12:00:00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>last_update</strong>
+                    </td>
+                    <td>Date de dernière mise à jour de la campagne</td>
+                    <td>20150201T12:00:00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>place_name</strong>
+                    </td>
+                    <td>Lieu de la campagne si applicable (uniquement pour les campagens de type EVENT)</td>
+                    <td>HelloAsso</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>place_address</strong>
+                    </td>
+                    <td>Addresse de la campagne si applicable (uniquement pour les campagens de type EVENT)</td>
+                    <td>87 quai des queyries</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>place_city</strong>
+                    </td>
+                    <td>Ville de la campagne si applicable (uniquement pour les campagens de type EVENT)</td>
+                    <td>Bordeaux</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>place_zipcode</strong>
+                    </td>
+                    <td>Code postal de la campagne si applicable (uniquement pour les campagens de type EVENT)</td>
+                    <td>33000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>place_country</strong>
+                    </td>
+                    <td>Pays de la campagne si applicable (uniquement pour les campagens de type EVENT)</td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>start_date</strong>
+                    </td>
+                    <td>Date de début de la campagne</td>
+                    <td>20150201T12:00:00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>end_date</strong>
+                    </td>
+                    <td>Date de fin de la campagne</td>
+                    <td>20150201T12:00:00</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+<article id="actions" class="chapter">
+    <h2>Actions</h2>
+    <section>
+        <p>La représentation JSON d’une action est la suivante :</p>
+        <pre class="language-json">
 <code class="language-json">
 {
 	"id": "string",
@@ -277,118 +345,152 @@
 }
 </code>
 </pre>
-            </section>
-            <section>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                                <th>Exemple</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>id</strong></td>
-                                <td>Identifiant de l’action</td>
-                                <td>00000001234</td>
-                            </tr>
-                            <tr>
-                                <td><strong>id_campaign</strong></td>
-                                <td>Identifiant de la campagne sur laquelle a été réalisée l’action</td>
-                                <td>00000000045</td>
-                            </tr>
-                            <tr>
-                                <td><strong>id_organism</strong></td>
-                                <td>Identifiant de l’organisme bénéficiaire de l’action</td>
-                                <td>00000000067</td>
-                            </tr>
-                            <tr>
-                                <td><strong>id_payment</strong></td>
-                                <td>Identifiant du paiement associé à l’action</td>
-                                <td>00000000089</td>
-                            </tr>
-                            <tr>
-                                <td><strong>date</strong></td>
-                                <td>La date à laquelle a été réalisée l’action</td>
-                                <td>20150201T12:00:00</td>
-                            </tr>
-                            <tr>
-                                <td><strong>amount</strong></td>
-                                <td>Le montant associé à l’action</td>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <td><strong>type</strong></td>
-                                <td>Le type de l’action : DONATION, INSCRIPTION, SUBSCRIPTION, RECURRENT_DONATION, OPTION</td>
-                                <td>DONATION</td>
-                            </tr>
-                            <tr>
-                                <td><strong>first_name</strong></td>
-                                <td>Le prénom de l’utilisateur associé à l’action</td>
-                                <td>Jean</td>
-                            </tr>
-                            <tr>
-                                <td><strong>last_name</strong></td>
-                                <td>Le nom de l’utilisateur associé à l’action</td>
-                                <td>Dupont</td>
-                            </tr>
-                            <tr>
-                                <td><strong>address</strong></td>
-                                <td>L’adresse de l’utilisateur associé à l’action</td>
-                                <td>1 rue des lilas</td>
-                            </tr>
-                            <tr>
-                                <td><strong>zip_code</strong></td>
-                                <td>Le code postal de l’utilisateur associé à l’action</td>
-                                <td>75001</td>
-                            </tr>
-                            <tr>
-                                <td><strong>city</strong></td>
-                                <td>La ville de l’utilisateur associé à l’action</td>
-                                <td>Paris</td>
-                            </tr>
-                            <tr>
-                                <td><strong>country</strong></td>
-                                <td>Le pays de l’utilisateur associé à l’action</td>
-                                <td>France</td>
-                            </tr>
-                            <tr>
-                                <td><strong>email</strong></td>
-                                <td>L’email de l’utilisateur associé à l’action</td>
-                                <td>jean.dupont@domaine.com</td>
-                            </tr>
-                            <tr>
-                                <td><strong>status</strong></td>
-                                <td>Status de l’action</td>
-                                <td>PROCESSED</td>
-                            </tr>
-                            <tr>
-                                <td><strong>option_label</strong></td>
-                                <td>Nom de l'option si définit</td>
-                                <td>Tarif réduit</td>
-                            </tr>
-                            <tr>
-                                <td><strong>custom_infos</strong></td>
-                                <td>La liste des réponses aux champs personnalisés renseignés par l’internaute</td>
-                                <td>
-                                    {<br />
-                                    &emsp;"label": "Antenne"<br />
-                                    &emsp;"value": "Paris XIII"<br />
-                                    }
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </article>
-        <article id="paiements" class="chapter">
-            <h2>Paiements</h2>
-            <section>
-                <p>La représentation JSON d’un paiement est la suivante :</p>
-<pre class="language-json">
+    </section>
+    <section>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Élément</th>
+                    <th>Description</th>
+                    <th>Exemple</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>id</strong>
+                    </td>
+                    <td>Identifiant de l’action</td>
+                    <td>00000001234</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>id_campaign</strong>
+                    </td>
+                    <td>Identifiant de la campagne sur laquelle a été réalisée l’action</td>
+                    <td>00000000045</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>id_organism</strong>
+                    </td>
+                    <td>Identifiant de l’organisme bénéficiaire de l’action</td>
+                    <td>00000000067</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>id_payment</strong>
+                    </td>
+                    <td>Identifiant du paiement associé à l’action</td>
+                    <td>00000000089</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>date</strong>
+                    </td>
+                    <td>La date à laquelle a été réalisée l’action</td>
+                    <td>20150201T12:00:00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>amount</strong>
+                    </td>
+                    <td>Le montant associé à l’action</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>type</strong>
+                    </td>
+                    <td>Le type de l’action : DONATION, INSCRIPTION, SUBSCRIPTION, RECURRENT_DONATION, OPTION</td>
+                    <td>DONATION</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>first_name</strong>
+                    </td>
+                    <td>Le prénom de l’utilisateur associé à l’action</td>
+                    <td>Jean</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>last_name</strong>
+                    </td>
+                    <td>Le nom de l’utilisateur associé à l’action</td>
+                    <td>Dupont</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>address</strong>
+                    </td>
+                    <td>L’adresse de l’utilisateur associé à l’action</td>
+                    <td>1 rue des lilas</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>zip_code</strong>
+                    </td>
+                    <td>Le code postal de l’utilisateur associé à l’action</td>
+                    <td>75001</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>city</strong>
+                    </td>
+                    <td>La ville de l’utilisateur associé à l’action</td>
+                    <td>Paris</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>country</strong>
+                    </td>
+                    <td>Le pays de l’utilisateur associé à l’action</td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>email</strong>
+                    </td>
+                    <td>L’email de l’utilisateur associé à l’action</td>
+                    <td>jean.dupont@domaine.com</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>status</strong>
+                    </td>
+                    <td>Status de l’action</td>
+                    <td>PROCESSED</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>option_label</strong>
+                    </td>
+                    <td>Nom de l'option si définit</td>
+                    <td>Tarif réduit</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>custom_infos</strong>
+                    </td>
+                    <td>La liste des réponses aux champs personnalisés renseignés par l’internaute</td>
+                    <td>
+                        {<br/>
+                        &emsp;"label": "Antenne"<br/>
+                        &emsp;"value": "Paris XIII"<br/>
+                        }
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+<article id="paiements" class="chapter">
+    <h2>Paiements</h2>
+    <section>
+        <p>La représentation JSON d’un paiement est la suivante :</p>
+        <pre class="language-json">
 <code class="language-json">
 {
 	"id": "string",
@@ -420,136 +522,174 @@
 }
 </code>
 </pre>
-            </section>
-            <section>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                                <th>Exemple</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>id</strong></td>
-                                <td>Identifiant du paiement</td>
-                                <td>00000001234</td>
-                            </tr>
-                            <tr>
-                                <td><strong>date</strong></td>
-                                <td>La date à laquelle a été réalisé le paiement</td>
-                                <td>20150201T12:00:00</td>
-                            </tr>
-                            <tr>
-                                <td><strong>amount</strong></td>
-                                <td>Le montant associé au paiement</td>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <td><strong>type</strong></td>
-                                <td>Le type du paiement : CREDIT dans cette version</td>
-                                <td>CREDIT</td>
-                            </tr>
-                            <tr>
-                                <td><strong>payer_first_name</strong></td>
-                                <td>Le prénom de l’utilisateur ayant effectué le paiement</td>
-                                <td>Jean</td>
-                            </tr>
-                            <tr>
-                                <td><strong>payer_last_name</strong></td>
-                                <td>Le nom de l’utilisateur ayant effectué le paiement</td>
-                                <td>Dupont</td>
-                            </tr>
-                            <tr>
-                                <td><strong>payer_address</strong></td>
-                                <td>L’adresse de l’utilisateur ayant effectué le paiement</td>
-                                <td>1 rue des lilas</td>
-                            </tr>
-                            <tr>
-                                <td><strong>payer_zip_code</strong></td>
-                                <td>Le code postal de l’utilisateur ayant effectué le paiement</td>
-                                <td>75001</td>
-                            </tr>
-                            <tr>
-                                <td><strong>payer_city</strong></td>
-                                <td>La ville de l’utilisateur ayant effectué le paiement</td>
-                                <td>Paris</td>
-                            </tr>
-                            <tr>
-                                <td><strong>payer_country</strong></td>
-                                <td>Le pays de l’utilisateur ayant effectué le paiement</td>
-                                <td>France</td>
-                            </tr>
-                            <tr>
-                                <td><strong>payer_email</strong></td>
-                                <td>L’email de l’utilisateur ayant effectué le paiement</td>
-                                <td>jean.dupont@domaine.com</td>
-                            </tr>
-                            <tr>
-                                <td><strong>payer_birthdate</strong></td>
-                                <td>La date de naissance de l’utilisateur</td>
-                                <td>19880104T12:00:00</td>
-                            </tr>
-                            <tr>
-                                <td><strong>payer_citizenship</strong></td>
-                                <td>La nationalité de l’utilisateur</td>
-                                <td>Française</td>
-                            </tr>
-                            <tr>
-                                <td><strong>payer_society</strong></td>
-                                <td>La société du payeur, si renseignée</td>
-                                <td>Company</td>
-                            </tr>
-                            <tr>
-                                <td><strong>payer_is_society</strong></td>
-                                <td>Indique si le paiement est réalisé au nom de la société du payeur</td>
-                                <td>true</td>
-                            </tr>
-                            <tr>
-                                <td><strong>url_receipt</strong></td>
-                                <td>L’url de l’attestation de paiement</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><strong>url_tax_receipt</strong></td>
-                                <td>L’url du reçu fiscal</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><strong>status</strong></td>
-                                <td>Status de l’action</td>
-                                <td>AUTHORIZED</td>
-                            </tr>
-                            <tr>
-                                <td><strong>actions</strong></td>
-                                <td>Une collection de représentations condensées des actions associées au paiement.</td>
-                                <td>
-                                    [<br />
-                                    &emsp;{<br />
-                                    &emsp;&emsp;"id": "00000000123",<br />
-                                    &emsp;&emsp;"type": "INSCRIPTION",<br />
-                                    &emsp;&emsp;"amount": "50.00"<br />
-                                    &emsp;},<br />
-                                    &emsp;{<br />
-                                    &emsp;&emsp;"id": "00000000124",<br />
-                                    &emsp;&emsp;"type": "DONATION",<br />
-                                    &emsp;&emsp;"amount": "10.00"<br />
-                                    &emsp;}<br />
-                                    ]<br />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </article>
-        <article id="campagnes-basiques" class="chapter">
-            <h2>Campagnes basiques</h2>
-            <section>
-                <p>La représentation JSON d’une campagne basique est la suivante :</p>
-<pre class="language-json">
+    </section>
+    <section>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Élément</th>
+                    <th>Description</th>
+                    <th>Exemple</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>id</strong>
+                    </td>
+                    <td>Identifiant du paiement</td>
+                    <td>00000001234</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>date</strong>
+                    </td>
+                    <td>La date à laquelle a été réalisé le paiement</td>
+                    <td>20150201T12:00:00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>amount</strong>
+                    </td>
+                    <td>Le montant associé au paiement</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>type</strong>
+                    </td>
+                    <td>Le type du paiement : CREDIT dans cette version</td>
+                    <td>CREDIT</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>payer_first_name</strong>
+                    </td>
+                    <td>Le prénom de l’utilisateur ayant effectué le paiement</td>
+                    <td>Jean</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>payer_last_name</strong>
+                    </td>
+                    <td>Le nom de l’utilisateur ayant effectué le paiement</td>
+                    <td>Dupont</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>payer_address</strong>
+                    </td>
+                    <td>L’adresse de l’utilisateur ayant effectué le paiement</td>
+                    <td>1 rue des lilas</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>payer_zip_code</strong>
+                    </td>
+                    <td>Le code postal de l’utilisateur ayant effectué le paiement</td>
+                    <td>75001</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>payer_city</strong>
+                    </td>
+                    <td>La ville de l’utilisateur ayant effectué le paiement</td>
+                    <td>Paris</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>payer_country</strong>
+                    </td>
+                    <td>Le pays de l’utilisateur ayant effectué le paiement</td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>payer_email</strong>
+                    </td>
+                    <td>L’email de l’utilisateur ayant effectué le paiement</td>
+                    <td>jean.dupont@domaine.com</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>payer_birthdate</strong>
+                    </td>
+                    <td>La date de naissance de l’utilisateur</td>
+                    <td>19880104T12:00:00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>payer_citizenship</strong>
+                    </td>
+                    <td>La nationalité de l’utilisateur</td>
+                    <td>Française</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>payer_society</strong>
+                    </td>
+                    <td>La société du payeur, si renseignée</td>
+                    <td>Company</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>payer_is_society</strong>
+                    </td>
+                    <td>Indique si le paiement est réalisé au nom de la société du payeur</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>url_receipt</strong>
+                    </td>
+                    <td>L’url de l’attestation de paiement</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>url_tax_receipt</strong>
+                    </td>
+                    <td>L’url du reçu fiscal</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>status</strong>
+                    </td>
+                    <td>Status de l’action</td>
+                    <td>AUTHORIZED</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>actions</strong>
+                    </td>
+                    <td>Une collection de représentations condensées des actions associées au paiement.</td>
+                    <td>
+                        [<br/>
+                        &emsp;{<br/>
+                        &emsp;&emsp;"id": "00000000123",<br/>
+                        &emsp;&emsp;"type": "INSCRIPTION",<br/>
+                        &emsp;&emsp;"amount": "50.00"<br/>
+                        &emsp;},<br/>
+                        &emsp;{<br/>
+                        &emsp;&emsp;"id": "00000000124",<br/>
+                        &emsp;&emsp;"type": "DONATION",<br/>
+                        &emsp;&emsp;"amount": "10.00"<br/>
+                        &emsp;}<br/>
+                        ]<br/>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+<article id="campagnes-basiques" class="chapter">
+    <h2>Campagnes basiques</h2>
+    <section>
+        <p>La représentation JSON d’une campagne basique est la suivante :</p>
+        <pre class="language-json">
 <code class="language-json">
 {
 	"name": "string",
@@ -563,77 +703,93 @@
 }
 </code>
 </pre>
-            </section>
-            <section>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                                <th>Exemple</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>name</strong></td>
-                                <td>Nom de la campagne, tel qu’il apparait sur la plateforme HelloAsso</td>
-                                <td>Festival de la choucroute</td>
-                            </tr>
-                            <tr>
-                                <td><strong>slug</strong></td>
-                                <td>Le slug de la campagne, utilisé dans les urls HelloAsso et sur l’api</td>
-                                <td>festival-de-la-choucroute</td>
-                            </tr>
-                            <tr>
-                                <td><strong>type</strong></td>
-                                <td>Le type de la campagne</td>
-                                <td>EVENT|FORM|MEMBERSHIP|FUNDRAISER</td>
-                            </tr>
-                            <tr>
-                                <td><strong>url</strong></td>
-                                <td>L’url de la campagne sur HelloAsso</td>
-                                <td>https://www.helloasso.com/associations/mon-asso/evenements/festival-de-la-choucroute</td>
-                            </tr>
-                            <tr>
-                                <td><strong>url_widget</strong></td>
-                                <td>L’url du widget de la campagne sur HelloAsso</td>
-                                <td>https://www.helloasso.com/associations/mon-asso/evenements/festival-de-la-choucroute/widget</td>
-                            </tr>
-                            <tr>
-                                <td><strong>url_bouton</strong></td>
-                                <td>L’url du bouton de la campagne sur HelloAsso</td>
-                                <td>https://www.helloasso.com/associations/mon-asso/evenements/festival-de-la-choucroute/widget-bouton</td>
-                            </tr>
-                            <tr>
-                                <td><strong>name_organism</strong></td>
-                                <td>Le nom  de l’organisme détenteur de la campagne</td>
-                                <td>Le Rire Médecin</td>
-                            </tr>
-                            <tr>
-                                <td><strong>slug_organism</strong></td>
-                                <td>Le slug de l’organisme détenteur de la campagne</td>
-                                <td>le-rire-medecin</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </article>
-    </div>
-    <nav class="page-switch center">
-        <a href="/v3/format" class="fill-to-left">
-            <i class="fas fa-long-arrow-alt-left"></i>
-            <span>Format des échanges</span>
-        </a>
-        <a href="/v3/resources" class="fill-to-right">
-            <span>Ressources</span>
-            <i class="fas fa-long-arrow-alt-right"></i>
-        </a>
-    </nav>
+    </section>
+    <section>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Élément</th>
+                    <th>Description</th>
+                    <th>Exemple</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>name</strong>
+                    </td>
+                    <td>Nom de la campagne, tel qu’il apparait sur la plateforme HelloAsso</td>
+                    <td>Festival de la choucroute</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>slug</strong>
+                    </td>
+                    <td>Le slug de la campagne, utilisé dans les urls HelloAsso et sur l’api</td>
+                    <td>festival-de-la-choucroute</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>type</strong>
+                    </td>
+                    <td>Le type de la campagne</td>
+                    <td>EVENT|FORM|MEMBERSHIP|FUNDRAISER</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>url</strong>
+                    </td>
+                    <td>L’url de la campagne sur HelloAsso</td>
+                    <td>https://www.helloasso.com/associations/mon-asso/evenements/festival-de-la-choucroute</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>url_widget</strong>
+                    </td>
+                    <td>L’url du widget de la campagne sur HelloAsso</td>
+                    <td>https://www.helloasso.com/associations/mon-asso/evenements/festival-de-la-choucroute/widget</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>url_bouton</strong>
+                    </td>
+                    <td>L’url du bouton de la campagne sur HelloAsso</td>
+                    <td>https://www.helloasso.com/associations/mon-asso/evenements/festival-de-la-choucroute/widget-bouton</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>name_organism</strong>
+                    </td>
+                    <td>Le nom de l’organisme détenteur de la campagne</td>
+                    <td>Le Rire Médecin</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>slug_organism</strong>
+                    </td>
+                    <td>Le slug de l’organisme détenteur de la campagne</td>
+                    <td>le-rire-medecin</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+</div>
+<nav class="page-switch center">
+    <a href="/v3/format" class="fill-to-left">
+        <i class="fas fa-long-arrow-alt-left"></i>
+        <span>Format des échanges</span>
+    </a>
+    <a href="/v3/resources" class="fill-to-right">
+        <span>Ressources</span>
+        <i class="fas fa-long-arrow-alt-right"></i>
+    </a>
+</nav>
 </div>
 <!-- Ancre vers le haut de page -->
 <a href="#top" class="back-to-top center">
-    <i class="fas fa-angle-up"></i><br />
+    <i class="fas fa-angle-up"></i><br/>
     Retour
 </a>

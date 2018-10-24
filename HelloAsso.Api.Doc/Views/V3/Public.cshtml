@@ -10,7 +10,7 @@
             <h2>Liste des campagnes d’une association par son slug</h2>
             <section>
                 <h3>Requête</h3>
-<pre class="language-markup">
+                <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/public/organizations/{slug}/campaigns.json[?type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
@@ -21,43 +21,51 @@ GET https://api.helloasso.com/v3/public/organizations/{slug}/campaigns.json[?typ
                 <div class="table-wrapper">
                     <table>
                         <thead>
-                            <tr>
-                                <th>Paramètre</th>
-                                <th>Description</th>
-                                <th>Requis</th>
-                                <th>Format</th>
-                            </tr>
+                        <tr>
+                            <th>Paramètre</th>
+                            <th>Description</th>
+                            <th>Requis</th>
+                            <th>Format</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>slug</strong></td>
-                                <td>Le slug de l’organisme détenteur des campagnes</td>
-                                <td>Oui</td>
-                                <td>string</td>
-                            </tr>
-                            <tr>
-                                <td><strong>type</strong></td>
-                                <td>Le type de campagnes à récupérer</td>
-                                <td>Non</td>
-                                <td>EVENT|FORM|FUNDRAISER |MEMBERSHIP</td>
-                            </tr>
-                            <tr>
-                                <td><strong>page</strong></td>
-                                <td>Page qu’on veut retourner (1 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
-                            <tr>
-                                <td><strong>results_per_page</strong></td>
-                                <td>Nombre de résultats par page (20 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
+                        <tr>
+                            <td>
+                                <strong>slug</strong>
+                            </td>
+                            <td>Le slug de l’organisme détenteur des campagnes</td>
+                            <td>Oui</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>type</strong>
+                            </td>
+                            <td>Le type de campagnes à récupérer</td>
+                            <td>Non</td>
+                            <td>EVENT|FORM|FUNDRAISER |MEMBERSHIP</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>page</strong>
+                            </td>
+                            <td>Page qu’on veut retourner (1 par défaut)</td>
+                            <td>Non</td>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>results_per_page</strong>
+                            </td>
+                            <td>Nombre de résultats par page (20 par défaut)</td>
+                            <td>Non</td>
+                            <td>int</td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
                 <p>Réponse : Une collection des <a href="responses#campagnes-basiques" target="_blank">campagnes basiques</a>.</p>
-<pre class="language-json">
+                <pre class="language-json">
 <code class="language-json">
 {
 	"resources": [
@@ -84,7 +92,7 @@ GET https://api.helloasso.com/v3/public/organizations/{slug}/campaigns.json[?typ
             <h2>Liste des campagnes d’une association par son id</h2>
             <section>
                 <h3>Requête</h3>
-<pre class="language-markup">
+                <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/public/organizations/campaigns.json?organism_id=&lt;organism_id&gt;[&type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
@@ -95,43 +103,51 @@ GET https://api.helloasso.com/v3/public/organizations/campaigns.json?organism_id
                 <div class="table-wrapper">
                     <table>
                         <thead>
-                            <tr>
-                                <th>Paramètre</th>
-                                <th>Description</th>
-                                <th>Requis</th>
-                                <th>Format</th>
-                            </tr>
+                        <tr>
+                            <th>Paramètre</th>
+                            <th>Description</th>
+                            <th>Requis</th>
+                            <th>Format</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>organism_id</strong></td>
-                                <td>L’id de l’organisme détenteur des campagnes</td>
-                                <td>Oui</td>
-                                <td>string</td>
-                            </tr>
-                            <tr>
-                                <td><strong>type</strong></td>
-                                <td>Le type de campagnes à récupérer</td>
-                                <td>Non</td>
-                                <td>EVENT|FORM|FUNDRAISER |MEMBERSHIP</td>
-                            </tr>
-                            <tr>
-                                <td><strong>page</strong></td>
-                                <td>Page qu’on veut retourner (1 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
-                            <tr>
-                                <td><strong>results_per_page</strong></td>
-                                <td>Nombre de résultats par page (20 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
+                        <tr>
+                            <td>
+                                <strong>organism_id</strong>
+                            </td>
+                            <td>L’id de l’organisme détenteur des campagnes</td>
+                            <td>Oui</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>type</strong>
+                            </td>
+                            <td>Le type de campagnes à récupérer</td>
+                            <td>Non</td>
+                            <td>EVENT|FORM|FUNDRAISER |MEMBERSHIP</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>page</strong>
+                            </td>
+                            <td>Page qu’on veut retourner (1 par défaut)</td>
+                            <td>Non</td>
+                            <td>int</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>results_per_page</strong>
+                            </td>
+                            <td>Nombre de résultats par page (20 par défaut)</td>
+                            <td>Non</td>
+                            <td>int</td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
                 <p>Réponse : Une collection des <a href="responses#campagnes-basiques" target="_blank">campagnes basiques</a>.</p>
-<pre class="language-json">
+                <pre class="language-json">
 <code class="language-json">
 {
 	"name": "string",
@@ -161,6 +177,6 @@ GET https://api.helloasso.com/v3/public/organizations/campaigns.json?organism_id
 </div>
 <!-- Ancre vers le haut de page -->
 <a href="#top" class="back-to-top center">
-    <i class="fas fa-angle-up"></i><br />
+    <i class="fas fa-angle-up"></i><br/>
     Retour
 </a>

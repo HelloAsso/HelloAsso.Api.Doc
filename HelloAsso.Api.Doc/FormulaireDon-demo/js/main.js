@@ -3,7 +3,7 @@ const fields = [
 ];
 
 // A REMPLIR !!!!
-// const baseUrl = 'https://www.helloasso.com/VOTRE_URL_DE_FORMUALIRE_DE_DON';
+const baseUrl = 'https://www.helloasso-dev.com/associations/test-gil/formulaires/2';
 
 const mapFields = (form) => {
   return fields.reduce((acc, key) => {
@@ -31,5 +31,7 @@ const redirect = (query) => {
 const onSubmit = (form) => {
   const fields = mapFields(form);
   const query = `${makeQuery(fields)}ft=0`;
+  console.log(query);
+  
   return redirect(query);
 };

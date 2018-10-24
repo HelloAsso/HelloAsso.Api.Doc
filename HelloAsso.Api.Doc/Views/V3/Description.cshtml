@@ -9,8 +9,12 @@
         <div class="summary">
             <h4>Sommaire</h4>
             <ul>
-                <li><a href="#definitions">Définitions</a></li>
-                <li><a href="#presentation-generale">Présentation générale</a></li>
+                <li>
+                    <a href="#definitions">Définitions</a>
+                </li>
+                <li>
+                    <a href="#presentation-generale">Présentation générale</a>
+                </li>
             </ul>
         </div>
         <article id="definitions" class="chapter">
@@ -39,9 +43,9 @@
         <article id="presentation-generale" class="chapter">
             <h2 class="chapter-title">Présentation générale</h2>
             <section>
-                <p>L’ensemble des interfaces HelloAsso sont exposées au travers d’une API accessible sur le domaine api.helloasso.com. Celle-ci est structurée suivant les principes REST : les ressources sont exposées sous forme d’url sur lesquelles des appels HTTP GET et POST permettent respectivement de récupérer et modifier les données concernées.</p>
+                <p>L’ensemble des interfaces HelloAsso sont exposées au travers d’une API accessible sur le domaine api.helloasso.com. Celle-ci est structurée suivant les principes REST : les ressources sont exposées sous forme d’url sur lesquelles des appels HTTP GET permettent de récupérer les données concernées.</p>
                 <p>HelloAsso ouvre pour ses partenaires des comptes d’application sur son API, il est nécessaire d’envoyer votre demande de clé via le <a href="https://www.helloasso.com/contact" target="_blank">formulaire de contact HelloAsso</a>. Des données d’authentification seront fournies par HelloAsso. Celles-ci vous permettront d’accéder aux ressources privées associées à votre application. Ces données d’authentification doivent être intégrées dans l’en-tête de tous les appels, via le champ Authorization. Tous les appels apis auront donc la forme :</p>
-<pre class="language-markup">
+                <pre class="language-markup">
 <code>
 &lt;VERB&gt; https://api.helloasso.com/v3/chemin
 Header :
@@ -50,8 +54,10 @@ Authorization : Basic &lt;chaine de connexion&gt;
 </pre>
             </section>
             <section>
-                <p>La chaîne de connexion est l’encodage base64 de la chaîne « username :password » ,ainsi que spécifié dans le standard Basic access authentication :</p>
-                <p><a href="https://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank" rel="noopener noreferrer" class="link-block">https://en.wikipedia.org/wiki/Basic_access_authentication</a></p>
+                <p>La chaîne de connexion est l’encodage base64 de la chaîne « username:password », ainsi que spécifié dans le standard Basic access authentication :</p>
+                <p>
+                    <a href="https://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank" rel="noopener noreferrer" class="link-block">https://en.wikipedia.org/wiki/Basic_access_authentication</a>
+                </p>
             </section>
             <section>
                 <p>Les ressources sont nommées de façon explicite et sont arrangées selon la typologie suivante.</p>
@@ -63,7 +69,7 @@ Authorization : Basic &lt;chaine de connexion&gt;
                 </ul>
             </section>
             <section>
-                <p>Tous les appels en lecture sont réalisés via une requête http GET. Les appels réalisant un enregistrement d’une nouvelle ressource sont réalisés par une requête http PUT, les modifications sont réalisées en POST. Toutes les requêtes doivent être réalisées en https.</p>
+                <p>Tous les appels en lecture sont réalisés via une requête http GET. Toutes les requêtes doivent être réalisées en https.</p>
             </section>
         </article>
     </div>
@@ -81,6 +87,6 @@ Authorization : Basic &lt;chaine de connexion&gt;
 
 <!-- Ancre vers le haut de page -->
 <a href="#top" class="back-to-top center">
-    <i class="fas fa-angle-up"></i><br />
+    <i class="fas fa-angle-up"></i><br/>
     Retour
 </a>

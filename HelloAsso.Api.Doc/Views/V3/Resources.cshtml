@@ -190,7 +190,7 @@ GET https://api.helloasso.com/v3/organizations/&lt;id&gt;.json[?page=&lt;page&gt
         <h3>Requête</h3>
         <pre class="language-markup">
 <code class="language-markup">
-GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/]campaigns.json[?type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP&gt;&createdFrom=&lt;createdFrom&gt;&createdTo=&lt;createdTo&gt;&updatedFrom=&lt;updatedFrom&gt;&updatedTo=&lt;updatedTo&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
+GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/]campaigns.json[?type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP|PAYMENT_FORM`&gt;&createdFrom=&lt;createdFrom&gt;&createdTo=&lt;createdTo&gt;&updatedFrom=&lt;updatedFrom&gt;&updatedTo=&lt;updatedTo&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
     </section>
@@ -263,7 +263,7 @@ GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/]campaigns.j
                     </td>
                     <td>Le type de campagnes à récupérer</td>
                     <td>Non</td>
-                    <td>EVENT | FORM | FUNDRAISER | MEMBERSHIP</td>
+                    <td>EVENT | FORM | FUNDRAISER | MEMBERSHIP | PAYMENT_FORM</td>
                 </tr>
                 <tr>
                     <td>
@@ -408,7 +408,7 @@ GET https://api.helloasso.com/v3/campaigns/&lt;id&gt;.json
         <h3>Requête</h3>
         <pre class="language-markup">
 <code class="language-markup">
-GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/&lt;campaign-id&gt;/]actions.json[?type=&lt;DONATION|INSCRIPTION|SUBSCRIPTION|RECURRENT_DONATION|OPTION&gt;&from=&lt;from&gt;&to=&lt;to&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
+GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/&lt;campaign-id&gt;/]actions.json[?type=&lt;DONATION|INSCRIPTION|SUBSCRIPTION|RECURRENT_DONATION|OPTION|ADDITIONAL_OPTION&gt;&from=&lt;from&gt;&to=&lt;to&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
     </section>
@@ -492,7 +492,7 @@ GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/
                     </td>
                     <td>Le type des actions à récupérer</td>
                     <td>Non</td>
-                    <td>DONATION | INSCRIPTION | SUBSCRIPTION | RECURRENT_DONATION | OPTION</td>
+                    <td>DONATION | INSCRIPTION | SUBSCRIPTION | RECURRENT_DONATION | OPTION | ADDITIONAL_OPTION</td>
                 </tr>
                 <tr>
                     <td>
@@ -647,6 +647,7 @@ GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/
 			"date": "date",
 			"amount": "decimal",
 			"type" : "string",
+            "mean": "CB | CHECK | SEPA",
 			"payer_first_name": "string",
 			"payer_last_name": "string",
 			"payer_address": "string",
@@ -794,6 +795,7 @@ GET https://api.helloasso.com/v3/payments/&lt;id&gt;.json
 	"date": "date",
 	"amount": "decimal",
 	"type" : "string",
+    "mean": "CB | CHECK | SEPA",
 	"payer_first_name": "string",
 	"payer_last_name": "string",
 	"payer_address": "string",

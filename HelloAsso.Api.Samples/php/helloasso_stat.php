@@ -21,7 +21,7 @@ curl_close($curl);
 
 // Display all information from request
 foreach ($json->resources as $action) {
-	echo "<h3>action de type $action->type d'un montant $action->montant effectuée le $action->date</h3><br/>";
+	echo "<h3>action de type $action->type d'un montant $action->amount effectuée le $action->date</h3><br/>";
 
 	if(count($action->custom_infos) > 0) {
 		echo "Liste des informations additionnelles:<br/>";
@@ -52,7 +52,7 @@ foreach ($json->resources as $action) {
 		$photoValue = $photoIndex == null ? "" : $action->custom_infos[$photoIndex]->value;
 
 		// Now display summary with only id picture
-		echo "<h3>action de type $action->type d'un montant $action->montant effectuée le $action->date avec cette photo $photoValue</h3><br/>";
+		echo "<h3>action de type $action->type d'un montant $action->amount effectuée le $action->date avec cette photo $photoValue</h3><br/>";
 	}
 }
 

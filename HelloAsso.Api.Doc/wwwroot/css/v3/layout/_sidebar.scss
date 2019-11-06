@@ -7,7 +7,7 @@
     right: 0;
     width: 25rem;
     background: #fff;
-    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, .05);
+    box-shadow: 0 0 2rem 0 rgba(46, 47, 94, .05);
     overflow-x: hidden;
     overflow-y: auto;
     backface-visibility: hidden;
@@ -25,7 +25,7 @@
 
     &.open {
         transform: translateX(0);
-        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .25), 0 0 0 9999px rgba(0, 0, 0, .5);
+        box-shadow: 0 2px 3px 0 rgba(46, 47, 94, .25), 0 0 0 9999px rgba(46, 47, 94, .5);
     }
 
     .sidebar-wrapper {
@@ -100,7 +100,7 @@
             }
         }
 
-        svg {
+        i {
             margin-left: .25em;
         }
     }
@@ -138,7 +138,6 @@
 
     .themes {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         padding-top: 1rem;
     }
@@ -150,6 +149,7 @@
         max-width: 2.4rem;
         height: 2.4rem;
         max-height: 2.4rem;
+        margin-right: 2em;
         border-radius: 50%;
         cursor: pointer;
 
@@ -204,14 +204,6 @@
 
         &.theme-active:before {
             border-color: $helloasso-green;
-        }
-    }
-
-    .theme-indigo {
-        background-color: $helloasso-indigo;
-
-        &.theme-active:before {
-            border-color: $helloasso-indigo;
         }
     }
 

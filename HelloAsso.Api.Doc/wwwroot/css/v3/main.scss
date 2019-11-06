@@ -1,6 +1,7 @@
 ﻿@charset "UTF-8";
 
 // Base
+
 @import "base/normalize";
 @import "base/colors";
 @import "base/config";
@@ -24,7 +25,6 @@
 @import "layout/navigation";
 
 // Themes
-@import "themes/indigo";
 @import "themes/blue";
 @import "themes/night-mode";
 
@@ -32,4 +32,5 @@
 @import "pages/home";
 
 // Vendors
+
 @import "vendors/prism";

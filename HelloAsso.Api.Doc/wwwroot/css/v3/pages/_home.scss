@@ -68,7 +68,7 @@
     text-align: center;
     background-color: #fff;
     border-radius: $base-border-radius;
-    box-shadow: 0 .5rem 2rem 0 rgba(0, 0, 0, .05);
+    box-shadow: 0 .5rem 2rem 0 rgba(46, 47, 94, .05);
     transition: all $base-duration $base-timing;
     
     @media (min-width: $large-phone) {
@@ -81,7 +81,7 @@
     }
 
     &:hover {
-        box-shadow: 0 .5rem 3rem 0 rgba(0, 0, 0, .15);
+        box-shadow: 0 .5rem 3rem 0 rgba(46, 47, 94, .15);
         transform: translateY(-.3rem);
     }
 
@@ -127,7 +127,7 @@
         margin: 0;
         font-weight: 600;
 
-        svg {
+        i {
             margin-left: .5em;
         }
     }

@@ -22,6 +22,15 @@ thead {
         color: #fff;
         background-color: $base-color;
     }
+
+    th {
+        &:first-of-type {
+            border-radius: $base-border-radius 0 0 $base-border-radius;
+        }
+        &:last-of-type {
+            border-radius: 0 $base-border-radius $base-border-radius 0;
+        }
+    }
 }
 
 tbody {

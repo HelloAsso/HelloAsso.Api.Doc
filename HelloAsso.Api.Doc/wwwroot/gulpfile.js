@@ -9,9 +9,9 @@ var $ = require('gulp-load-plugins')({
 
 var paths = {
     views: '../Views/V3/**/*.cshtml',
-    styles: 'css/v3/**/*.scss',
-    scripts: 'js/v3/**/*.js',
-    images: 'images/v3/**/*'
+    styles: 'assets/css/v3/**/*.scss',
+    scripts: 'assets/js/v3/**/*.js',
+    images: 'assets/images/v3/**/*'
 }
 
 // Serveur statique pour rafraichir la page on save
@@ -45,7 +45,7 @@ gulp.task('styles', function() {
         .pipe($.autoprefixer()) // Autoprefixer
         .pipe($.cleanCss()) // Minifier
         .pipe($.rename({ suffix: '.min' })) // Renommer la version minifiée avec un suffixe ".min"
-        .pipe(gulp.dest('css/v3/')) // Déplacer les fichiers dans le dossier de production
+        .pipe(gulp.dest('assets/css/v3/')) // Déplacer les fichiers dans le dossier de production
         .pipe(browserSync.reload({ stream: true })); // Rafraichir le navigateur automatiquement
 });
 
@@ -58,7 +58,7 @@ gulp.task('scripts', function() {
         }))
         .pipe($.uglify()) // Minifier
         .pipe($.rename({ suffix: '.min' }))
-        .pipe(gulp.dest('js/v3/'))
+        .pipe(gulp.dest('assets/js/v3/'))
         .pipe(browserSync.reload({ stream: true }));
 });
 
@@ -70,7 +70,7 @@ gulp.task('images', function() {
             this.emit('end');
         }))
         .pipe($.cache($.imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))) // Optimiser les images
-        .pipe(gulp.dest('images/v3'))
+        .pipe(gulp.dest('assets/images/v3'))
         .pipe(browserSync.reload({ stream: true }));
 });
 

@@ -5,34 +5,50 @@
 @Html.Partial("Shared/_Header")
 
 <div class="main">
-    <div class="container">
-        <div class="summary">
-            <h4>Sommaire</h4>
-            <ul>
-                <li><a href="#liste-organismes">Liste des organismes</a></li>
-                <li><a href="#detail-organisme">Détail d’un organisme</a></li>
-                <li><a href="#liste-campagnes">Liste des campagnes</a></li>
-                <li><a href="#detail-campagne">Détail d’une campagne</a></li>
-                <li><a href="#liste-actions">Liste des actions</a></li>
-                <li><a href="#detail-action">Détail d’une action</a></li>
-                <li><a href="#liste-paiements">Liste des paiements</a></li>
-                <li><a href="#detail-paiement">Détail d’un paiement</a></li>
-            </ul>
-        </div>
-        <article id="liste-organismes" class="chapter">
-            <h2>Liste des organismes</h2>
-            <section>
-                <h3>Requête</h3>
-<pre class="language-markup">
+<div class="container">
+<div class="summary">
+    <h4>Sommaire</h4>
+    <ul>
+        <li>
+            <a href="#liste-organismes">Liste des organismes</a>
+        </li>
+        <li>
+            <a href="#detail-organisme">Détail d’un organisme</a>
+        </li>
+        <li>
+            <a href="#liste-campagnes">Liste des campagnes</a>
+        </li>
+        <li>
+            <a href="#detail-campagne">Détail d’une campagne</a>
+        </li>
+        <li>
+            <a href="#liste-actions">Liste des actions</a>
+        </li>
+        <li>
+            <a href="#detail-action">Détail d’une action</a>
+        </li>
+        <li>
+            <a href="#liste-paiements">Liste des paiements</a>
+        </li>
+        <li>
+            <a href="#detail-paiement">Détail d’un paiement</a>
+        </li>
+    </ul>
+</div>
+<article id="liste-organismes" class="chapter">
+    <h2>Liste des organismes</h2>
+    <section>
+        <h3>Requête</h3>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/organizations.json[?page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Réponse</h3>
-                <p>Une collection d’<a href="responses#organismes" traget="_blank">organismes</a>.</p>
-<pre class="language-json">
+    </section>
+    <section>
+        <h3>Réponse</h3>
+        <p>Une collection d’<a href="responses#organismes" traget="_blank">organismes</a>.</p>
+        <pre class="language-json">
 <code class="language-json">
 {
 	"resources": [
@@ -53,55 +69,59 @@ GET https://api.helloasso.com/v3/organizations.json[?page=&lt;page&gt;&results_p
 }
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Description</h3>
-                <p>Cette ressource permet de lister l’ensemble des organismes enregistrés sur votre application.</p>
-            </section>
-            <section>
-                <h3>Paramètres</h3>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                                <th>Requis</th>
-                                <th>Format</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>page</strong></td>
-                                <td>Page qu’on veut retourner (1 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
-                            <tr>
-                                <td><strong>results_per_page</strong></td>
-                                <td>Nombre de résultats par page (20 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </article>
-        <article id="detail-organisme" class="chapter">
-            <h2>Détail d’un organisme</h2>
-            <section>
-                <h3>Requête</h3>
-<pre class="language-markup">
+    </section>
+    <section>
+        <h3>Description</h3>
+        <p>Cette ressource permet de lister l’ensemble des organismes enregistrés sur votre application.</p>
+    </section>
+    <section>
+        <h3>Paramètres</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Élément</th>
+                    <th>Description</th>
+                    <th>Requis</th>
+                    <th>Format</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>page</strong>
+                    </td>
+                    <td>Page que l’on veut retourner (1 par défaut)</td>
+                    <td>Non</td>
+                    <td>int</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>results_per_page</strong>
+                    </td>
+                    <td>Nombre de résultats par page (20 par défaut)</td>
+                    <td>Non</td>
+                    <td>int</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+<article id="detail-organisme" class="chapter">
+    <h2>Détail d’un organisme</h2>
+    <section>
+        <h3>Requête</h3>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/organizations/&lt;id&gt;.json[?page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Réponse</h3>
-                <p>Un <a href="responses#organismes" traget="_blank">organisme</a>.</p>
-<pre class="language-json">
+    </section>
+    <section>
+        <h3>Réponse</h3>
+        <p>Un <a href="responses#organismes" traget="_blank">organisme</a>.</p>
+        <pre class="language-json">
 <code class="language-json">
 {
 	"id": "string",
@@ -117,61 +137,67 @@ GET https://api.helloasso.com/v3/organizations/&lt;id&gt;.json[?page=&lt;page&gt
 }
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Description</h3>
-                <p>Cette url permet d’obtenir des informations détaillées sur un organisme enregistré sur votre application.</p>
-            </section>
-            <section>
-                <h3>Paramètres</h3>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                                <th>Requis</th>
-                                <th>Format</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>id</strong></td>
-                                <td>L’identifiant de l’organisme</td>
-                                <td>Oui</td>
-                                <td>string</td>
-                            </tr>
-                            <tr>
-                                <td><strong>page</strong></td>
-                                <td>Page qu’on veut retourner (1 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
-                            <tr>
-                                <td><strong>results_per_page</strong></td>
-                                <td>Nombre de résultats par page (20 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </article>
-        <article id="liste-campagnes" class="chapter">
-            <h2>Liste des campagnes</h2>
-            <section>
-                <h3>Requête</h3>
-<pre class="language-markup">
+    </section>
+    <section>
+        <h3>Description</h3>
+        <p>Cette url permet d’obtenir des informations détaillées sur un organisme enregistré sur votre application.</p>
+    </section>
+    <section>
+        <h3>Paramètres</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Élément</th>
+                    <th>Description</th>
+                    <th>Requis</th>
+                    <th>Format</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>id</strong>
+                    </td>
+                    <td>L’identifiant de l’organisme</td>
+                    <td>Oui</td>
+                    <td>string</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>page</strong>
+                    </td>
+                    <td>Page qu’on veut retourner (1 par défaut)</td>
+                    <td>Non</td>
+                    <td>int</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>results_per_page</strong>
+                    </td>
+                    <td>Nombre de résultats par page (20 par défaut)</td>
+                    <td>Non</td>
+                    <td>int</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+<article id="liste-campagnes" class="chapter">
+    <h2>Liste des campagnes</h2>
+    <section>
+        <h3>Requête</h3>
+        <pre class="language-markup">
 <code class="language-markup">
-GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/]campaigns.json[?type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP&gt;&createdFrom=&lt;createdFrom&gt;&createdTo=&lt;createdTo&gt;&updatedFrom=&lt;updatedFrom&gt;&updatedTo=&lt;updatedTo&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
+GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/]campaigns.json[?type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP|PAYMENT_FORM`&gt;&createdFrom=&lt;createdFrom&gt;&createdTo=&lt;createdTo&gt;&updatedFrom=&lt;updatedFrom&gt;&updatedTo=&lt;updatedTo&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Réponse</h3>
-                <p>Une collection de <a href="responses#campagnes" traget="_blank">campagnes</a>.</p>
-<pre class="language-json">
+    </section>
+    <section>
+        <h3>Réponse</h3>
+        <p>Une collection de <a href="responses#campagnes" traget="_blank">campagnes</a>.</p>
+        <pre class="language-json">
 <code class="language-json">
 {
 	"resources": [
@@ -201,110 +227,126 @@ GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/]campaigns.j
 }
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Description</h3>
-                <p>
-                    Cette url permet d’obtenir une liste des campagnes enregistrées sur l’application. Si un chemin d’organisme
-                    est précisé, la liste est réduite aux campagnes de l’organisme concerné. Le paramètre optionnel type
-                    permet de filtrer la recherche sur les campagnes d’un type donné.
-                </p>
-            </section>
-            <section>
-                <h3>Paramètres</h3>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                                <th>Requis</th>
-                                <th>Format</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>organism-id</strong></td>
-                                <td>L’id de l’organisme détenteur des campagnes</td>
-                                <td>Non</td>
-                                <td>string</td>
-                            </tr>
-                            <tr>
-                                <td><strong>type</strong></td>
-                                <td>Le type de campagnes à récupérer</td>
-                                <td>Non</td>
-                                <td>EVENT | FORM | FUNDRAISER | MEMBERSHIP</td>
-                            </tr>
-                            <tr>
-                                <td><strong>createdFrom</strong></td>
-                                <td>Date de création minimum</td>
-                                <td>Non</td>
-                                <td>date</td>
-                            </tr>
-                            <tr>
-                                <td><strong>createdTo</strong></td>
-                                <td>Date de création maximum</td>
-                                <td>Non</td>
-                                <td>date</td>
-                            </tr>
-                            <tr>
-                                <td><strong>updatedFrom</strong></td>
-                                <td>Date de mise à jour minimum</td>
-                                <td>Non</td>
-                                <td>date</td>
-                            </tr>
-                            <tr>
-                                <td><strong>updatedTo</strong></td>
-                                <td>Date de mise à jour maximum</td>
-                                <td>Non</td>
-                                <td>date</td>
-                            </tr>
-                            <tr>
-                                <td><strong>page</strong></td>
-                                <td>Page qu’on veut retourner (1 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
-                            <tr>
-                                <td><strong>results_per_page</strong></td>
-                                <td>Nombre de résultats par page (20 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-            <section>
-                <h3>Exemples</h3>
-                <p>Récupérer la liste des événements enregistrés sur l’application :</p>
-<pre class="language-markup">
+    </section>
+    <section>
+        <h3>Description</h3>
+        <p>
+            Cette url permet d’obtenir une liste des campagnes enregistrées sur l’application. Si un chemin d’organisme
+            est précisé, la liste est réduite aux campagnes de l’organisme concerné. Le paramètre optionnel type
+            permet de filtrer la recherche sur les campagnes d’un type donné.
+        </p>
+    </section>
+    <section>
+        <h3>Paramètres</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Élément</th>
+                    <th>Description</th>
+                    <th>Requis</th>
+                    <th>Format</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>organism-id</strong>
+                    </td>
+                    <td>L’id de l’organisme détenteur des campagnes</td>
+                    <td>Non</td>
+                    <td>string</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>type</strong>
+                    </td>
+                    <td>Le type de campagnes à récupérer</td>
+                    <td>Non</td>
+                    <td>EVENT | FORM | FUNDRAISER | MEMBERSHIP | PAYMENT_FORM</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>createdFrom</strong>
+                    </td>
+                    <td>Date de création minimum</td>
+                    <td>Non</td>
+                    <td>date</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>createdTo</strong>
+                    </td>
+                    <td>Date de création maximum</td>
+                    <td>Non</td>
+                    <td>date</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>updatedFrom</strong>
+                    </td>
+                    <td>Date de mise à jour minimum</td>
+                    <td>Non</td>
+                    <td>date</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>updatedTo</strong>
+                    </td>
+                    <td>Date de mise à jour maximum</td>
+                    <td>Non</td>
+                    <td>date</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>page</strong>
+                    </td>
+                    <td>Page qu’on veut retourner (1 par défaut)</td>
+                    <td>Non</td>
+                    <td>int</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>results_per_page</strong>
+                    </td>
+                    <td>Nombre de résultats par page (20 par défaut)</td>
+                    <td>Non</td>
+                    <td>int</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section>
+        <h3>Exemples</h3>
+        <p>Récupérer la liste des événements enregistrés sur l’application :</p>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/campaigns.json?type=EVENT
 </code>
 </pre>
-                <p>Récupérer la liste des campagnes créées par l’organisme “mon association” :</p>
-<pre class="language-markup">
+        <p>Récupérer la liste des campagnes créées par l’organisme “mon association” :</p>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/organizations/00000000002/campaigns.json
 </code>
 </pre>
-            </section>
-        </article>
-        <article id="detail-campagne" class="chapter">
-            <h2>Détail d’une campagne</h2>
-            <section>
-                <h3>Requête</h3>
-<pre class="language-markup">
+    </section>
+</article>
+<article id="detail-campagne" class="chapter">
+    <h2>Détail d’une campagne</h2>
+    <section>
+        <h3>Requête</h3>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/campaigns/&lt;id&gt;.json
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Réponse</h3>
-                <p>Une <a href="responses#campagnes" traget="_blank">campagne</a>.</p>
-<pre class="language-json">
+    </section>
+    <section>
+        <h3>Réponse</h3>
+        <p>Une <a href="responses#campagnes" traget="_blank">campagne</a>.</p>
+        <pre class="language-json">
 <code class="language-json">
 {
 	"id": "string",
@@ -329,49 +371,51 @@ GET https://api.helloasso.com/v3/campaigns/&lt;id&gt;.json
 }
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Description</h3>
-                <p>Cette url permet d’obtenir des informations détaillées sur une campagne enregistrée sur votre application.</p>
-            </section>
-            <section>
-                <h3>Paramètres</h3>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                                <th>Requis</th>
-                                <th>Format</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>id</strong></td>
-                                <td>L’identifiant de la campagne</td>
-                                <td>Oui</td>
-                                <td>string</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </article>
-        <article id="liste-actions" class="chapter">
-            <h2>Liste des actions</h2>
-            <section>
-                <h3>Requête</h3>
-<pre class="language-markup">
+    </section>
+    <section>
+        <h3>Description</h3>
+        <p>Cette url permet d’obtenir des informations détaillées sur une campagne enregistrée sur votre application.</p>
+    </section>
+    <section>
+        <h3>Paramètres</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Élément</th>
+                    <th>Description</th>
+                    <th>Requis</th>
+                    <th>Format</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>id</strong>
+                    </td>
+                    <td>L’identifiant de la campagne</td>
+                    <td>Oui</td>
+                    <td>string</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+<article id="liste-actions" class="chapter">
+    <h2>Liste des actions</h2>
+    <section>
+        <h3>Requête</h3>
+        <pre class="language-markup">
 <code class="language-markup">
-GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/&lt;campaign-id&gt;/]actions.json[?type=&lt;DONATION|INSCRIPTION|SUBSCRIPTION|RECURRENT_DONATION|OPTION&gt;&from=&lt;from&gt;&to=&lt;to&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
+GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/&lt;campaign-id&gt;/]actions.json[?type=&lt;DONATION|INSCRIPTION|SUBSCRIPTION|RECURRENT_DONATION|OPTION|ADDITIONAL_OPTION&gt;&from=&lt;from&gt;&to=&lt;to&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Réponse</h3>
-                <p>Une collection d’<a href="responses#actions" traget="_blank">actions</a>.</p>
-<pre class="language-json">
+    </section>
+    <section>
+        <h3>Réponse</h3>
+        <p>Une collection d’<a href="responses#actions" traget="_blank">actions</a>.</p>
+        <pre class="language-json">
 <code class="language-json">
 {
 	"resources": [
@@ -405,109 +449,123 @@ GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/
 }
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Description</h3>
-                <p>
-                    Cet appel permet de récupérer une collection d’action rattachée à votre application, et à l’éventuel organisme
-                    ou campagne spécifiée dans l’URL.
-                </p>
-            </section>
-            <section>
-                <h3>Paramètres</h3>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                                <th>Requis</th>
-                                <th>Format</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>organism-id</strong></td>
-                                <td>L’id de l’organisme détenteur des campagnes</td>
-                                <td>Non</td>
-                                <td>string</td>
-                            </tr>
-                            <tr>
-                                <td><strong>campaign-id</strong></td>
-                                <td>L’id de la campagne sur laquelle ont été effectuées les actions</td>
-                                <td>Non</td>
-                                <td>string</td>
-                            </tr>
-                            <tr>
-                                <td><strong>type</strong></td>
-                                <td>Le type des actions à récupérer</td>
-                                <td>Non</td>
-                                <td>DONATION | INSCRIPTION | SUBSCRIPTION | RECURRENT_DONATION | OPTION</td>
-                            </tr>
-                            <tr>
-                                <td><strong>from</strong></td>
-                                <td>Date de création minimum</td>
-                                <td>Non</td>
-                                <td>date</td>
-                            </tr>
-                            <tr>
-                                <td><strong>to</strong></td>
-                                <td>Date de création maximum</td>
-                                <td>Non</td>
-                                <td>date</td>
-                            </tr>
-                            <tr>
-                                <td><strong>page</strong></td>
-                                <td>Page qu’on veut retourner (1 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
-                            <tr>
-                                <td><strong>results_per_page</strong></td>
-                                <td>Nombre de résultats par page (20 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-            <section>
-                <h3>Exemples</h3>
-                <p>Récupérer la liste des actions enregistrés sur l’application :</p>
-<pre class="language-markup">
+    </section>
+    <section>
+        <h3>Description</h3>
+        <p>
+            Cet appel permet de récupérer une collection d’action rattachée à votre application, et à l’éventuel organisme
+            ou campagne spécifiée dans l’URL.
+        </p>
+    </section>
+    <section>
+        <h3>Paramètres</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Élément</th>
+                    <th>Description</th>
+                    <th>Requis</th>
+                    <th>Format</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>organism-id</strong>
+                    </td>
+                    <td>L’id de l’organisme détenteur des campagnes</td>
+                    <td>Non</td>
+                    <td>string</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>campaign-id</strong>
+                    </td>
+                    <td>L’id de la campagne sur laquelle ont été effectuées les actions</td>
+                    <td>Non</td>
+                    <td>string</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>type</strong>
+                    </td>
+                    <td>Le type des actions à récupérer</td>
+                    <td>Non</td>
+                    <td>DONATION | INSCRIPTION | SUBSCRIPTION | RECURRENT_DONATION | OPTION | ADDITIONAL_OPTION</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>from</strong>
+                    </td>
+                    <td>Date de création minimum</td>
+                    <td>Non</td>
+                    <td>date</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>to</strong>
+                    </td>
+                    <td>Date de création maximum</td>
+                    <td>Non</td>
+                    <td>date</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>page</strong>
+                    </td>
+                    <td>Page qu’on veut retourner (1 par défaut)</td>
+                    <td>Non</td>
+                    <td>int</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>results_per_page</strong>
+                    </td>
+                    <td>Nombre de résultats par page (20 par défaut)</td>
+                    <td>Non</td>
+                    <td>int</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section>
+        <h3>Exemples</h3>
+        <p>Récupérer la liste des actions enregistrés sur l’application :</p>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/actions.json
 </code>
 </pre>
-                <p>Récupérer la liste des actions enregistrées sur une association :</p>
-<pre class="language-markup">
+        <p>Récupérer la liste des actions enregistrées sur une association :</p>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/organizations/00000000002/actions.json
 </code>
 </pre>
-                <p>Récupérer la liste des actions enregistrées sur un événement depuis le premier janvier 2017 :</p>
-<pre class="language-markup">
+        <p>Récupérer la liste des actions enregistrées sur un événement depuis le premier janvier 2017 :</p>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/campaigns/00000000002/actions.json?from=2017-01-01T00:00:00
 </code>
 </pre>
-            </section>
-        </article>
-        <article id="detail-action" class="chapter">
-            <h2>Détail d’une action</h2>
-            <section>
-                <h3>Requête</h3>
-<pre class="language-markup">
+    </section>
+</article>
+<article id="detail-action" class="chapter">
+    <h2>Détail d’une action</h2>
+    <section>
+        <h3>Requête</h3>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/actions/&lt;id&gt;.json
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Réponse</h3>
-                <p>Une <a href="responses#actions" traget="_blank">action</a>.</p>
-<pre class="language-json">
+    </section>
+    <section>
+        <h3>Réponse</h3>
+        <p>Une <a href="responses#actions" traget="_blank">action</a>.</p>
+        <pre class="language-json">
 <code class="language-json">
 {
 	"id": "string",
@@ -536,49 +594,51 @@ GET https://api.helloasso.com/v3/actions/&lt;id&gt;.json
 }
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Description</h3>
-                <p>Cet appel retourne la représentation JSON d’une action dont l’identifiant est donné en paramètre.</p>
-            </section>
-            <section>
-                <h3>Paramètres</h3>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                                <th>Requis</th>
-                                <th>Format</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>id</strong></td>
-                                <td>L’identifiant de l’action</td>
-                                <td>Oui</td>
-                                <td>string</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </article>
-        <article id="liste-paiements" class="chapter">
-            <h2>Liste des paiements</h2>
-            <section>
-                <h3>Requête</h3>
-<pre class="language-markup">
+    </section>
+    <section>
+        <h3>Description</h3>
+        <p>Cet appel retourne la représentation JSON d’une action dont l’identifiant est donné en paramètre.</p>
+    </section>
+    <section>
+        <h3>Paramètres</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Élément</th>
+                    <th>Description</th>
+                    <th>Requis</th>
+                    <th>Format</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>id</strong>
+                    </td>
+                    <td>L’identifiant de l’action</td>
+                    <td>Oui</td>
+                    <td>string</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+<article id="liste-paiements" class="chapter">
+    <h2>Liste des paiements</h2>
+    <section>
+        <h3>Requête</h3>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/&lt;campaign-id&gt;/]payments.json[?type=&lt;CREDIT&gt;&from=&lt;from&gt;&to=&lt;to&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Réponse</h3>
-                <p>Une collection de <a href="responses#paiements" traget="_blank">paiements</a>.</p>
-<pre class="language-json">
+    </section>
+    <section>
+        <h3>Réponse</h3>
+        <p>Une collection de <a href="responses#paiements" traget="_blank">paiements</a>.</p>
+        <pre class="language-json">
 <code class="language-json">
 {
 	"resources": [
@@ -587,6 +647,7 @@ GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/
 			"date": "date",
 			"amount": "decimal",
 			"type" : "string",
+            "mean": "CB | CHECK | SEPA",
 			"payer_first_name": "string",
 			"payer_last_name": "string",
 			"payer_address": "string",
@@ -615,111 +676,126 @@ GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/][campaigns/
 }
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Paramètres</h3>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                                <th>Requis</th>
-                                <th>Format</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>organism-id</strong></td>
-                                <td>L’id de l’organisme bénéficiaire du paiement</td>
-                                <td>Non</td>
-                                <td>string</td>
-                            </tr>
-                            <tr>
-                                <td><strong>campaign-id</strong></td>
-                                <td>L’id de la campagne sur laquelle le paiement a été réalisé</td>
-                                <td>Non</td>
-                                <td>string</td>
-                            </tr>
-                            <tr>
-                                <td><strong>type</strong></td>
-                                <td>Le type de paiement à récupérer (CREDIT dans cette version)</td>
-                                <td>Non</td>
-                                <td>CREDIT</td>
-                            </tr>
-                            <tr>
-                                <td><strong>from</strong></td>
-                                <td>Date de création minimum</td>
-                                <td>Non</td>
-                                <td>date</td>
-                            </tr>
-                            <tr>
-                                <td><strong>to</strong></td>
-                                <td>Date de création maximum</td>
-                                <td>Non</td>
-                                <td>date</td>
-                            </tr>
-                            <tr>
-                                <td><strong>page</strong></td>
-                                <td>Page qu’on veut retourner (1 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
-                            <tr>
-                                <td><strong>results_per_page</strong></td>
-                                <td>Nombre de résultats par page (20 par défaut)</td>
-                                <td>Non</td>
-                                <td>int</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-            <section>
-                <h3>Exemples</h3>
-                <p>Récupérer la liste des paiements enregistrés sur l’application :</p>
-<pre class="language-markup">
+    </section>
+    <section>
+        <h3>Paramètres</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Élément</th>
+                    <th>Description</th>
+                    <th>Requis</th>
+                    <th>Format</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>organism-id</strong>
+                    </td>
+                    <td>L’id de l’organisme bénéficiaire du paiement</td>
+                    <td>Non</td>
+                    <td>string</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>campaign-id</strong>
+                    </td>
+                    <td>L’id de la campagne sur laquelle le paiement a été réalisé</td>
+                    <td>Non</td>
+                    <td>string</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>type</strong>
+                    </td>
+                    <td>Le type de paiement à récupérer (CREDIT dans cette version)</td>
+                    <td>Non</td>
+                    <td>CREDIT</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>from</strong>
+                    </td>
+                    <td>Date de création minimum</td>
+                    <td>Non</td>
+                    <td>date</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>to</strong>
+                    </td>
+                    <td>Date de création maximum</td>
+                    <td>Non</td>
+                    <td>date</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>page</strong>
+                    </td>
+                    <td>Page qu’on veut retourner (1 par défaut)</td>
+                    <td>Non</td>
+                    <td>int</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>results_per_page</strong>
+                    </td>
+                    <td>Nombre de résultats par page (20 par défaut)</td>
+                    <td>Non</td>
+                    <td>int</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section>
+        <h3>Exemples</h3>
+        <p>Récupérer la liste des paiements enregistrés sur l’application :</p>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/payments.json
 </code>
 </pre>
-                <p>Récupérer la liste des paiements enregistrés sur un événement :</p>
-<pre class="language-markup">
+        <p>Récupérer la liste des paiements enregistrés sur un événement :</p>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/campaigns/00000000002/payments.json
 </code>
 </pre>
-                <p>
-                    Récupérer la liste des paiements au profit d’une association entre le premier janvier et le premier février
-                    2017 :
-                </p>
-<pre class="language-markup">
+        <p>
+            Récupérer la liste des paiements au profit d’une association entre le premier janvier et le premier février
+            2017 :
+        </p>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/organizations/00000000002/payments.json?from=2017-01-01T00:00:00&to=2017-02-01T00:00:00
 </code>
 </pre>
-            </section>
-        </article>
-        <article id="detail-paiement" class="chapter">
-            <h2>Détail d’un paiement</h2>
-            <section>
-                <h3>Requête</h3>
-<pre class="language-markup">
+    </section>
+</article>
+<article id="detail-paiement" class="chapter">
+    <h2>Détail d’un paiement</h2>
+    <section>
+        <h3>Requête</h3>
+        <pre class="language-markup">
 <code class="language-markup">
 GET https://api.helloasso.com/v3/payments/&lt;id&gt;.json
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Réponse</h3>
-                <p>Un <a href="responses#paiements" traget="_blank">paiement</a>.</p>
-<pre class="language-json">
+    </section>
+    <section>
+        <h3>Réponse</h3>
+        <p>Un <a href="responses#paiements" traget="_blank">paiement</a>.</p>
+        <pre class="language-json">
 <code class="language-json">
 {
 	"id": "string",
 	"date": "date",
 	"amount": "decimal",
 	"type" : "string",
+    "mean": "CB | CHECK | SEPA",
 	"payer_first_name": "string",
 	"payer_last_name": "string",
 	"payer_address": "string",
@@ -745,49 +821,51 @@ GET https://api.helloasso.com/v3/payments/&lt;id&gt;.json
 }
 </code>
 </pre>
-            </section>
-            <section>
-                <h3>Description</h3>
-                <p>Cet appel retourne la représentation JSON d’un paiement dont l’identifiant est donné en paramètre.</p>
-            </section>
-            <section>
-                <h3>Paramètres</h3>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                                <th>Requis</th>
-                                <th>Format</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>id</strong></td>
-                                <td>L’identifiant du paiement</td>
-                                <td>Oui</td>
-                                <td>string</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </article>
-    </div>
-    <nav class="page-switch center">
-        <a href="/v3/responses" class="fill-to-left">
-            <i class="fas fa-long-arrow-alt-left"></i>
-            <span>Types des réponses</span>
-        </a>
-        <a href="/v3/notifications" class="fill-to-right">
-            <span>Notifications</span>
-            <i class="fas fa-long-arrow-alt-right"></i>
-        </a>
-    </nav>
+    </section>
+    <section>
+        <h3>Description</h3>
+        <p>Cet appel retourne la représentation JSON d’un paiement dont l’identifiant est donné en paramètre.</p>
+    </section>
+    <section>
+        <h3>Paramètres</h3>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Élément</th>
+                    <th>Description</th>
+                    <th>Requis</th>
+                    <th>Format</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>id</strong>
+                    </td>
+                    <td>L’identifiant du paiement</td>
+                    <td>Oui</td>
+                    <td>string</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</article>
+</div>
+<nav class="page-switch center">
+    <a href="/v3/responses" class="fill-to-left">
+        <i class="fas fa-long-arrow-alt-left"></i>
+        <span>Types des réponses</span>
+    </a>
+    <a href="/v3/notifications" class="fill-to-right">
+        <span>Notifications</span>
+        <i class="fas fa-long-arrow-alt-right"></i>
+    </a>
+</nav>
 </div>
 <!-- Ancre vers le haut de page -->
 <a href="#top" class="back-to-top center">
-    <i class="fas fa-angle-up"></i><br />
+    <i class="fas fa-angle-up"></i><br/>
     Retour
 </a>

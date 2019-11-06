@@ -17,4 +17,15 @@
     <Folder Include="wwwroot\css\v1\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\V1\Cgu.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\V1\Doc.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\V1\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\V1\Shared\_Layout.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\V2\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\V2\Shared\_Footer.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\V2\Shared\_Header.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\V2\Shared\_Layout.cshtml" />
+  </ItemGroup>
+
 </Project>

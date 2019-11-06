@@ -9,10 +9,18 @@
         <div class="summary">
             <h4>Sommaire</h4>
             <ul>
-                <li><a href="#encodage">Encodage</a></li>
-                <li><a href="#gestion-erreurs">Gestion des erreurs</a></li>
-                <li><a href="#format-chemins">Format des chemins d’accès aux ressources</a></li>
-                <li><a href="#format-reponses">Format des réponses et pagination</a></li>
+                <li>
+                    <a href="#encodage">Encodage</a>
+                </li>
+                <li>
+                    <a href="#gestion-erreurs">Gestion des erreurs</a>
+                </li>
+                <li>
+                    <a href="#format-chemins">Format des chemins d’accès aux ressources</a>
+                </li>
+                <li>
+                    <a href="#format-reponses">Format des réponses et pagination</a>
+                </li>
             </ul>
         </div>
         <article id="encodage" class="chapter">
@@ -21,7 +29,7 @@
                 <p>Les données échangées à travers l’API HelloAsso, qu’elles soient passées en paramètres, ou retournées dans les réponses, respectent les normes suivantes :</p>
                 <ul class="list-styled">
                     <li><strong>chaine de caractères : </strong>l’encodage utilisé est l’UTF-8</li>
-                    <li><strong>dates : </strong>les dates sont représentées sous forme de timestamp au format <a href="https://fr.wikipedia.org/wiki/ISO_8601">ISO 8601</a>. Le <span class="full-date">12 mai 2015</span>  est ainsi représenté par la chaine <span class="api-date">2015-05-12T12:12:33</span></li>
+                    <li><strong>dates : </strong>les dates sont représentées sous forme de timestamp au format <a href="https://fr.wikipedia.org/wiki/ISO_8601">ISO 8601</a>. Le <span class="full-date">12 mai 2015</span> est ainsi représenté par la chaine <span class="api-date">2015-05-12T12:12:33</span></li>
                     <li><strong>format du contenu de la réponse : </strong>JSON</li>
                 </ul>
             </section>
@@ -86,7 +94,7 @@
             <h2>Format des chemins d’accès aux ressources</h2>
             <section>
                 <p>Le format canonique des urls d’accès aux ressources est le suivant :</p>
-<pre class="language-markup">
+                <pre class="language-markup">
 <code>
 &lt;VERB&gt; api.helloasso.com/&lt;version&gt;/&lt;type&gt;[/&lt;id|slug&gt;].&lt;format&gt;[?parameters]
 </code>
@@ -96,10 +104,18 @@
                 <p><strong>[version]</strong> est l’identifiant de version de l’API utilisée. Celui-ci sera valorisé à <strong>v3</strong>. Les futures mises à jour importantes de l’API engendreront systématiquement un changement de numéro de version.</p>
                 <p><strong>[type]</strong> est le type de ressource demandée. Celui-ci peut prendre différentes valeurs :</p>
                 <ul class="list-styled">
-                    <li><strong>organizations</strong></li>
-                    <li><strong>campaigns</strong></li>
-                    <li><strong>actions</strong></li>
-                    <li><strong>payments</strong></li>
+                    <li>
+                        <strong>organizations</strong>
+                    </li>
+                    <li>
+                        <strong>campaigns</strong>
+                    </li>
+                    <li>
+                        <strong>actions</strong>
+                    </li>
+                    <li>
+                        <strong>payments</strong>
+                    </li>
                 </ul>
                 <p><strong>[id]</strong> est l’identifiant unique de la ressource demandée. Celui-ci est normalement récupéré par un autre appel à l’API, ou fourni en retour d’un appel de création d’une nouvelle ressource.</p>
                 <p><strong>[format]</strong> est le format de sérialisation souhaitée. Le format par défaut est le JSON, mais d’autres formats de sérialisation pourront être mis en place à l’avenir.</p>
@@ -111,7 +127,7 @@
             <section>
                 <p>Si l’appel à une resource est correcte, la réponse contient une representation JSON de la resource demandée. Les representations JSON des différentes ressources sont documentées dans le chapitre “Type de réponses”.</p>
                 <p>Certains appels retournent une collection de ressources. Dans ce cas, le format de la réponse est le suivant :</p>
-<pre class="language-json">
+                <pre class="language-json">
 <code class="language-json">
 {
 	"resources": [
@@ -133,28 +149,36 @@
                 <div class="table-wrapper">
                     <table>
                         <thead>
-                            <tr>
-                                <th>Élément</th>
-                                <th>Description</th>
-                            </tr>
+                        <tr>
+                            <th>Élément</th>
+                            <th>Description</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>ressources</strong></td>
-                                <td>Un tableau contenant les représentations JSON des ressources demandées</td>
-                            </tr>
-                            <tr>
-                                <td><strong>pagination.page</strong></td>
-                                <td>La page courante de la collection retournée</td>
-                            </tr>
-                            <tr>
-                                <td><strong>pagination.max_page</strong></td>
-                                <td>Le nombre de pages disponibles pour cette collection</td>
-                            </tr>
-                            <tr>
-                                <td><strong>pagination.result_per_page</strong></td>
-                                <td>Le nombre de résultat par page</td>
-                            </tr>
+                        <tr>
+                            <td>
+                                <strong>ressources</strong>
+                            </td>
+                            <td>Un tableau contenant les représentations JSON des ressources demandées</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>pagination.page</strong>
+                            </td>
+                            <td>La page courante de la collection retournée</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>pagination.max_page</strong>
+                            </td>
+                            <td>Le nombre de pages disponibles pour cette collection</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>pagination.result_per_page</strong>
+                            </td>
+                            <td>Le nombre de résultat par page</td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -174,7 +198,7 @@
 </div>
 <!-- Ancre vers le haut de page -->
 <a href="#top" class="back-to-top center">
-    <i class="fas fa-angle-up"></i><br />
+    <i class="fas fa-angle-up"></i><br/>
     Retour
 </a>
 

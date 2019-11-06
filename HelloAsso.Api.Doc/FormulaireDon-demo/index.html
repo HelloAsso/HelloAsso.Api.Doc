@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>HelloAsso API</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row payment-form-wrapper">
+            <div class="col-6 offset-3">
+                <form id="payment-form" onsubmit="return onSubmit(this)">
+                    <h1>Formulaire custom avec <img src="/img/helloasso-logo.png" alt=""></h1>
+                    <!--transaction amount-->
+                    <div class="form-group">
+                        <label for="amount">Montant</label>
+                        <input type="number" class="form-control" id="amount" placeholder="100" name="a">
+                    </div>
+                    <!--order type-->
+                    <div class="form-group">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-secondary active">
+                                <input type="radio" name="m" id="option-order" value="ORDER" checked> Achat
+                            </label>
+                            <label class="btn btn-secondary">
+                                <input type="radio" name="m" id="option-membership" value="MEMBERSHIP"> Adhésion
+                            </label>
+                        </div>
+                    </div>
+                    <!--first name-->
+                    <div class="form-group">
+                        <label for="firstname">Nom</label>
+                        <input type="text" class="form-control" id="firstname" placeholder="Johnny" name="fn">
+                    </div>
+                    <!--last name-->
+                    <div class="form-group">
+                        <label for="lastname">Nom</label>
+                        <input type="text" class="form-control" id="lastname" placeholder="Dupont" name="ln">
+                    </div>
+                    <!--company-->
+                    <div class="form-group">
+                        <label for="company">Société</label>
+                        <input type="text" class="form-control" id="company" placeholder="Dupont SARL" name="s">
+                    </div>
+                    <!--email-->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="johnny@dupont.com" name="e">
+                    </div>
+                    <!--address-->
+                    <div class="form-group">
+                        <label for="address">Adresse</label>
+                        <input type="text" class="form-control" id="address" placeholder="7 rue Jean Jaurès" name="ad">
+                    </div>
+                    <!--zip code-->
+                    <div class="form-group">
+                        <label for="zip">Code postal</label>
+                        <input type="text" class="form-control" id="zip" placeholder="75010" name="z">
+                    </div>
+                    <!--city-->
+                    <div class="form-group">
+                        <label for="city">Ville</label>
+                        <input type="text" class="form-control" id="city" placeholder="Paris" name="ci">
+                    </div>
+                    <!--country-->
+                    <div class="form-group">
+                        <label for="country">Pays</label>
+                        <select id="country" class="custom-select" name="co">
+                            <option value="FRA" selected>France</option>
+                            <option value="BEL">Belgique</option>
+                            <option value="CHE">Suisse</option>
+                            <option value="AND">Andorre</option>
+                        </select>
+                    </div>
+                    <!--custom ref-->
+                    <div class="form-group">
+                        <label for="ref">Custom Refs</label>
+                        <textarea class="form-control" id="ref" name="custom_ref" rows="3">{ info_asso_custom: "foobar" }</textarea>
+                    </div>
+                    <button type="submit" class="btn payment btn-primary" >Payer sur HelloAsso</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

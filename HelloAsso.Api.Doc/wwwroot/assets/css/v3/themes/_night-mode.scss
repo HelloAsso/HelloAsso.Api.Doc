@@ -1,6 +1,6 @@
 .theme-night-mode {
     color: #fff;
-    background-color: $helloasso-black;
+    background-color: $midnight;
 
     p > a,
     section li > a,
@@ -27,7 +27,7 @@
     .sidebar a.current,
     .list-content h3,
     .list-content.list-content-key span {
-        color: $helloasso-black;
+        color: $midnight;
     }
 
     header,
@@ -49,11 +49,11 @@
     .back-to-top:hover,
     .back-to-top:focus,
     .back-to-top:active {
-        background-color: darken($helloasso-black, 5%);
+        background-color: darken($midnight, 5%);
     }
 
     thead tr {
-        background-color: darken($helloasso-black, 10%);
+        background-color: darken($midnight, 10%);
     }
 
     .sidebar,
@@ -63,7 +63,7 @@
     }
 
     .btn-primary {
-        color: $helloasso-black;
+        color: $midnight;
         background-color: #fff;
     }
 
@@ -72,11 +72,11 @@
     }
 
     .btn-secondary:hover {
-        box-shadow: inset 0 0 0 .2rem darken($helloasso-black, 5%);
+        box-shadow: inset 0 0 0 .2rem darken($midnight, 5%);
     }
 
     .list-content.list-content-key span {
-        box-shadow: inset 0 0 0 .2rem $helloasso-black;
+        box-shadow: inset 0 0 0 .2rem $midnight;
     }
 
     .sidebar .sidebar-nav a.current {

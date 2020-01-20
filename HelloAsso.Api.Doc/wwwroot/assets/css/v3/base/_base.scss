@@ -8,17 +8,17 @@
 
 html {
     height: 100%;
-    font-family: $base-font-family;
+    font-family: $font-family;
     font-size: 62.5%;
-    color: $base-font-color;
-    line-height: $base-line-height;
+    color: $color-text;
+    line-height: $line-height-base;
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
     font-size: 1.4rem;
-    background-color: $body-background;
+    background-color: $background-color-body;
 
     @media (min-width: $tablet) {
         font-size: 1.6rem;

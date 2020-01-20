@@ -1,0 +1,87 @@
+// Alerts - defaults
+
+.alert {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 1em;
+    padding: .75em 1em;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: $border-radius-base;
+
+    @media (min-width: $largephone) {
+        font-size: 1.4rem;
+	}
+
+    > * {
+        flex: 0 0 auto;
+    }
+
+    svg {
+        margin: 0 1.25em 0 .25em;
+        font-size: 1.4rem;
+
+        @media (min-width: $largephone) {
+            font-size: 1.6rem;
+        }
+    }
+
+    h1, .h1, h2, .h2, h3, .h3 {
+        margin-bottom: .5em;
+    }
+
+    a {
+        font-weight: 700;
+
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: underline;
+        }
+    }
+}
+
+.alert-success {
+    background-color: $color-success;
+}
+
+.alert-info {
+    background-color: $color-info;
+}
+
+.alert-warning {
+    background-color: $color-warning;
+}
+
+.alert-danger {
+    background-color: $color-danger;
+}
+
+// Alerts - Text
+
+.message {
+    display: block;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.message-success,
+.success {
+    color: $color-success;
+}
+
+.message-info,
+.info {
+    color: $color-info;
+}
+
+.message-warning,
+.success {
+    color: $color-warning;
+}
+
+.message-danger,
+.danger {
+    color: $color-danger;
+}

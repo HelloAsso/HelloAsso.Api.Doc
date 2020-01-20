@@ -3,7 +3,7 @@
 .wrapper {
     min-height: 100vh;
 
-    @media (min-width: $small-desktop) {
+    @media (min-width: $smalldesktop) {
         padding-left: 30rem;
     }
 }
@@ -25,7 +25,7 @@
         padding: 0;
     }
     
-    @media (min-width: $small-desktop) {
+    @media (min-width: $smalldesktop) {
         width: 75%;
     }
 }

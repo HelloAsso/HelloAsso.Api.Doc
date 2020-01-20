@@ -10,7 +10,7 @@ picture {
 
 .logo-wrapper {
 	a {
-		color: $base-font-color;
+		color: $color-text;
 		text-decoration: none;
 
 		&:before {
@@ -22,7 +22,7 @@ picture {
 .logo {
 	max-width: 18rem;
 	
-	@media (min-width: $large-phone) {
+	@media (min-width: $largephone) {
 		max-width: 20rem;
 	}
 }

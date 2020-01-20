@@ -1,48 +1,54 @@
 // Media Queries
-$large-desktop: 1200px !default;
-$small-desktop: 992px !default;
+$largedesktop: 1200px !default;
+$smalldesktop: 992px !default;
 $tablet: 768px !default;
-$large-phone: 480px !default;
-$small-phone: 320px !default;
+$largephone: 480px !default;
+$smallphone: 320px !default;
 
 // Typography
-$base-font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
 
 // Line height
-$base-line-height: 1.5 !default;
-$heading-line-height: 1.2 !default;
+$line-height-base: 1.5 !default;
+$line-height-heading: 1.2 !default;
 
 // Base color
-$base-color: $helloasso-green !default;
+$color-primary: $mint !default;
 
 // Font Colors
-$base-font-color: $space !default;
-$font-grey: $smoke !default;
+$color-text: $midnight !default;
+$color-text-light: $storm !default;
 
 // Background Colors
-$body-background: $cloud !default;
-$disabled-background: $smoke !default;
+$background-color-body: $air !default;
 
 // Borders
 $border-color: $silver !default;
-$base-border: 1px solid $border-color !default;
+$border-base: 1px solid $border-color !default;
 
-// Disabled states
-$disabled-color: $smoke !default;
-$disabled-background: $silver !default;
+// States
+$color-success: $emerald;
+$color-info: $sapphire;
+$color-warning: $gold;
+$color-danger: $ruby;
+
+// States (disabled)
+$disabled-color-text: $storm !default;
+$disabled-color-background: $silver !default;
 
 // Focus
-$focus-outline-color: transparentize($base-color, .25) !default;
+$focus-outline-color: transparentize($color-primary, .25) !default;
 $focus-outline-width: 1px !default;
 $focus-outline: $focus-outline-width solid $focus-outline-color !default;
 $focus-outline-offset: 1px !default;
 
 // Other Sizes
-$base-border-radius: 5px !default;
-$base-spacing: 2em !default;
-$small-spacing: $base-spacing / 2 !default;
-$large-spacing: $base-spacing * 2 !default;
+$border-radius-base: 5px !default;
+
+$spacing-base: 2em !default;
+$spacing-small: $spacing-base / 2 !default;
+$spacing-large: $spacing-base * 2 !default;
 
 // Animations
-$base-duration: 250ms !default;
-$base-timing: cubic-bezier(.65, 0, .45, 1) !default;
+$animation-duration: 250ms !default;
+$animation-timing: cubic-bezier(.65, 0, .45, 1) !default;

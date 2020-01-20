@@ -3,22 +3,22 @@
         .octo-arm {
             animation: none;
 
-            @media (min-width: $large-phone) {
+            @media (min-width: $largephone) {
                 animation: octocat-wave 560ms ease-in-out;
             }
         }
     }
 
     i {
-        color: $base-color;
+        color: $color-primary;
         fill: #fff;
 
-        @media (min-width: $large-phone) {
+        @media (min-width: $largephone) {
             width: 6.4rem;
             height: 6.4rem;
         }
 
-        @media (min-width: $large-desktop) {
+        @media (min-width: $largedesktop) {
             width: 8rem;
             height: 8rem;
         }
@@ -46,13 +46,13 @@
     min-width: 4rem;
     min-height: 4rem;
     padding: .5rem 1rem;
-    color: $base-color;
+    color: $color-primary;
     font-size: 2rem;
     text-align: center;
     background-color: rgba(255, 255, 255, .75);
-    border-radius: $base-border-radius;
+    border-radius: $border-radius-base;
 
-    @media (min-width: $small-desktop) {
+    @media (min-width: $smalldesktop) {
         display: none;
     }
 
@@ -72,7 +72,7 @@
     h4 {
         position: relative;
         padding: 0 0 1rem;
-        color: $font-grey;
+        color: $color-text-light;
         font-weight: 400;
 
         @media (min-width: $tablet) {
@@ -86,7 +86,7 @@
             left: 0;
             width: 33.33%;
             height: .2rem;
-            background-color: $base-color;
+            background-color: $color-primary;
 
             @media (min-width: $tablet) {
                 width: 25%;
@@ -112,7 +112,7 @@
             left: 0;
             width: .5rem;
             height: .5rem;
-            background-color: $base-color;
+            background-color: $color-primary;
             border-radius: 5px;
             opacity: 0;
             transform: translateY(-50%);
@@ -120,7 +120,7 @@
     }
 
     a {
-        color: $base-font-color;
+        color: $color-text;
         font-size: 2rem;
         font-weight: 600;
 
@@ -134,10 +134,10 @@
     position: fixed;
     top: 50%;
     display: none;
-    border-radius: $base-border-radius;
-    color: $font-grey;
+    border-radius: $border-radius-base;
+    color: $color-text-light;
     background-color: transparent;
-    transition: all $base-duration $base-timing;
+    transition: all $animation-duration $animation-timing;
     transform: translateY(-50%);
 
     @media (min-width: $tablet) {
@@ -149,7 +149,7 @@
         font-size: 1.1rem;
     }
 
-    @media (min-width: $small-desktop) {
+    @media (min-width: $smalldesktop) {
         right: 1rem;
         width: 7rem;
         height: 7rem;
@@ -159,14 +159,14 @@
 
     &:hover {
         color: #fff;
-        background-color: darken($base-color, 5%);
+        background-color: darken($color-primary, 5%);
         text-decoration: none;
     }
 
     i {
         font-size: 2rem;
 
-        @media (min-width: $small-desktop) {
+        @media (min-width: $smalldesktop) {
             font-size: 2.6rem;
         }
     }
@@ -192,8 +192,8 @@
         padding: 1.5rem 0;
         font-size: 2.4rem;
         font-weight: 600;
-        color: $base-font-color;
-        transition: all $base-duration $base-timing;
+        color: $color-text;
+        transition: all $animation-duration $animation-timing;
 
         @media (min-width: $tablet) {
             padding: 2.5rem 0;

@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     max-width: 100%;
-    margin: $base-spacing 0;
+    margin: $spacing-base 0;
     overflow-x: auto;
 }
 
@@ -13,22 +13,22 @@ table {
 }
 
 thead {
-    line-height: $heading-line-height;
+    line-height: $line-height-heading;
     vertical-align: bottom;
 
     th,
     td {
         font-weight: 600;
         color: #fff;
-        background-color: $base-color;
+        background-color: $color-primary;
     }
 
     th {
         &:first-of-type {
-            border-radius: $base-border-radius 0 0 $base-border-radius;
+            border-radius: $border-radius-base 0 0 $border-radius-base;
         }
         &:last-of-type {
-            border-radius: 0 $base-border-radius $base-border-radius 0;
+            border-radius: 0 $border-radius-base $border-radius-base 0;
         }
     }
 }
@@ -43,7 +43,7 @@ tbody {
 
 th,
 td {
-    padding: $small-spacing;
+    padding: $spacing-small;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;

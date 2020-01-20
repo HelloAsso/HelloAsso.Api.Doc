@@ -4,15 +4,15 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $base-font-family;
-	line-height: $heading-line-height;
-	margin: 0 0 $small-spacing;
+	font-family: $font-family;
+	line-height: $line-height-heading;
+	margin: 0 0 $spacing-small;
 }
 
 h1 {
 	font-size: 3rem;
 
-	@media (min-width: $large-phone) {
+	@media (min-width: $largephone) {
 		font-size: 3.6rem;
 	}
 
@@ -56,13 +56,13 @@ h5 {
 }
 
 p {
-	margin: 0 0 $small-spacing;
+	margin: 0 0 $spacing-small;
 }
 
 a {
-	color: $base-color;
+	color: $color-primary;
 	text-decoration: none;
-	transition: color $base-duration $base-timing;
+	transition: color $animation-duration $animation-timing;
 	
 	&:hover {
 		text-decoration: underline;
@@ -84,7 +84,7 @@ a {
 hr {
 	border-top: 0;
 	border-right: 0;
-	border-bottom: $base-border;
+	border-bottom: $border-base;
 	border-left: 0;
-	margin: $base-spacing 0;
+	margin: $spacing-base 0;
 }

@@ -13,13 +13,13 @@
     backface-visibility: hidden;
     will-change: transform;
     transform: translateX(-30rem);
-    transition: all $base-duration $base-timing;
+    transition: all $animation-duration $animation-timing;
 
-    @media (min-width: $large-phone) {
+    @media (min-width: $largephone) {
         width: 30rem;
     }
 
-    @media (min-width: $small-desktop) {
+    @media (min-width: $smalldesktop) {
         transform: translateX(0);
     }
 
@@ -42,7 +42,7 @@
         padding-bottom: 8rem;
         box-sizing: border-box;
 
-        @media (min-width: $large-phone) {
+        @media (min-width: $largephone) {
             padding-bottom: 10rem;
         }
     }
@@ -50,13 +50,13 @@
     .logo-wrapper {
         padding: 2rem 2rem 0;
 
-        @media (min-width: $large-phone) {
+        @media (min-width: $largephone) {
             padding: 3rem 2rem 1rem;
         }
     }
 
     .version-number {
-        color: $font-grey;
+        color: $color-text-light;
     }
 
     .sidebar-nav {
@@ -68,9 +68,9 @@
             display: block;
             font-size: 1.3rem;
             font-weight: 600;
-            color: $base-font-color;
+            color: $color-text;
 
-            @media (min-width: $large-phone) {
+            @media (min-width: $largephone) {
                 padding: 1rem 2rem;
                 font-size: 1.4rem;
             }
@@ -84,7 +84,7 @@
             }
 
             &.current {
-                color: $base-color;
+                color: $color-primary;
             }
 
             &:before {
@@ -95,7 +95,7 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background-color: $base-color;
+                background-color: $color-primary;
                 opacity: 0;
             }
         }
@@ -116,7 +116,7 @@
             padding: .8rem 1.5rem .8rem 3rem;
             font-weight: 400;
 
-            @media (min-width: $large-phone) {
+            @media (min-width: $largephone) {
                 padding: 1rem 2rem 1rem 4rem;
             }
         }
@@ -127,10 +127,10 @@
         bottom: 0;
         width: 100%;
         padding: 2rem;
-        color: $font-grey;
+        color: $color-text-light;
         font-size: 1.3rem;
 
-        @media (min-width: $large-phone) {
+        @media (min-width: $largephone) {
             padding: 1.5rem;
             font-size: 1.4rem;
         }
@@ -153,7 +153,7 @@
         border-radius: 50%;
         cursor: pointer;
 
-        @media (min-width: $large-phone) {
+        @media (min-width: $largephone) {
             width: 2.8rem;
             max-width: 2.8rem;
             height: 2.8rem;
@@ -186,7 +186,7 @@
             opacity: 0;
             transform: translate3d(-50%, -50%, 0);
 
-            @media (min-width: $large-phone) {
+            @media (min-width: $largephone) {
                 width: 4rem;
                 max-width: 4rem;
                 height: 4rem;
@@ -200,26 +200,26 @@
     }
 
     .theme-default {
-        background-color: $helloasso-green;
+        background-color: $mint;
 
         &.theme-active:before {
-            border-color: $helloasso-green;
+            border-color: $mint;
         }
     }
 
     .theme-blue {
-        background-color: $helloasso-blue;
+        background-color: $dream;
 
         &.theme-active:before {
-            border-color: $helloasso-blue;
+            border-color: $dream;
         }
     }
 
     .theme-night-mode {
-        background-color: $helloasso-black;
+        background-color: $midnight;
 
         &.theme-active:before {
-            border-color: $helloasso-black;
+            border-color: $midnight;
         }
     }
 }

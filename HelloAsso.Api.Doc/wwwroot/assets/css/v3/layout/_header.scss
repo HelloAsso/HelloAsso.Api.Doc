@@ -1,9 +1,9 @@
 header {
     padding: 6.5rem 0 1rem;
     color: #fff;
-    background-color: $base-color;
+    background-color: $color-primary;
 
-    @media (min-width: $small-desktop) {
+    @media (min-width: $smalldesktop) {
         padding: 5rem 0;
     }
 

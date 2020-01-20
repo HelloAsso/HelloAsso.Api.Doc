@@ -75,13 +75,13 @@ gulp.task('images', function() {
 });
 
 // Cherche les changements dans les fichiers
-gulp.task('watch', ['browser-sync'], function() {
+gulp.task('watch', gulp.series('browser-sync', function() {
     gulp.watch(paths.views, ['views']);
     gulp.watch(paths.styles, ['styles']);
     //gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.images, ['images']);
-});
+}));
 
 // Définit la  tâche par défaut
 //gulp.task('default', ['styles', 'scripts', 'images']);
-gulp.task('default', ['styles']);
+gulp.task('default', gulp.series('styles', function() {}));

@@ -189,9 +189,9 @@ GET https://api.helloasso.com/v3/organizations/&lt;id&gt;.json[?page=&lt;page&gt
     <section>
         <h3>Requête</h3>
         <pre class="language-markup">
-<code class="language-markup">
-GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/]campaigns.json[?type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP|PAYMENT_FORM`&gt;&createdFrom=&lt;createdFrom&gt;&createdTo=&lt;createdTo&gt;&updatedFrom=&lt;updatedFrom&gt;&updatedTo=&lt;updatedTo&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
-</code>
+            <code class="language-markup">
+GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/]campaigns.json[?type=&lt;EVENT|FORM|FUNDRAISER|MEMBERSHIP`&gt;&createdFrom=&lt;createdFrom&gt;&createdTo=&lt;createdTo&gt;&updatedFrom=&lt;updatedFrom&gt;&updatedTo=&lt;updatedTo&gt;&page=&lt;page&gt;&results_per_page=&lt;results_per_page&gt;]
+            </code>
 </pre>
     </section>
     <section>
@@ -263,7 +263,7 @@ GET https://api.helloasso.com/v3/[organizations/&lt;organism-id&gt;/]campaigns.j
                     </td>
                     <td>Le type de campagnes à récupérer</td>
                     <td>Non</td>
-                    <td>EVENT | FORM | FUNDRAISER | MEMBERSHIP | PAYMENT_FORM</td>
+                    <td>EVENT | FORM | FUNDRAISER | MEMBERSHIP</td>
                 </tr>
                 <tr>
                     <td>
@@ -335,6 +335,7 @@ GET https://api.helloasso.com/v3/organizations/00000000002/campaigns.json
 </article>
 <article id="detail-campagne" class="chapter">
     <h2>Détail d’une campagne</h2>
+    <p>Le type PAYMENT_FORM n'est pas pris en compte par l'API V3.</p>
     <section>
         <h3>Requête</h3>
         <pre class="language-markup">

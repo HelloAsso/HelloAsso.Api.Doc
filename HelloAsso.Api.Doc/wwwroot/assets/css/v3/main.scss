@@ -3,25 +3,25 @@
 // Base
 
 @import "base/normalize";
-@import "base/colors";
+@import "base/color";
 @import "base/config";
 @import "base/base";
 @import "base/typography";
 
 // Components
-@import "components/animations";
-@import "components/buttons";
-@import "components/icons";
-@import "components/lists";
-@import "components/medias";
-@import "components/tables";
+@import "components/animation";
+@import "components/button";
+@import "components/icon";
+@import "components/list";
+@import "components/media";
+@import "components/table";
 
 // Layout
 @import "layout/grid";
 @import "layout/header";
 @import "layout/footer";
 @import "layout/sidebar";
-@import "layout/articles";
+@import "layout/article";
 @import "layout/navigation";
 
 // Themes

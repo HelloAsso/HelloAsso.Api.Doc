@@ -32,3 +32,73 @@
         </div>
     </div>
 </div>
+
+<div id="myModal" class="modal wrapper">
+    <div class="modal-content list-content">
+        <span class="modal-close">×</span>
+        <h2 class="modal-title">Découvrez la nouvelle version de notre API</h2>
+        <p>La V5 de notre API est désormais accessible et utilisable par les associations et les partenaires de HelloAsso. Bien qu'elle reste fonctionnelle, l'API V3 n'est plus maintenue et nous vous encourageons à passer à la V5.</p>
+        <a href="https://dev.helloasso.com/v5" target="_blank">Découvrir l'API V5</a>
+    </div>
+</div>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the <span> element that closes the modal
+    var span = modal.getElementsByClassName("modal-close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+</script>
+
+<style>
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1000;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        display: block;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    .modal-title {
+        margin-bottom: 4rem;
+        margin-top: 1.1rem;
+    }
+
+    .modal-content a {
+        font-size: 4rem;
+    }
+
+    .modal-close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .modal-close:hover,
+    .modal-close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
